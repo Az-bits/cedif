@@ -84,8 +84,8 @@
     <div class="footer-bottom">
         <div class="container">
             <p>
-                &copy; 2022 All Rights Reserved. Designed by <a href="https://themeforest.net/user/labartisan/portfolio"
-                    target="_blank">LabArtisan</a>
+                &copy; Todos los derechos reservados. Desarrollado por <a href="https://azbits.dev" target="_blank">Edar
+                    Company</a>
             </p>
         </div>
     </div>

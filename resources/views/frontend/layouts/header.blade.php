@@ -38,7 +38,7 @@
             <div class="header-wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/images/logo/logo2.png" alt="logo">
+                        <img src="assets/images/logo/logo-main.png" alt="logo">
                     </a>
                 </div>
                 <div class="menu-area">
