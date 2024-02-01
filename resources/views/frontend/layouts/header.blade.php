@@ -1,20 +1,32 @@
 <header>
+    {{-- {{ var_dump($data['telefonos']->numero) }} --}}
     <div class="header-top">
         <div class="container">
             <div class="header-top-area">
                 <ul class="left">
+
                     <li>
-                        <i class="far fa-clock"></i> 9:30am - 6:30pm Mon - Sun
+                        <i class="far fa-clock"></i>
+                        {{ $data['horario']['hora_ini'] . ' am - ' . $data['horario']['hora_fin'] . ' pm Lun - Vie' }}
                     </li>
                     <li>
-                        <a href="#"><i class="fas fa-phone-alt"></i> +800-123-4567 6587</a>
+                        <a href="#"><i class="fas fa-phone-alt"></i>
+                            @foreach ($data['telefonos'] as $item)
+                                <a href="https://api.whatsapp.com/send?phone={{ $item['numero'] }}" target="_blank">
+                                    {{ $item['numero'] }}
+                                </a>
+                                @if (!$loop->last)
+                                    - {{-- Solo imprime el guion si no es el último elemento --}}
+                                @endif
+                            @endforeach
+                        </a>
                     </li>
                     <li>
-                        <i class="fas fa-map-marker-alt"></i> Beverley, New York 224 US
+                        <i class="fas fa-map-marker-alt"></i> {{ $data['direccion'] }}
                     </li>
                 </ul>
                 <ul class="social-icons">
-                    <li>
+                    {{-- <li>
                         <a href="#"><i class="fab fa-facebook-messenger"></i></a>
                     </li>
                     <li>
@@ -28,14 +40,14 @@
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-wifi"></i></a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
     </div>
     <div class="header-bottom">
         <div class="container">
-            <div class="header-wrapper">
+            <div class="header-wrapper" style="height: 6rem;">
                 <div class="logo">
                     <a href="index.html">
                         <img src="assets/images/logo/logo-main.png" alt="logo">
@@ -164,20 +176,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="contact.html"><i class="fas fa-map-marker-alt"></i>Contact</a>
+                            <a href="contact.html"><i class="fas fa-map-marker-alt"></i>Contacto</a>
                         </li>
                     </ul>
-                    <div class="search-button">
-                        <a href="#">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                    <div class="cart-button">
-                        <a href="#">
-                            <span class="cart-amount">05</span>
-                            <i class="fas fa-shopping-basket"></i>
-                        </a>
-                    </div>
+
                     <div class="header-bar d-lg-none">
                         <span></span>
                         <span></span>

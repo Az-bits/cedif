@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ContactoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,4 +23,5 @@ use App\Http\Controllers\ClienteController;
 // Route::get('/inicio', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::resource('home', ClienteController::class);
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contacto', [App\Http\Controllers\ContactoController::class, 'index'])->name('contacto');
 Route::resource('home', ClienteController::class);

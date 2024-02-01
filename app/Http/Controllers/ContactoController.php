@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ContactoController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -29,6 +29,6 @@ class HomeController extends Controller
             "direccion" => "Av. Juan Pablo II esquina Av. Sucre A Parada Z/ lado Teleférico Azul."
         ];
         // return view('home');
-        return view('frontend.home', compact('data'));
+        return view('frontend.contacto', compact('data'));
     }
 }

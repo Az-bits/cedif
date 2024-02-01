@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>kitton - Kids & Kindergarten School HTML Template</title>
+    <title>Jisk'a Wawa</title>
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/all.min.css">
@@ -26,7 +26,6 @@
 </head>
 
 <body>
-
 
     <!-- ==========Preloader Overlay Starts Here========== -->
     <div class="overlayer">
