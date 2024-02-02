@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\SobreNosotrosController;
+use App\Http\Controllers\GaleriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,4 +27,5 @@ use App\Http\Controllers\SobreNosotrosController;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
 Route::get('/sobre-nosotros', [SobreNosotrosController::class, 'index'])->name('sobre-nosotros');
+Route::get('/galeria', [GaleriaController::class, 'index'])->name('galeria');
 Route::resource('home', ClienteController::class);

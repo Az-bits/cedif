@@ -132,66 +132,6 @@
 
     @yield('content')
 
-    <!-- ==========Map Section Starts Here========== -->
-    <div class="map-section pos-rel">
-        <div class="maps"></div>
-        <div class="contact-area padding-bottom padding-top pt-lg-0 pb-lg-0">
-            <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-item">
-                        <div class="contact-thumb">
-                            <img src="assets/images/contact/01.png" alt="contact">
-                        </div>
-                        <div class="contact-content">
-                            <h6 class="title">Class Sessions</h6>
-                            <ul>
-                                <li>Sunday - Monday</li>
-                                <li>08:00 am – 11:00 am (Fri Closed)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-thumb">
-                            <img src="assets/images/contact/02.png" alt="contact">
-                        </div>
-                        <div class="contact-content">
-                            <h6 class="title">kittons Address</h6>
-                            <ul>
-                                <li>123 White Amphitheatre Kinway, Mountain, CA 12345, USA</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-thumb">
-                            <img src="assets/images/contact/03.png" alt="contact">
-                        </div>
-                        <div class="contact-content">
-                            <h6 class="title">Openning Hours</h6>
-                            <ul>
-                                <li>Sunday - Monday</li>
-                                <li>08.00 am – 05.00 pm</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-thumb">
-                            <img src="assets/images/contact/04.png" alt="contact">
-                        </div>
-                        <div class="contact-content">
-                            <h6 class="title">Phone & E-mail</h6>
-                            <ul>
-                                <li><a href="Tel:05210021020">+123 456 78910, 0265478</a></li>
-                                <li><a href="Mailto:sfkljsdfsj@gmail.com">enroll@kittons.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ==========Map Section Ends Here========== -->
-
-
     <!-- ==========Footer Section Starts Here========== -->
     @include('frontend.layouts.footer')
     <!-- ==========Footer Section Ends Here========== -->

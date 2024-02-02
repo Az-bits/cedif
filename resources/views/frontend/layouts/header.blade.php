@@ -56,9 +56,9 @@
                 <div class="menu-area">
                     <ul class="menu">
                         <li>
-                            <a href="#0"><i class="fas fa-home"></i>Home</a>
+                            <a href="/"><i class="fas fa-home"></i>Inicio</a>
                             <ul class="submenu">
-                                <li>
+                                {{-- <li>
                                     <a href="index.html">Home One</a>
                                 </li>
                                 <li>
@@ -66,7 +66,7 @@
                                 </li>
                                 <li>
                                     <a href="index-3.html">Home Three</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                         <li>
@@ -87,20 +87,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#0"><i class="fas fa-pencil-alt"></i>Blog</a>
-                            <ul class="submenu">
-                                <li>
-                                    <a href="blog-grid.html">Blog Grid</a>
-                                </li>
-                                <li>
-                                    <a href="blog-classic.html">Blog Classic</a>
-                                </li>
-                                <li>
-                                    <a href="blog-single.html">Blog Single</a>
-                                </li>
-                            </ul>
-                        </li>
+
                         <li>
                             <a href="#0"><i class="fas fa-layer-group"></i>Servicios Educativos</a>
                             {{-- <ul class="submenu">
@@ -201,6 +188,21 @@
                         </li>
                         <li>
                             <a href="{{ route('contacto') }}"><i class="fas fa-map-marker-alt"></i>Contacto</a>
+                        </li>
+                        <li>
+                            {{-- <a href="#0"><i class="fas fa-pencil-alt"></i>Blog</a> --}}
+                            <a href="#0"><i class="fas fa-plus"></i>Más</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="{{ route('galeria') }}">Galeria</a>
+                                </li>
+                                {{-- <li>
+                                    <a href="blog-classic.html">Blog Classic</a>
+                                </li>
+                                <li>
+                                    <a href="blog-single.html">Blog Single</a>
+                                </li> --}}
+                            </ul>
                         </li>
                     </ul>
 
