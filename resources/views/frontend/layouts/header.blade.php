@@ -7,7 +7,7 @@
 
                     <li>
                         <i class="far fa-clock"></i>
-                        {{ $data['horario']['hora_ini'] . ' am - ' . $data['horario']['hora_fin'] . ' pm Lun - Vie' }}
+                        {{ $data['horario']['hora_ini'] . 'am - ' . $data['horario']['hora_fin'] . 'pm Lun - Vie' }}
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-phone-alt"></i>
@@ -49,7 +49,7 @@
         <div class="container">
             <div class="header-wrapper" style="height: 6rem;">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="/">
                         <img src="assets/images/logo/logo-main.png" alt="logo">
                     </a>
                 </div>
@@ -70,10 +70,11 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="about.html"><i class="fas fa-user"></i>About</a>
+                            <a href="{{ route('sobre-nosotros') }}"><i class="fas fa-user"></i>Sobre
+                                Nosotros</a>
                         </li>
                         <li>
-                            <a href="#0"><i class="fas fa-book"></i>Classes</a>
+                            <a href="#0"><i class="fas fa-book"></i>Clases</a>
                             <ul class="submenu">
                                 <li>
                                     <a href="classes.html">Classes</a>
@@ -101,8 +102,8 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#0"><i class="fas fa-layer-group"></i>Pages</a>
-                            <ul class="submenu">
+                            <a href="#0"><i class="fas fa-layer-group"></i>Servicios Educativos</a>
+                            {{-- <ul class="submenu">
                                 <li>
                                     <a href="#0">Teacher</a>
                                     <ul class="submenu">
@@ -173,10 +174,33 @@
                                 <li>
                                     <a href="error-page.html">404 Error</a>
                                 </li>
+                            </ul> --}}
+                            <ul class="submenu">
+                                <li>
+                                    <a href="blog-grid.html">Club de Tareas</a>
+                                </li>
+                                <li>
+                                    <a href="blog-classic.html">Apoyo Escolar</a>
+                                </li>
+                                <li>
+                                    <a href="blog-single.html">Sala Parvulo</a>
+                                </li>
+                                <li>
+                                    <a href="blog-single.html">Desarrollo Integral</a>
+                                </li>
+                                <li>
+                                    <a href="blog-single.html">Estimulacion Temprana</a>
+                                </li>
+                                <li>
+                                    <a href="blog-single.html">Psicomotricidad</a>
+                                </li>
+                                <li>
+                                    <a href="blog-single.html">Lecto-Escritura</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="contact.html"><i class="fas fa-map-marker-alt"></i>Contacto</a>
+                            <a href="{{ route('contacto') }}"><i class="fas fa-map-marker-alt"></i>Contacto</a>
                         </li>
                     </ul>
 
