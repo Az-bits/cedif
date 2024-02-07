@@ -50,7 +50,7 @@
             <div class="header-wrapper" style="height: 6rem;">
                 <div class="logo">
                     <a href="/">
-                        <img src="assets/images/logo/logo-main.png" alt="logo">
+                        <img src="{{ asset('assets/images/logo/logo-main.png') }}" alt="logo">
                     </a>
                 </div>
                 <div class="menu-area">
@@ -73,20 +73,20 @@
                             <a href="{{ route('sobre-nosotros') }}"><i class="fas fa-user"></i>Sobre
                                 Nosotros</a>
                         </li>
-                        {{-- <li>
+                        <li>
                             <a href="#0"><i class="fas fa-book"></i>Clases</a>
                             <ul class="submenu">
-                                <li>
-                                    <a href="classes.html">Classes</a>
-                                </li>
-                                <li>
+                                {{-- <li>
+                                    <a href="classes.html">Clases</a>
+                                </li> --}}
+                                {{-- <li>
                                     <a href="class-single.html">Class Single</a>
-                                </li>
+                                </li> --}}
                                 <li>
-                                    <a href="class-schedule.html">Class Schedule</a>
+                                    <a href="{{ route('horario') }}">Horario</a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>
 
                         <li>
                             <a href="#0"><i class="fas fa-layer-group"></i>Servicios Educativos</a>
@@ -164,7 +164,7 @@
                             </ul> --}}
                             <ul class="submenu">
                                 <li>
-                                    <a href="blog-grid.html">Club de Tareas</a>
+                                    <a href="#">Club de Tareas</a>
                                 </li>
                                 <li>
                                     <a href="blog-classic.html">Apoyo Escolar</a>

@@ -5,6 +5,9 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\SobreNosotrosController;
 use App\Http\Controllers\GaleriaController;
+use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\ServiciosController;
+// use App\Http\Controllers\ClasesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +31,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
 Route::get('/sobre-nosotros', [SobreNosotrosController::class, 'index'])->name('sobre-nosotros');
 Route::get('/galeria', [GaleriaController::class, 'index'])->name('galeria');
+Route::get('/horario', [HorarioController::class, 'index'])->name('horario');
+Route::get('/servicios/{id}', [ServiciosController::class, 'index'])->name('servicios');
+
+// Route::get('/clases', [ClasesController::class, 'index'])->name('clases');
+// Route::get('/clases/horario', [HorarioController::class, 'index'])->name('horario');
 Route::resource('home', ClienteController::class);

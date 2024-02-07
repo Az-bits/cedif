@@ -1,16 +1,35 @@
 @extends('frontend.app')
 @section('content')
+    <style>
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .maquina {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 1px solid #fff;
+            animation: typing 3s steps(50) infinite;
+        }
+    </style>
     <!-- ==========Banner Section Starts Here========== -->
     <section class="banner-section bg_img style-2 oh" data-background="assets/images/banner/banner02.jpg">
         {{-- <section class="banner-section bg_img style-2 oh" data-background="{{ asset('images/jw-img-5.jpg') }}"> --}}
-        <div class="top-shape-content d-none d-lg-block">
-            {{-- <img src="assets/images/banner/banner04.png" alt="banner"> --}}
+
+        <div class="top-shape-content d-none d-lg-block" style='right: calc(50% - 780px)'>
+            <img src="assets/images/banner/banner04.png" alt="banner">
         </div>
         <div class="container">
             <div class="d-flex justify-content-between">
-                <div class="banner-content style-2 cl-white w-100">
+                <div class="banner-content style-2 cl-white">
                     <h3 class="cate">Nuestra centro de desarrollo es la mejor</h3>
-                    <h1 class="title">Para tus hijos</h1>
+                    <h1 class="title maquina">Para tus hijos</h1>
                     <p>prestara un servicio multidisciplinario, integral, con calidad y calidez a las niñas(os).</p>
                     <a href="{{ route('contacto') }}" class="custom-button"><span>
                             Empezar ahora</span></a>
