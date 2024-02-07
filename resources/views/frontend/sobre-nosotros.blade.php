@@ -20,7 +20,7 @@
 
 
     <!-- ==========About Section Starts Here========== -->
-    <section class="about-section pos-rel padding-bottom padding-top oh">
+    <section class="about-section pos-rel padding-bottom padding-top">
         <div class="top-shape-center">
             <img src="assets/css/img/gallery1.png" alt="css">
         </div>
@@ -31,65 +31,99 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-header">
-                        <span class="cate">Welcome to Our kitton School</span>
-                        <h3 class="title">Best Education in Our Kindergarden</h3>
+                        <span class="cate">Bienvenidos a nuestra centro infantil Jisk'a wawa</span>
+                        <h3 class="title">La Mejor Educación En Nuestro Jardín De Infantes</h3>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center mb-30-none -mx-10">
-                <div class="col-md-6 col-lg-5 col-xl-3">
+                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
                     <div class="feature-item">
                         <div class="feature-thumb">
                             <img src="assets/images/feature/01.png" class="ml--8" alt="feature">
                         </div>
                         <div class="feature-content">
-                            <h5 class="title">Toddler</h5>
-                            <span class="cate">(1,5 – 2 years)</span>
-                            <p>Since have been vsnary arenre
-                                reabe software enneern partne
-                                have been and visionary</p>
+                            <h5 class="title">Club de tareas</h5>
+                            <span class="cate">(1,5 – 2 años)</span>
+                            <p>Espacio colaborativo donde estudiantes se reúnen para realizar sus tareas y estudiar juntos.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-5 col-xl-3">
+                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
                     <div class="feature-item">
                         <div class="feature-thumb">
                             <img src="assets/images/feature/02.png" class="ml--8" alt="feature">
                         </div>
                         <div class="feature-content">
-                            <h5 class="title">Pre-K Program</h5>
-                            <span class="cate">(4 – 5 years)</span>
-                            <p>Since have been vsnary arenre
-                                reabe software enneern partne
-                                have been and visionary</p>
+                            <h5 class="title">Apoyo Escolar</h5>
+                            <span class="cate">(4 – 5 años)</span>
+                            <p>Es un recurso valioso que brinda asistencia adicional a los estudiantes en
+                                sus estudios.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-5 col-xl-3">
+                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
                     <div class="feature-item">
                         <div class="feature-thumb">
                             <img src="assets/images/feature/03.png" class="ml--8" alt="feature">
                         </div>
                         <div class="feature-content">
-                            <h5 class="title">Preschool</h5>
-                            <span class="cate">(2 – 3 years)</span>
-                            <p>Since have been vsnary arenre
-                                reabe software enneern partne
-                                have been and visionary</p>
+                            <h5 class="title">Sala Parvulo</h5>
+                            <span class="cate">(2 – 3 años)</span>
+                            <p>Es un ambiente acogedor y estimulante, donde los niños participan en actividades lúdicas y
+                                educativas adaptadas a su edad.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-5 col-xl-3">
+                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
+                    <div class="feature-item">
+                        <div class="feature-thumb">
+                            <img src="assets/images/feature/01.png" class="ml--8" alt="feature">
+                        </div>
+                        <div class="feature-content">
+                            <h5 class="title">Psicomotricidad</h5>
+                            <span class="cate">(2 – 3 años)</span>
+                            <p> Se refiere a la relación entre la mente y el movimiento del cuerpo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
                     <div class="feature-item">
                         <div class="feature-thumb">
                             <img src="assets/images/feature/04.png" class="ml--8" alt="feature">
                         </div>
                         <div class="feature-content">
-                            <h5 class="title">Kindergarten</h5>
-                            <span class="cate">(3 – 4 years)</span>
-                            <p>Since have been vsnary arenre
-                                reabe software enneern partne
-                                have been and visionary</p>
+                            <h5 class="title">Lecto-Escritura</h5>
+                            <span class="cate">(3 – 4 años)</span>
+                            <p>se refiere al conjunto de habilidades que implican la capacidad de leer y escribir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
+                    <div class="feature-item">
+                        <div class="feature-thumb">
+                            <img src="assets/images/feature/04.png" class="ml--8" alt="feature">
+                        </div>
+                        <div class="feature-content">
+                            <h5 class="title">Desarrollo Integral</h5>
+                            <span class="cate">(3 – 4 años)</span>
+                            <p>Incluye el desarrollo físico, emocional, social, cognitivo y moral. En este enfoque, se busca
+                                cultivar no solo habilidades académicas, sino también habilidades sociales, emocionales y
+                                físicas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
+                    <div class="feature-item">
+                        <div class="feature-thumb">
+                            <img src="assets/images/feature/02.png" class="ml--8" alt="feature">
+                        </div>
+                        <div class="feature-content">
+                            <h5 class="title">Estimulación Temprana</h5>
+                            <span class="cate">(4 – 5 años)</span>
+                            <p>Es un conjunto de actividades y prácticas diseñadas para promover el desarrollo óptimo de los
+                                niños desde el nacimiento hasta los primeros años de vida. </p>
                         </div>
                     </div>
                 </div>
@@ -99,54 +133,49 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="rtl d-none d-lg-block pr-4">
-                            <img src="assets/images/about/about03.png" alt="about">
+                        <div class="about-thumb">
+                            <img src="assets/images/about/about02.png" alt="about">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="about-content">
                             <div class="section-header left-style mb-olpo">
-                                <span class="cate">About Our kitton</span>
-                                <h3 class="title">Special Attention For Every Child</h3>
-                                <p>Dolor sit amet consectetur elitery eiusmod tempor dunt aliqua utas enim veniam
-                                    tempore quis sed psum nostrud ipsume amet consectetur adipisicing elit sedom
-                                    eiusmod tempor incididunt ut labore</p>
+                                <span class="cate">Acerca de nuestro centro</span>
+                                <h3 class="title">Atención Especial Para Cada Niño</h3>
+                                <p>Brindamos servicios integrales de atención cuidado, seguridad, educación Inicial en
+                                    Familia
+                                    Comunitaria, estimulación y orientación parental, con un enfoque multidisciplinario,
+                                    oportuno, solidario, con calidad y calidez; sin fines de lucro en beneficio de hijas e
+                                    hijos menores de cinco años de estudiantes universitarios, docentes y administrativos de
+                                    la Universidad Publica de El Alto (UPEA).</p>
                             </div>
-                            <div class="faq-wrapper mb--10">
-                                <div class="faq-item">
-                                    <div class="faq-title">
-                                        <span class="right-icon"></span>
-                                        <h5 class="title">Learning Environment</h5>
-                                    </div>
-                                    <div class="faq-content">
-                                        <p>Since 2007 we have been visionary and areliable software enginering
-                                            partner for worldclass brands what are bouque digital transformation
-                                            are awesome theme consultancy.</p>
-                                    </div>
+                            <ul class="about-list">
+                                <li>
+                                    <i class="flaticon-vegan"></i><span>Baño</span> ordenado y limpio
+                                </li>
+                                <li>
+                                    <i class="flaticon-vegan"></i><span>Cantina</span> con alimentos saludables y agua.
+                                </li>
+                                <li>
+                                    <i class="flaticon-vegan"></i><span>Sala de clase</span> con aire acondicionado
+                                </li>
+                                <li>
+                                    <i class="flaticon-vegan"></i><span>Zona de juegos</span> Amplia
+                                </li>
+
+
+
+
+                            </ul>
+                            <blockquote class="about-quote">
+                                <div class="thumb">
+                                    <img src="assets/images/about/quote.png" alt="about">
                                 </div>
-                                <div class="faq-item active open">
-                                    <div class="faq-title">
-                                        <span class="right-icon"></span>
-                                        <h5 class="title">Professional Teachers</h5>
-                                    </div>
-                                    <div class="faq-content">
-                                        <p>Since 2007 we have been visionary and areliable software enginering
-                                            partner for worldclass brands what are bouque digital transformation
-                                            are awesome theme consultancy.</p>
-                                    </div>
+                                <div class="content">
+                                    <span class="quote">“Un niño puede hacer preguntas que un hombre sabio no puede
+                                        responder.”</span> <span class="name">Jostein Gaarder</span>
                                 </div>
-                                <div class="faq-item">
-                                    <div class="faq-title">
-                                        <span class="right-icon"></span>
-                                        <h5 class="title">Programs for Everyone</h5>
-                                    </div>
-                                    <div class="faq-content">
-                                        <p>Since 2007 we have been visionary and areliable software enginering
-                                            partner for worldclass brands what are bouque digital transformation
-                                            are awesome theme consultancy.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            </blockquote>
                         </div>
                     </div>
                 </div>
@@ -167,9 +196,9 @@
                         </div>
                         <div class="counter-content">
                             <div class="counter-header">
-                                <h2 class="title odometer" data-odometer-final="830">0</h2>
+                                <h2 class="title odometer" data-odometer-final="17">0</h2>
                             </div>
-                            <span class="cate">Age 03 - 04</span>
+                            <span class="cate">Edad 01 - 03</span>
                         </div>
                     </div>
                 </div>
@@ -180,10 +209,10 @@
                         </div>
                         <div class="counter-content">
                             <div class="counter-header">
-                                <h2 class="title odometer" data-odometer-final="26">0</h2>
+                                <h2 class="title odometer" data-odometer-final="12">0</h2>
                                 <h2 class="title">+</h2>
                             </div>
-                            <span class="cate">Age 10 - 12</span>
+                            <span class="cate">Edad 03 - 05</span>
                         </div>
                     </div>
                 </div>
@@ -194,10 +223,10 @@
                         </div>
                         <div class="counter-content">
                             <div class="counter-header">
-                                <h2 class="title odometer" data-odometer-final="100">0</h2>
+                                <h2 class="title odometer" data-odometer-final="63">0</h2>
                                 <h2 class="title">%</h2>
                             </div>
-                            <span class="cate">Total Boys</span>
+                            <span class="cate">Total Niños</span>
                         </div>
                     </div>
                 </div>
@@ -208,10 +237,10 @@
                         </div>
                         <div class="counter-content">
                             <div class="counter-header">
-                                <h2 class="title odometer" data-odometer-final="100">0</h2>
+                                <h2 class="title odometer" data-odometer-final="37">0</h2>
                                 <h2 class="title">%</h2>
                             </div>
-                            <span class="cate">Total Girls</span>
+                            <span class="cate">Total Niñas</span>
                         </div>
                     </div>
                 </div>
@@ -230,8 +259,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-header">
-                        <span class="cate">Meet Our Staffs</span>
-                        <h3 class="title">Our Best Popular Teachers</h3>
+                        <span class="cate">Conozca A Nuestro Personal</span>
+                        <h3 class="title">Nuestros Mejores Profesores Populares</h3>
                     </div>
                 </div>
             </div>
@@ -240,14 +269,23 @@
                     <div class="teacher-item-2">
                         <div class="teacher-thumb">
                             <div class="thumb">
-                                <a href="teacher-single.html">
-                                    <img src="assets/images/teacher/teacher05.jpg" alt="teacher">
+                                <a href="#">
+                                    <img src="assets/images/teacher/teacher01.jpg" alt="teacher">
                                 </a>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Jason Kovalsky</a></h5>
-                                <span>Spanish Teacher</span>
+                                <h5 class="title"><a href="#">Ricardo Mendoza</a></h5>
+                                <span>Maestro de Música o Arte</span>
                             </div>
+                            {{-- <div class="thumb">
+                                <a href="teacher-single.html">
+                                    <img src="assets/images/teacher/teacher01.jpg" alt="teacher">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="teacher-single.html">Ricardo Mendoza</a></h5>
+                                <span>Maestro de Música o Arte</span>
+                            </div> --}}
                         </div>
                         <div class="teacher-content">
                             <ul class="teacher-social justify-content-center">
@@ -255,9 +293,10 @@
                                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
+                                            style="color: green;"></i></a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
                                 </li>
                                 <li>
@@ -265,7 +304,7 @@
                                 </li>
                                 <li>
                                     <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -274,81 +313,13 @@
                     <div class="teacher-item-2">
                         <div class="teacher-thumb">
                             <div class="thumb">
-                                <a href="teacher-single.html">
-                                    <img src="assets/images/teacher/teacher06.jpg" alt="teacher">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Bangile Yusha</a></h5>
-                                <span>Spanish Teacher</span>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <ul class="teacher-social justify-content-center">
-                                <li>
-                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="teacher-item-2">
-                        <div class="teacher-thumb">
-                            <div class="thumb">
-                                <a href="teacher-single.html">
-                                    <img src="assets/images/teacher/teacher07.jpg" alt="teacher">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Willium Kovalsky</a></h5>
-                                <span>Spanish Teacher</span>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <ul class="teacher-social justify-content-center">
-                                <li>
-                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="teacher-item-2">
-                        <div class="teacher-thumb">
-                            <div class="thumb">
-                                <a href="teacher-single.html">
+                                <a href="#">
                                     <img src="assets/images/teacher/teacher08.jpg" alt="teacher">
                                 </a>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Bini Zaara</a></h5>
-                                <span>Spanish Teacher</span>
+                                <h5 class="title"><a href="#">Luz Manriquez</a></h5>
+                                <span>Maestra de Necesidades Especiales</span>
                             </div>
                         </div>
                         <div class="teacher-content">
@@ -357,9 +328,10 @@
                                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
+                                            style="color: green;"></i></a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
                                 </li>
                                 <li>
@@ -367,7 +339,78 @@
                                 </li>
                                 <li>
                                     <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                </li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="teacher-item-2">
+                        <div class="teacher-thumb">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="assets/images/teacher/teacher06.jpg" alt="teacher">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">Carla Diaz</a></h5>
+                                <span>Tecnica y tecnologia</span>
+                            </div>
+                        </div>
+                        <div class="teacher-content">
+                            <ul class="teacher-social justify-content-center">
+                                <li>
+                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
+                                <li>
+                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
+                                            style="color: green;"></i></a>
+                                </li>
+                                {{-- <li>
+                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                </li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="teacher-item-2">
+                        <div class="teacher-thumb">
+                            <div class="thumb">
+                                {{-- <a href="#"> --}}
+                                <a href="#">
+                                    <img src="assets/images/teacher/teacher03.jpg" alt="teacher">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">Susan Soliz</a></h5>
+                                <span>Maestro de Educación Infantil</span>
+                            </div>
+                        </div>
+                        <div class="teacher-content">
+                            <ul class="teacher-social justify-content-center">
+                                <li>
+                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
+                                            style="color: green;"></i></a>
+                                </li>
+                                {{-- <li>
+                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>

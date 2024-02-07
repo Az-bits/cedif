@@ -73,7 +73,7 @@
                             <a href="{{ route('sobre-nosotros') }}"><i class="fas fa-user"></i>Sobre
                                 Nosotros</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#0"><i class="fas fa-book"></i>Clases</a>
                             <ul class="submenu">
                                 <li>
@@ -86,7 +86,7 @@
                                     <a href="class-schedule.html">Class Schedule</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                         <li>
                             <a href="#0"><i class="fas fa-layer-group"></i>Servicios Educativos</a>

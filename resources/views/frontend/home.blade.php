@@ -4,15 +4,14 @@
     <section class="banner-section bg_img style-2 oh" data-background="assets/images/banner/banner02.jpg">
         {{-- <section class="banner-section bg_img style-2 oh" data-background="{{ asset('images/jw-img-5.jpg') }}"> --}}
         <div class="top-shape-content d-none d-lg-block">
-            <img src="assets/images/banner/banner04.png" alt="banner">
+            {{-- <img src="assets/images/banner/banner04.png" alt="banner"> --}}
         </div>
         <div class="container">
             <div class="d-flex justify-content-between">
                 <div class="banner-content style-2 cl-white w-100">
                     <h3 class="cate">Nuestra centro de desarrollo es la mejor</h3>
                     <h1 class="title">Para tus hijos</h1>
-                    <p>Preescolar para el proceso de inscripción y pruebas de aplicación para escuelas públicas y privadas,
-                        la ciudad de alo abu mal kita kores vai kitton es la mejor para sus hijos.</p>
+                    <p>prestara un servicio multidisciplinario, integral, con calidad y calidez a las niñas(os).</p>
                     <a href="{{ route('contacto') }}" class="custom-button"><span>
                             Empezar ahora</span></a>
                 </div>
@@ -337,40 +336,48 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="class-item">
                         <div class="class-thumb">
-                            <a href="class-single.html"><img src="assets/images/class/class04.jpg" alt="class"></a>
+                            <a href="#"><img src="assets/images/class/class04.jpg" alt="class"></a>
                         </div>
                         <div class="class-content">
                             <h5 class="title">
-                                <a href="class-single.html">Art And Color Management</a>
+                                <a href="#">Gestión de arte y color</a>
                             </h5>
                             <div class="class-meta">
                                 <div class="class-author">
                                     <div class="thumb">
+                                        <a href="#"><img src="assets/images/class/teacher02.jpg"
+                                                alt="class"></a>
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="subtitle"><a href="#">Martin Soliz</a></h6>
+                                        {{-- <a href="#" class="info">Ver perfil</a> --}}
+                                    </div>
+                                    {{-- <div class="thumb">
                                         <a href="teacher-single.html"><img src="assets/images/class/teacher02.jpg"
                                                 alt="class"></a>
                                     </div>
                                     <div class="content">
                                         <h6 class="subtitle"><a href="teacher-single.html">Joly Smith</a></h6>
                                         <a href="teacher-single.html" class="info">View Profile</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="cost-area">
-                                    <h6 class="subtitle">$12.96</h6>
-                                    <span class="info">Per Month</span>
+                                    <h6 class="subtitle">Gratuito</h6>
+                                    {{-- <span class="info">Per Month</span> --}}
                                 </div>
                             </div>
                             <div class="schedule-area">
                                 <div class="schedule-item">
                                     <h6 class="sub-title">24 - 30</h6>
-                                    <span class="info">Class Size</span>
+                                    <span class="info">Tamaño de la clase</span>
                                 </div>
                                 <div class="schedule-item">
-                                    <h6 class="sub-title">09:30 -12:00</h6>
-                                    <span class="info">Class Time</span>
+                                    <h6 class="sub-title">02:30 -18:00</h6>
+                                    <span class="info">Hora de clase</span>
                                 </div>
                                 <div class="schedule-item">
-                                    <h6 class="sub-title">06 - 08</h6>
-                                    <span class="info">Years Old</span>
+                                    <h6 class="sub-title">03 - 05</h6>
+                                    <span class="info">Años</span>
                                 </div>
                             </div>
                         </div>
@@ -379,40 +386,40 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="class-item">
                         <div class="class-thumb">
-                            <a href="class-single.html"><img src="assets/images/class/class05.jpg" alt="class"></a>
+                            <a href="#"><img src="assets/images/class/class05.jpg" alt="class"></a>
                         </div>
                         <div class="class-content">
                             <h5 class="title">
-                                <a href="class-single.html">Music And Performance</a>
+                                <a href="#">Música y actuación</a>
                             </h5>
                             <div class="class-meta">
                                 <div class="class-author">
                                     <div class="thumb">
-                                        <a href="teacher-single.html"><img src="assets/images/class/teacher01.jpg"
+                                        <a href="#"><img src="assets/images/class/teacher01.jpg"
                                                 alt="class"></a>
                                     </div>
                                     <div class="content">
-                                        <h6 class="subtitle"><a href="teacher-single.html">Mrs. Labonno</a></h6>
-                                        <a href="teacher-single.html" class="info">View Profile</a>
+                                        <h6 class="subtitle"><a href="#">Luz Ali</a></h6>
+                                        <a href="#" class="info">Ver Perfil</a>
                                     </div>
                                 </div>
                                 <div class="cost-area">
-                                    <h6 class="subtitle">$12.96</h6>
-                                    <span class="info">Per Month</span>
+                                    <h6 class="subtitle">Gratuito</h6>
+                                    {{-- <span class="info">Per Month</span> --}}
                                 </div>
                             </div>
                             <div class="schedule-area">
                                 <div class="schedule-item">
                                     <h6 class="sub-title">24 - 30</h6>
-                                    <span class="info">Class Size</span>
+                                    <span class="info">Tamaño de la clase</span>
                                 </div>
                                 <div class="schedule-item">
                                     <h6 class="sub-title">09:30 -12:00</h6>
-                                    <span class="info">Class Time</span>
+                                    <span class="info">Hora de clase</span>
                                 </div>
                                 <div class="schedule-item">
-                                    <h6 class="sub-title">06 - 08</h6>
-                                    <span class="info">Years Old</span>
+                                    <h6 class="sub-title">03 - 05</h6>
+                                    <span class="info">Años</span>
                                 </div>
                             </div>
                         </div>
@@ -421,20 +428,20 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="class-item">
                         <div class="class-thumb">
-                            <a href="class-single.html"><img src="assets/images/class/class06.jpg" alt="class"></a>
+                            <a href="#"><img src="assets/images/class/class06.jpg" alt="class"></a>
                         </div>
                         <div class="class-content">
                             <h5 class="title">
-                                <a href="class-single.html">Lecto - Escritura</a>
+                                <a href="#">Lecto - Escritura</a>
                             </h5>
                             <div class="class-meta">
                                 <div class="class-author">
                                     <div class="thumb">
-                                        <a href="#"><img src="{{ asset('images/prof/teacher01.jpg') }}"
+                                        <a href="#"><img src="{{ asset('images/prof/teacher03.jpg') }}"
                                                 alt="class"></a>
                                     </div>
                                     <div class="content">
-                                        <h6 class="subtitle"><a href="#">Roxana Villaroel</a></h6>
+                                        <h6 class="subtitle"><a href="#">Pablo Villaroel</a></h6>
                                         <a href="#" class="info">Ver perfil</a>
                                         {{-- <a href="teacher-single.html" class="info">Ver perfil</a> --}}
                                     </div>
@@ -625,8 +632,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-header">
-                        <span class="cate">Meet Our Staffs</span>
-                        <h3 class="title">Our Best Popular Teachers</h3>
+                        <span class="cate">Conozca A Nuestro Personal</span>
+                        <h3 class="title">Nuestros Mejores Profesores Populares</h3>
                     </div>
                 </div>
             </div>
@@ -635,14 +642,23 @@
                     <div class="teacher-item-2">
                         <div class="teacher-thumb">
                             <div class="thumb">
-                                <a href="teacher-single.html">
-                                    <img src="assets/images/teacher/teacher05.jpg" alt="teacher">
+                                <a href="#">
+                                    <img src="assets/images/teacher/teacher01.jpg" alt="teacher">
                                 </a>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Jason Kovalsky</a></h5>
-                                <span>Spanish Teacher</span>
+                                <h5 class="title"><a href="#">Ricardo Mendoza</a></h5>
+                                <span>Maestro de Música o Arte</span>
                             </div>
+                            {{-- <div class="thumb">
+                                <a href="teacher-single.html">
+                                    <img src="assets/images/teacher/teacher01.jpg" alt="teacher">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="teacher-single.html">Ricardo Mendoza</a></h5>
+                                <span>Maestro de Música o Arte</span>
+                            </div> --}}
                         </div>
                         <div class="teacher-content">
                             <ul class="teacher-social justify-content-center">
@@ -650,9 +666,10 @@
                                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
+                                            style="color: green;"></i></a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
                                 </li>
                                 <li>
@@ -660,7 +677,7 @@
                                 </li>
                                 <li>
                                     <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -669,81 +686,13 @@
                     <div class="teacher-item-2">
                         <div class="teacher-thumb">
                             <div class="thumb">
-                                <a href="teacher-single.html">
-                                    <img src="assets/images/teacher/teacher06.jpg" alt="teacher">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Bangile Yusha</a></h5>
-                                <span>Spanish Teacher</span>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <ul class="teacher-social justify-content-center">
-                                <li>
-                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="teacher-item-2">
-                        <div class="teacher-thumb">
-                            <div class="thumb">
-                                <a href="teacher-single.html">
-                                    <img src="assets/images/teacher/teacher07.jpg" alt="teacher">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Willium Kovalsky</a></h5>
-                                <span>Spanish Teacher</span>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <ul class="teacher-social justify-content-center">
-                                <li>
-                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="teacher-item-2">
-                        <div class="teacher-thumb">
-                            <div class="thumb">
-                                <a href="teacher-single.html">
+                                <a href="#">
                                     <img src="assets/images/teacher/teacher08.jpg" alt="teacher">
                                 </a>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Bini Zaara</a></h5>
-                                <span>Spanish Teacher</span>
+                                <h5 class="title"><a href="#">Luz Manriquez</a></h5>
+                                <span>Maestra de Necesidades Especiales</span>
                             </div>
                         </div>
                         <div class="teacher-content">
@@ -752,9 +701,10 @@
                                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
+                                            style="color: green;"></i></a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
                                 </li>
                                 <li>
@@ -762,7 +712,78 @@
                                 </li>
                                 <li>
                                     <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                </li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="teacher-item-2">
+                        <div class="teacher-thumb">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="assets/images/teacher/teacher06.jpg" alt="teacher">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">Carla Diaz</a></h5>
+                                <span>Tecnica y tecnologia</span>
+                            </div>
+                        </div>
+                        <div class="teacher-content">
+                            <ul class="teacher-social justify-content-center">
+                                <li>
+                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
+                                <li>
+                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
+                                            style="color: green;"></i></a>
+                                </li>
+                                {{-- <li>
+                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                </li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="teacher-item-2">
+                        <div class="teacher-thumb">
+                            <div class="thumb">
+                                {{-- <a href="#"> --}}
+                                <a href="#">
+                                    <img src="assets/images/teacher/teacher03.jpg" alt="teacher">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h5 class="title"><a href="#">Susan Soliz</a></h5>
+                                <span>Maestro de Educación Infantil</span>
+                            </div>
+                        </div>
+                        <div class="teacher-content">
+                            <ul class="teacher-social justify-content-center">
+                                <li>
+                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
+                                            style="color: green;"></i></a>
+                                </li>
+                                {{-- <li>
+                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -779,12 +800,12 @@
         <div class="container">
             <div class="call-wrapper">
                 <div class="section-header mb-olpo">
-                    <h3 class="title">Become A Teacher</h3>
-                    <p>If you want to join with us as a trainer to share you knowledge & professional experiance,
-                        We will say you welcome as our trainer family</p>
+                    <h3 class="title">Vuelvete Un Maestro</h3>
+                    <p>Si desea unirse a nosotros como formador para compartir su conocimiento y experiencia profesional, le
+                        daremos la bienvenida como nuestra familia de formadores.</p>
                 </div>
                 <div class="text-center">
-                    <a href="#" class="custom-button"><span>Get Started Now</span></a>
+                    <a href="#" class="custom-button"><span>EMPIEZA AHORA</span></a>
                 </div>
             </div>
         </div>
@@ -793,7 +814,7 @@
 
 
     <!-- ==========Blog Section Starts Here========== -->
-    <section class="blog-section padding-top padding-bottom pos-rel">
+    {{-- <section class="blog-section padding-top padding-bottom pos-rel">
         <div class="top-shape-center">
             <img src="assets/css/img/gallery1.png" alt="css">
         </div>
@@ -882,12 +903,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- ==========Blog Section Ends Here========== -->
     <!-- ==========Map Section Starts Here========== -->
     <div class="map-section pos-rel">
         <div class="maps"></div>
-        <div class="contact-area padding-bottom padding-top pt-lg-0 pb-lg-0">
+        {{-- <div class="contact-area padding-bottom padding-top pt-lg-0 pb-lg-0">
             <div class="container">
                 <div class="contact-wrapper">
                     <div class="contact-item">
@@ -939,7 +960,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <!-- ==========Map Section Ends Here========== -->
 @endsection

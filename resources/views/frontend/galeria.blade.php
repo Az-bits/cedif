@@ -4,7 +4,7 @@
     <section class="page-header bg_img" data-background="assets/images/banner/page-header.jpg">
         <div class="container">
             <div class="page-header-content">
-                <h1 class="title">Fotos De Nuestra Centro</h1>
+                <h1 class="title">Fotos de nuestro Centro</h1>
                 <ul class="breadcrumb">
                     <li>
                         <a href="/">Inicio</a>
