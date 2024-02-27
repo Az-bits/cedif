@@ -25,22 +25,13 @@
                         <i class="fas fa-map-marker-alt"></i> {{ $data['direccion'] }}
                     </li>
                 </ul>
-                <ul class="social-icons">
-                    {{-- <li>
-                        <a href="#"><i class="fab fa-facebook-messenger"></i></a>
-                    </li>
+                <ul>
                     <li>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="{{ route('login') }}"class="d-flex align-items-center"> <i
+                                class="material-symbols-outlined">
+                                login
+                            </i> Ingresar</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fab fa-vimeo-v"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fab fa-skype"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-wifi"></i></a>
-                    </li> --}}
                 </ul>
             </div>
         </div>
@@ -70,8 +61,15 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ route('sobre-nosotros') }}"><i class="fas fa-user"></i>Sobre
-                                Nosotros</a>
+                            <a href="#0"><i class="fas fa-book"></i>Sobre Nosotros</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="{{ route('sobre-nosotros') }}">Sobre Nosotros</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('organigrama') }}">Organigrama</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#0"><i class="fas fa-book"></i>Clases</a>
@@ -195,6 +193,7 @@
                             <ul class="submenu">
                                 <li>
                                     <a href="{{ route('galeria') }}">Galeria</a>
+                                    <a href="{{ route('publicaciones') }}">Publicaciones</a>
                                 </li>
                                 {{-- <li>
                                     <a href="blog-classic.html">Blog Classic</a>
@@ -204,6 +203,9 @@
                                 </li> --}}
                             </ul>
                         </li>
+                        {{-- <li>
+                            <a href="">Iniciar Sesión</a>
+                        </li> --}}
                     </ul>
 
                     <div class="header-bar d-lg-none">

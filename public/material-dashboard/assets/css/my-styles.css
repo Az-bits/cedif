@@ -1,0 +1,66 @@
+.container-form {
+	background: #2c2c2c;
+	padding: 1.5rem;
+	border-radius: 1rem;
+}
+.navbar.navbar-transparent {
+	background-color: none !important;
+	box-shadow: none;
+}
+
+.off-canvas-sidebar .navbar.navbar-transparent {
+	padding-top: 10px !important;
+}
+
+.az-nav {
+	height: 6rem !important;
+	box-shadow: 2px 1px 10px 5px rgb(192 192 192 / 12%) !important;
+	/* background-color: rgb(0 0 0 / 50%) !important; */
+}
+.bmd-form-group [class*=' bmd-label'],
+.bmd-form-group [class^='bmd-label'] {
+	position: relative !important;
+}
+.bmd-label-static {
+	top: 1px !important;
+}
+.az-nav-logo {
+	width: 100px;
+	height: 80px;
+}
+.navbar .navbar-brand {
+	height: 100px;
+	padding: 0;
+}
+input {
+	color: white !important;
+}
+input:focus {
+	color: white !important;
+}
+@media (max-width: 900px) {
+	.container-form {
+		margin-top: 48rem !important;
+	}
+}
+.az-area {
+	display: flex !important;
+	align-items: center;
+}
+.az-area .clear {
+	border-radius: 50%;
+	width: 26px;
+	height: 26px;
+	margin-left: 10px;
+	border: none;
+	font-weight: bold;
+	color: #a9a3a3;
+	cursor: pointer;
+	background-color: #d5dfdf;
+	outline: none;
+}
+.az-area .clear:hover {
+	color: #ee4040;
+	cursor: pointer;
+	background-color: #a4aaaa;
+}

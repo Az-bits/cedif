@@ -18,9 +18,96 @@
             animation: typing 3s steps(50) infinite;
         }
     </style>
+
+    <style>
+        /* position dots in carousel */
+        .carousel {
+            background: #EEE;
+        }
+
+        .carousel-cell {
+            width: 100%;
+            /* height: 200px; */
+            margin-right: 10px;
+            /* background: #8C8; */
+            border-radius: 5px;
+            /* counter-increment: gallery-cell; */
+        }
+
+        /* cell number */
+        .carousel-cell:before {
+            display: block;
+            text-align: center;
+            /* content: counter(gallery-cell); */
+            line-height: 200px;
+            font-size: 80px;
+            color: white;
+        }
+
+        /* position dots in gallery */
+        .flickity-page-dots {
+            bottom: 0px;
+        }
+
+        /* white circles */
+        .flickity-page-dots .dot {
+            width: 12px;
+            height: 12px;
+            opacity: 1;
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        /* fill-in selected dot */
+        .flickity-page-dots .dot.is-selected {
+            background: white;
+        }
+    </style>
+
+
+    <!-- Flickity HTML init -->
+    {{-- <div class="carousel" data-flickity='{ "imagesLoaded": true, "percentPosition": false }'>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" alt="submerged" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" alt="look-out" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" alt="One World Trade" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" alt="drizzle" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" alt="cat nose" />
+    </div> --}}
+    {{-- <div class="top-shape-content d-none d-lg-block" style='right: calc(50% - 780px)'>
+        <img src="assets/images/banner/banner04.png" alt="banner">
+    </div>
+    <div class="carousel banner-section bg_img style-2 oh p-0" data-flickity='{ "fullscreen": true, "lazyLoad": 1 }'>
+        <div class="carousel-cell">
+            <img class="carousel-cell-image" data-flickity-lazyload="{{ asset('images/cdi-1.png') }}" alt="orange tree" />
+            <div class="top-shape-content d-none d-lg-block" style='right: calc(50% - 780px)'>
+                <img src="assets/images/banner/banner04.png" alt="banner">
+            </div>
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="banner-content style-2 cl-white">
+                        <h3 class="cate">Nuestra centro de desarrollo es la mejor</h3>
+                        <h1 class="title maquina">Para tus hijos</h1>
+                        <p>prestara un servicio multidisciplinario, integral, con calidad y calidez a las niñas(os).</p>
+                        <a href="{{ route('contacto') }}" class="custom-button"><span>
+                                Empezar ahora</span></a>
+                    </div>
+                    <div class="banner-thumb d-none d-lg-block">
+                        <img src="assets/images/banner/banner03.png" alt="banner">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-cell">
+            <img class="carousel-cell-image" data-flickity-lazyload="{{ asset('images/cdi-1.png') }}" alt="orange tree" />
+        </div>
+        <div class="carousel-cell">
+            <img data-flickity-lazyload="{{ asset('images/cdi-1.png') }}" alt="drizzle" />
+        </div>
+    </div> --}}
     <!-- ==========Banner Section Starts Here========== -->
     <section class="banner-section bg_img style-2 oh" data-background="assets/images/banner/banner02.jpg">
         {{-- <section class="banner-section bg_img style-2 oh" data-background="{{ asset('images/jw-img-5.jpg') }}"> --}}
+
 
         <div class="top-shape-content d-none d-lg-block" style='right: calc(50% - 780px)'>
             <img src="assets/images/banner/banner04.png" alt="banner">
@@ -39,6 +126,20 @@
                 </div>
             </div>
         </div>
+        {{-- <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="banner-content style-2 cl-white">
+                    <h3 class="cate">Nuestra centro de desarrollo es la mejor</h3>
+                    <h1 class="title maquina">Para tus hijos</h1>
+                    <p>prestara un servicio multidisciplinario, integral, con calidad y calidez a las niñas(os).</p>
+                    <a href="{{ route('contacto') }}" class="custom-button"><span>
+                            Empezar ahora</span></a>
+                </div>
+                <div class="banner-thumb d-none d-lg-block">
+                    <img src="assets/images/banner/banner03.png" alt="banner">
+                </div>
+            </div>
+        </div> --}}
     </section>
     <!-- ==========Banner Section Ends Here========== -->
 
@@ -235,13 +336,13 @@
                             </div>
                             <ul class="about-list">
                                 <li>
-                                    <i class="flaticon-vegan"></i><span>Baño</span> ordenado y limpio
+                                    <i class="flaticon-vegan"></i><span>Baños</span> ordenados y limpios
                                 </li>
                                 <li>
-                                    <i class="flaticon-vegan"></i><span>Cantina</span> con alimentos saludables y agua.
+                                    <i class="flaticon-vegan"></i><span>Comedor</span> con alimentos saludables y agua.
                                 </li>
                                 <li>
-                                    <i class="flaticon-vegan"></i><span>Sala de clase</span> con aire acondicionado
+                                    <i class="flaticon-vegan"></i><span>Salones de clases</span> ambientados
                                 </li>
                                 <li>
                                     <i class="flaticon-vegan"></i><span>Zona de juegos</span> Amplia
@@ -982,4 +1083,12 @@
         </div> --}}
     </div>
     <!-- ==========Map Section Ends Here========== -->
+    <script>
+        $('.carousel').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            autoPlay: true
+        });
+    </script>
 @endsection
