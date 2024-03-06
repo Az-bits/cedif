@@ -1027,60 +1027,20 @@
     <!-- ==========Blog Section Ends Here========== -->
     <!-- ==========Map Section Starts Here========== -->
     <div class="map-section pos-rel">
-        <div class="maps"></div>
-        {{-- <div class="contact-area padding-bottom padding-top pt-lg-0 pb-lg-0">
-            <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-item">
-                        <div class="contact-thumb">
-                            <img src="assets/images/contact/01.png" alt="contact">
-                        </div>
-                        <div class="contact-content">
-                            <h6 class="title">Class Sessions</h6>
-                            <ul>
-                                <li>Sunday - Monday</li>
-                                <li>08:00 am – 11:00 am (Fri Closed)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-thumb">
-                            <img src="assets/images/contact/02.png" alt="contact">
-                        </div>
-                        <div class="contact-content">
-                            <h6 class="title">kittons Address</h6>
-                            <ul>
-                                <li>123 White Amphitheatre Kinway, Mountain, CA 12345, USA</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-thumb">
-                            <img src="assets/images/contact/03.png" alt="contact">
-                        </div>
-                        <div class="contact-content">
-                            <h6 class="title">Openning Hours</h6>
-                            <ul>
-                                <li>Sunday - Monday</li>
-                                <li>08.00 am – 05.00 pm</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-thumb">
-                            <img src="assets/images/contact/04.png" alt="contact">
-                        </div>
-                        <div class="contact-content">
-                            <h6 class="title">Phone & E-mail</h6>
-                            <ul>
-                                <li><a href="Tel:05210021020">+123 456 78910, 0265478</a></li>
-                                <li><a href="Mailto:sfkljsdfsj@gmail.com">enroll@kittons.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
+        {{-- <iframe width="600" height="450" frameborder="0" style="border:0" 
+            src="https://maps.app.goo.gl/ee2EhbxsHMXTbz8u5" allowfullscreen>
+        </iframe> --}}
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1137.3903343415705!2d-68.19275061591475!3d-16.490224711822528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf246daebfb9%3A0x2a4becb95f2f7651!2sEdificio%20del%20%C3%81rea%20Sociales%20de%20la%20UPEA!5e0!3m2!1ses-419!2sbo!4v1709309676020!5m2!1ses-419!2sbo"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="d-flex contact-area p-5" style="bottom: -30px">
+            <div class="container" style="max-width: 32rem;">
+                <div class="contact-wrapper justify-content-center ubicate-title">
+                    <h3>Nuestra Ubicación</h3>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
     <!-- ==========Map Section Ends Here========== -->
     <script>

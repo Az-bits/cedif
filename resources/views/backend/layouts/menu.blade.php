@@ -35,10 +35,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <button class="nav-link" href="{{ route('logout') }}">
                                 <span class="sidebar-mini"> CS</span>
                                 <span class="sidebar-normal"> Cerrar Sesión </span>
-                            </a>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -57,18 +57,26 @@
                 <div class="collapse" id="formsExamples">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('users.index') }}">
+                            {{-- <a class="nav-link" href="{{ route('users.index') }}"> --}}
+                            <a class="nav-link" href="#">
                                 <span class="sidebar-mini"> U </span>
                                 <span class="sidebar-normal"> Usuarios </span>
                             </a>
+                            <x></x>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item  {{ $data['page'] == 'dashboard' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="material-icons">home</i>
                     <p>Inicio</p>
+                </a>
+            </li>
+            <li class="nav-item  {{ $data['page'] == 'persona' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin-persona.index') }}">
+                    <i class="material-icons">person</i>
+                    <p>Personas</p>
                 </a>
             </li>
             <li class="nav-item">

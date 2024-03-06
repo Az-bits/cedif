@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\BackendController;
 use App\Models\PublicacionModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class PublicacionController extends BackendController
 {
@@ -15,6 +17,8 @@ class PublicacionController extends BackendController
      */
     public function index()
     {
+        $publicaciones = new PublicacionModel();
+        $this->data['publicaciones'] = $publicaciones->getAll();
         $this->title = "Publicación";
         $this->page = "publicacion";
         return $this->render("publicacion.index");
@@ -37,8 +41,28 @@ class PublicacionController extends BackendController
      */
     public function store(Request $request)
     {
-        //
-        dd('create');
+        // dd(Auth::id());
+        //guardar publicacion
+        // dd();
+        $request->validate([
+            'titulo' => 'required|max:80',
+            'fecha_ini' => 'required',
+            'imagen' => 'required|file|max:3000'
+        ]);
+        // dd($_FILES);
+
+        PublicacionModel::create([
+            'titulo' => $request->titulo,
+            'id_usuario' => Auth::id(),
+            'descripcion' => $request->descripcion,
+            'tipo' => $request->tipo,
+            'fecha_ini' => $request->fecha_ini,
+            'fecha_fin' => $request->fecha_fin,
+            'direccion' => $request->direccion,
+            'estado' => $request->estado,
+        ]);
+
+        return redirect()->route('admin-publicacion.index')->with('success', 'Publicación creada exitosamente!');
     }
 
     /**
@@ -58,9 +82,10 @@ class PublicacionController extends BackendController
      * @param  \App\Models\PublicacionModel  $publicacionModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(PublicacionModel $publicacionModel)
+    public function edit(PublicacionModel $publicacion)
     {
-        //
+        $this->data['publicacion'] = $publicacion;
+        return $this->render('publicacion.edit-form');
     }
 
     /**
@@ -70,9 +95,20 @@ class PublicacionController extends BackendController
      * @param  \App\Models\PublicacionModel  $publicacionModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PublicacionModel $publicacionModel)
+    public function update(Request $request, PublicacionModel $publicacion)
     {
-        //
+        $request->validate(
+            [
+                'nombre' => 'required|max:50',
+                'email' => 'required|email',
+                'celular' => 'required|numeric|digits:8',
+                'ci' => 'required',
+                'imagen' => 'required'
+            ]
+        );
+        die($_FILES);
+        $publicacion->update($request->all());
+        return redirect()->route('admin-persona.index')->with('success', 'Persona actualizada exitosamente!');
     }
 
     /**

@@ -173,7 +173,9 @@
             <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
             <div class="container">
                 <div class="col-lg-4 col-md-6 col-sm-6 ml-auto mr-auto">
-                    <form class="form" method="" action="#">
+                    {{-- <x-auth-session-status class="mb-4" :status="session('status')" /> --}}
+                    <form class="form" method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="card card-login card-hidden">
                             <div class="card-header card-header-rose text-center">
                                 <h4 class="card-title">Iniciar Sesión</h4>
@@ -198,8 +200,10 @@
                                                 <i class="material-icons">person</i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Usuario..."
-                                            name="user">
+                                        <x-text-input id="email" class="block mt-1 w-full" type="email"
+                                            name="email" :value="old('email')" required autofocus
+                                            autocomplete="username" placeholder="Correo electrónico" />
+                                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                     </div>
                                 </span>
                                 <span class="bmd-form-group">
@@ -209,12 +213,16 @@
                                                 <i class="material-icons">lock_outline</i>
                                             </span>
                                         </div>
-                                        <input type="password" class="form-control" placeholder="Contraseña...">
+                                        <x-text-input id="password" class="block mt-4 w-full" type="password"
+                                            name="password" required autocomplete="current-password"
+                                            placeholder="Contraseña" />
+
+                                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                     </div>
                                 </span>
                             </div>
                             <div class="card-footer justify-content-center">
-                                <a href="#pablo" class="btn btn-rose btn-link btn-lg">Ingresar</a>
+                                <button type="submit" class="btn btn-rose btn-link btn-lg">Ingresar</button>
                             </div>
                         </div>
                     </form>

@@ -25,13 +25,8 @@ class DashboardController extends BackendController
      */
     public function index()
     {
-        // dd('dashboard', 'casa', $this->name);
-        // $data = [
-        //     "horario" => ["hora_ini" => "8:30", "hora_fin" => "18:00"],
-        //     "telefonos" => [["numero" => "67031409"], ["numero" => "74277575"], ["numero" => "75800862"]],
-        //     "direccion" => "Av. Juan Pablo II esquina Av. Sucre A Parada Z/ lado Teleférico Azul."
-        // ];
-        // // return view('home');
-        return view('backend.dashboard');
+        $this->title = "Dashboard";
+        $this->page = "dashboard";
+        return $this->render("dashboard");
     }
 }

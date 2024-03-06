@@ -1,1 +1,21 @@
 @import url("organigrama.css");
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+        .input-group-btn
+    ) {
+    width: 100%;
+}
+textarea {
+    border: 1px solid #aaa !important;
+    border-radius: 10px !important;
+}
+.modal-dialog .modal-body {
+    margin-top: 10px;
+    padding: 15px 24px 16px;
+}
+.az-b {
+    height: 26px;
+    width: 85px;
+    border-radius: 15px !important;
+    padding: 5px !important;
+}

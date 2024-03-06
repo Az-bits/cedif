@@ -1,6 +1,18 @@
 @extends('backend.app')
 @section('content')
     <div class="row">
+        @if (Session::get('success'))
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        <b> ÉXITO - </b> {{ Session::get('success') }}</span>
+                </div>
+            </div>
+        @endif
+
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary card-header-icon d-flex justify-content-between">
@@ -35,6 +47,39 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data['publicaciones'] as $item)
+                                    <tr>
+                                        <td>{{ $item->id_publicacion }}</td>
+                                        <td>{{ $item->titulo }}</td>
+                                        <td>{{ $item->titulo }}</td>
+                                        <td>{{ $item->fecha_ini }}</td>
+                                        <td>{{ $item->fecha_fin }}</td>
+                                        <td>
+                                            @if ($item->estado == '1')
+                                                <span class="text-warning az-b">NO PUBLICADO</span>
+                                            @else
+                                                <span class="text-success az-b">PUBLICADO</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('admin-persona.edit', $item) }}"
+                                                class="btn btn-link btn-info btn-just-icon editar" data-toggle="tooltip"
+                                                title="Editar"><i class="material-icons">edit</i></a>
+                                            <form id="eliminarForm-{{ $item->id_publicacion }}"
+                                                action="{{ route('admin-persona.destroy', $item) }}" method="post"
+                                                class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="button"
+                                                    onclick="confirmarEliminacion('{{ $item->id_publicacion }}')"
+                                                    class="btn btn-link btn-danger btn-just-icon eliminar"
+                                                    data-toggle="tooltip" title="Eliminar">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -56,6 +101,10 @@
     @include('backend.publicacion.modal')
     <script>
         $(document).ready(function() {
+            @if ($errors->any())
+                console.log('Hay errores');
+                $("#main_modal").modal('show');
+            @endif
             $('#datatables').DataTable({
                 language: {
                     search: '_INPUT_',

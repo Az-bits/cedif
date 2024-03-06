@@ -67,123 +67,45 @@
                                     <a href="{{ route('sobre-nosotros') }}">Sobre Nosotros</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('organigrama') }}">Organigrama</a>
+                                    {{-- <a href="{{ route('organigrama') }}">Organigrama</a> --}}
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#0"><i class="fas fa-book"></i>Clases</a>
                             <ul class="submenu">
-                                {{-- <li>
-                                    <a href="classes.html">Clases</a>
-                                </li> --}}
-                                {{-- <li>
-                                    <a href="class-single.html">Class Single</a>
-                                </li> --}}
                                 <li>
                                     <a href="{{ route('horario') }}">Horario</a>
                                 </li>
                             </ul>
-                        </li>
-
+                        </li> --}}
+                        {{-- 
                         <li>
                             <a href="#0"><i class="fas fa-layer-group"></i>Servicios Educativos</a>
-                            {{-- <ul class="submenu">
-                                <li>
-                                    <a href="#0">Teacher</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="teacher.html">Our Teacher</a>
-                                        </li>
-                                        <li>
-                                            <a href="teacher-single.html">Teacher Single</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Account</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="login.html">Sign In</a>
-                                        </li>
-                                        <li>
-                                            <a href="registration.html">Sign Up</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Events</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="events.html">Our Events</a>
-                                        </li>
-                                        <li>
-                                            <a href="events-single.html">Events Single</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Shop</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="shop.html">Our Shop</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-single.html">Shop Single</a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">Cart</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="faqs.html">Faqs</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Our Gallery</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="gallery.html">Gallery One</a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery-2.html">Gallery Two</a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery-3.html">Gallery Three</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="coming-soon.html">Coming Soon</a>
-                                </li>
-                                <li>
-                                    <a href="error-page.html">404 Error</a>
-                                </li>
-                            </ul> --}}
                             <ul class="submenu">
                                 <li>
                                     <a href="#">Club de Tareas</a>
                                 </li>
                                 <li>
-                                    <a href="blog-classic.html">Apoyo Escolar</a>
+                                    <a href="#l">Apoyo Escolar</a>
                                 </li>
                                 <li>
-                                    <a href="blog-single.html">Sala Parvulo</a>
+                                    <a href="#">Sala Parvulo</a>
                                 </li>
                                 <li>
-                                    <a href="blog-single.html">Desarrollo Integral</a>
+                                    <a href="#">Desarrollo Integral</a>
                                 </li>
                                 <li>
-                                    <a href="blog-single.html">Estimulacion Temprana</a>
+                                    <a href="#">Estimulacion Temprana</a>
                                 </li>
                                 <li>
-                                    <a href="blog-single.html">Psicomotricidad</a>
+                                    <a href="#">Psicomotricidad</a>
                                 </li>
                                 <li>
-                                    <a href="blog-single.html">Lecto-Escritura</a>
+                                    <a href="#">Lecto-Escritura</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ route('contacto') }}"><i class="fas fa-map-marker-alt"></i>Contacto</a>
                         </li>

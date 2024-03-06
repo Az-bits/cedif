@@ -27,6 +27,8 @@
 
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
 
+    <link rel="stylesheet" href="{{ asset('frontend/css/global-styles.css') }}">
+
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/flickity.pkgd.min.js') }}"></script>
 

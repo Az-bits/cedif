@@ -23,6 +23,8 @@ class InstitucionController extends BackendController
         //
         // return view("backend.institucion.index");
         // dd($this->name);
+        $this->title = "Institución";
+        $this->page = "institucion";
         return  $this->render("institucion.index");
     }
 
