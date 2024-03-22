@@ -205,6 +205,9 @@
     <!-- ==========Banner Section Ends Here========== -->
 
     <!-- ==========About Section Starts Here========== -->
+    @php
+        $icons = ['01', '02', '03', '04'];
+    @endphp
     <section class="about-section pos-rel padding-bottom padding-top">
         <div class="top-shape-center">
             <img src="assets/css/img/gallery1.png" alt="css">
@@ -217,101 +220,25 @@
                 <div class="col-lg-8">
                     <div class="section-header">
                         <span class="cate">Bienvenidos a nuestra centro infantil Jisk'a wawa</span>
-                        <h3 class="title">La Mejor Educación En Nuestro Jardín De Infantes</h3>
+                        <h3 class="title">La Mejor Educación En Nuestro Centro Infantil</h3>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center mb-30-none -mx-10">
-                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
-                    <div class="feature-item">
-                        <div class="feature-thumb">
-                            <img src="assets/images/feature/01.png" class="ml--8" alt="feature">
-                        </div>
-                        <div class="feature-content">
-                            <h5 class="title">Club de tareas</h5>
-                            <span class="cate">(1,5 – 2 años)</span>
-                            <p>Espacio colaborativo donde estudiantes se reúnen para realizar sus tareas y estudiar juntos.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
-                    <div class="feature-item">
-                        <div class="feature-thumb">
-                            <img src="assets/images/feature/02.png" class="ml--8" alt="feature">
-                        </div>
-                        <div class="feature-content">
-                            <h5 class="title">Apoyo Escolar</h5>
-                            <span class="cate">(4 – 5 años)</span>
-                            <p>Es un recurso valioso que brinda asistencia adicional a los estudiantes en
-                                sus estudios.</p>
+                @foreach ($data['salas'] as $item)
+                    <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
+                        <div class="feature-item">
+                            <div class="feature-thumb">
+                                <img src="assets/images/feature/{{ $icons[rand(0, 3)] }}.png" class="ml--8" alt="feature">
+                            </div>
+                            <div class="feature-content">
+                                <h5 class="title">{{ $item->nombre }}</h5>
+                                <span class="cate">{{ $item->categoria }}</span>
+                                <p>{{ $item->subtitulo }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
-                    <div class="feature-item">
-                        <div class="feature-thumb">
-                            <img src="assets/images/feature/03.png" class="ml--8" alt="feature">
-                        </div>
-                        <div class="feature-content">
-                            <h5 class="title">Sala Parvulo</h5>
-                            <span class="cate">(2 – 3 años)</span>
-                            <p>Es un ambiente acogedor y estimulante, donde los niños participan en actividades lúdicas y
-                                educativas adaptadas a su edad.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
-                    <div class="feature-item">
-                        <div class="feature-thumb">
-                            <img src="assets/images/feature/01.png" class="ml--8" alt="feature">
-                        </div>
-                        <div class="feature-content">
-                            <h5 class="title">Psicomotricidad</h5>
-                            <span class="cate">(2 – 3 años)</span>
-                            <p> Se refiere a la relación entre la mente y el movimiento del cuerpo.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
-                    <div class="feature-item">
-                        <div class="feature-thumb">
-                            <img src="assets/images/feature/04.png" class="ml--8" alt="feature">
-                        </div>
-                        <div class="feature-content">
-                            <h5 class="title">Lecto-Escritura</h5>
-                            <span class="cate">(3 – 4 años)</span>
-                            <p>se refiere al conjunto de habilidades que implican la capacidad de leer y escribir.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
-                    <div class="feature-item">
-                        <div class="feature-thumb">
-                            <img src="assets/images/feature/04.png" class="ml--8" alt="feature">
-                        </div>
-                        <div class="feature-content">
-                            <h5 class="title">Desarrollo Integral</h5>
-                            <span class="cate">(3 – 4 años)</span>
-                            <p>Incluye el desarrollo físico, emocional, social, cognitivo y moral. En este enfoque, se busca
-                                cultivar no solo habilidades académicas, sino también habilidades sociales, emocionales y
-                                físicas.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-7 col-md-6 col-lg-5 col-xl-3">
-                    <div class="feature-item">
-                        <div class="feature-thumb">
-                            <img src="assets/images/feature/02.png" class="ml--8" alt="feature">
-                        </div>
-                        <div class="feature-content">
-                            <h5 class="title">Estimulación Temprana</h5>
-                            <span class="cate">(4 – 5 años)</span>
-                            <p>Es un conjunto de actividades y prácticas diseñadas para promover el desarrollo óptimo de los
-                                niños desde el nacimiento hasta los primeros años de vida. </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="padding-top about-bottom">
@@ -339,10 +266,10 @@
                                     <i class="flaticon-vegan"></i><span>Baños</span> ordenados y limpios
                                 </li>
                                 <li>
-                                    <i class="flaticon-vegan"></i><span>Comedor</span> con alimentos saludables y agua.
+                                    <i class="flaticon-vegan"></i><span>Comedor</span> con alimentos saludables.
                                 </li>
                                 <li>
-                                    <i class="flaticon-vegan"></i><span>Salones de clases</span> ambientados
+                                    <i class="flaticon-vegan"></i><span>Salones de clases</span> ambientados y confortantes.
                                 </li>
                                 <li>
                                     <i class="flaticon-vegan"></i><span>Zona de juegos</span> Amplia
@@ -369,63 +296,54 @@
     </section>
     <!-- ==========About Section Ends Here========== -->
 
-
     <!-- ==========Counter Section Starts Here========== -->
     <div class="counter-section padding-top padding-bottom bg_img" data-background="assets/images/counter/counter-bg.jpg">
         <div class="container">
             <div class="row justify-content-center mb-30-none">
-                <div class="col-xl-3 col-md-6 col-sm-6">
-                    <div class="counter-item round-style">
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="counter-item">
                         <div class="counter-thumb">
-                            <img src="assets/images/counter/counter4.png" alt="counter">
+                            <img class="rounded-circle" src="{{ asset('images/gifs/video.gif') }}" alt="counter" />
                         </div>
                         <div class="counter-content">
                             <div class="counter-header">
-                                <h2 class="title odometer" data-odometer-final="17">0</h2>
+                                <h2 class="title odometer" data-odometer-final="{{ $data['contadores']['videos'] }}">
+                                    0
+                                </h2>
                             </div>
-                            <span class="cate">Edad 01 - 03</span>
+                            <span class="cate">Videos</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 col-sm-6">
-                    <div class="counter-item round-style">
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="counter-item">
                         <div class="counter-thumb">
-                            <img src="assets/images/counter/counter5.png" alt="counter">
+                            <img src="{{ asset('images/gifs/file.gif') }}" alt="counter" />
                         </div>
                         <div class="counter-content">
                             <div class="counter-header">
-                                <h2 class="title odometer" data-odometer-final="12">0</h2>
-                                <h2 class="title">+</h2>
+                                <h2 class="title odometer" data-odometer-final="{{ $data['contadores']['publicaciones'] }}">
+                                    0
+                                </h2>
+                                <h2 class="title"></h2>
                             </div>
-                            <span class="cate">Edad 03 - 05</span>
+                            <span class="cate">Publicaciones</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 col-sm-6">
-                    <div class="counter-item round-style">
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="counter-item">
                         <div class="counter-thumb">
-                            <img src="assets/images/counter/counter6.png" alt="counter">
+                            <img src="{{ asset('images/gifs/image.gif') }}" alt="counter" />
                         </div>
                         <div class="counter-content">
                             <div class="counter-header">
-                                <h2 class="title odometer" data-odometer-final="63">0</h2>
-                                <h2 class="title">%</h2>
+                                <h2 class="title odometer" data-odometer-final="{{ $data['contadores']['galeria'] }}">
+                                    0
+                                </h2>
+                                <h2 class="title"></h2>
                             </div>
-                            <span class="cate">Total Niños</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 col-sm-6">
-                    <div class="counter-item round-style">
-                        <div class="counter-thumb">
-                            <img src="assets/images/counter/counter7.png" alt="counter">
-                        </div>
-                        <div class="counter-content">
-                            <div class="counter-header">
-                                <h2 class="title odometer" data-odometer-final="37">0</h2>
-                                <h2 class="title">%</h2>
-                            </div>
-                            <span class="cate">Total Niñas</span>
+                            <span class="cate">Fotografias</span>
                         </div>
                     </div>
                 </div>
@@ -434,9 +352,8 @@
     </div>
     <!-- ==========Counter Section Ends Here========== -->
 
-
     <!-- ==========Class Section Starts Here========== -->
-    <section class="class-section padding-top padding-bottom pos-rel">
+    {{-- section class="class-section padding-top padding-bottom pos-rel">
         <div class="top-shape-center">
             <img src="assets/css/img/gallery1.png" alt="css">
         </div>
@@ -470,20 +387,11 @@
                                     </div>
                                     <div class="content">
                                         <h6 class="subtitle"><a href="#">Martin Soliz</a></h6>
-                                        {{-- <a href="#" class="info">Ver perfil</a> --}}
+                                        <a href="#" class="info">Ver perfil</a>
                                     </div>
-                                    {{-- <div class="thumb">
-                                        <a href="teacher-single.html"><img src="assets/images/class/teacher02.jpg"
-                                                alt="class"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="subtitle"><a href="teacher-single.html">Joly Smith</a></h6>
-                                        <a href="teacher-single.html" class="info">View Profile</a>
-                                    </div> --}}
                                 </div>
                                 <div class="cost-area">
                                     <h6 class="subtitle">Gratuito</h6>
-                                    {{-- <span class="info">Per Month</span> --}}
                                 </div>
                             </div>
                             <div class="schedule-area">
@@ -503,223 +411,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="class-item">
-                        <div class="class-thumb">
-                            <a href="#"><img src="assets/images/class/class05.jpg" alt="class"></a>
-                        </div>
-                        <div class="class-content">
-                            <h5 class="title">
-                                <a href="#">Música y actuación</a>
-                            </h5>
-                            <div class="class-meta">
-                                <div class="class-author">
-                                    <div class="thumb">
-                                        <a href="#"><img src="assets/images/class/teacher01.jpg"
-                                                alt="class"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="subtitle"><a href="#">Luz Ali</a></h6>
-                                        <a href="#" class="info">Ver Perfil</a>
-                                    </div>
-                                </div>
-                                <div class="cost-area">
-                                    <h6 class="subtitle">Gratuito</h6>
-                                    {{-- <span class="info">Per Month</span> --}}
-                                </div>
-                            </div>
-                            <div class="schedule-area">
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">24 - 30</h6>
-                                    <span class="info">Tamaño de la clase</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">09:30 -12:00</h6>
-                                    <span class="info">Hora de clase</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">03 - 05</h6>
-                                    <span class="info">Años</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="class-item">
-                        <div class="class-thumb">
-                            <a href="#"><img src="assets/images/class/class06.jpg" alt="class"></a>
-                        </div>
-                        <div class="class-content">
-                            <h5 class="title">
-                                <a href="#">Lecto - Escritura</a>
-                            </h5>
-                            <div class="class-meta">
-                                <div class="class-author">
-                                    <div class="thumb">
-                                        <a href="#"><img src="{{ asset('images/prof/teacher03.jpg') }}"
-                                                alt="class"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="subtitle"><a href="#">Pablo Villaroel</a></h6>
-                                        <a href="#" class="info">Ver perfil</a>
-                                        {{-- <a href="teacher-single.html" class="info">Ver perfil</a> --}}
-                                    </div>
-                                </div>
-                                <div class="cost-area">
-                                    <h6 class="subtitle">Gratuito</h6>
-                                    {{-- <span class="info">Per Month</span> --}}
-                                </div>
-                            </div>
-                            <div class="schedule-area">
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">12 - 15</h6>
-                                    <span class="info">Tamaño de la clase</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">09:30 -12:00</h6>
-                                    <span class="info">Hora de clase</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">04 - 05</h6>
-                                    <span class="info">Años</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{-- <div class="col-xl-4 col-md-6">
-                    <div class="class-item">
-                        <div class="class-thumb">
-                            <a href="class-single.html"><img src="assets/images/class/class01.jpg" alt="class"></a>
-                        </div>
-                        <div class="class-content">
-                            <h5 class="title">
-                                <a href="class-single.html">Art And Color Management</a>
-                            </h5>
-                            <div class="class-meta">
-                                <div class="class-author">
-                                    <div class="thumb">
-                                        <a href="teacher-single.html"><img src="assets/images/class/teacher02.jpg"
-                                                alt="class"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="subtitle"><a href="teacher-single.html">Joly Smith</a></h6>
-                                        <a href="teacher-single.html" class="info">View Profile</a>
-                                    </div>
-                                </div>
-                                <div class="cost-area">
-                                    <h6 class="subtitle">$12.96</h6>
-                                    <span class="info">Per Month</span>
-                                </div>
-                            </div>
-                            <div class="schedule-area">
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">24 - 30</h6>
-                                    <span class="info">Class Size</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">09:30 -12:00</h6>
-                                    <span class="info">Class Time</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">06 - 08</h6>
-                                    <span class="info">Years Old</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="class-item">
-                        <div class="class-thumb">
-                            <a href="class-single.html"><img src="assets/images/class/class02.jpg" alt="class"></a>
-                        </div>
-                        <div class="class-content">
-                            <h5 class="title">
-                                <a href="class-single.html">Music And Performance</a>
-                            </h5>
-                            <div class="class-meta">
-                                <div class="class-author">
-                                    <div class="thumb">
-                                        <a href="teacher-single.html"><img src="assets/images/class/teacher01.jpg"
-                                                alt="class"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="subtitle"><a href="teacher-single.html">Mrs. Labonno</a></h6>
-                                        <a href="teacher-single.html" class="info">View Profile</a>
-                                    </div>
-                                </div>
-                                <div class="cost-area">
-                                    <h6 class="subtitle">$12.96</h6>
-                                    <span class="info">Per Month</span>
-                                </div>
-                            </div>
-                            <div class="schedule-area">
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">24 - 30</h6>
-                                    <span class="info">Class Size</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">09:30 -12:00</h6>
-                                    <span class="info">Class Time</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">06 - 08</h6>
-                                    <span class="info">Years Old</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="class-item">
-                        <div class="class-thumb">
-                            <a href="class-single.html"><img src="assets/images/class/class03.jpg" alt="class"></a>
-                        </div>
-                        <div class="class-content">
-                            <h5 class="title">
-                                <a href="class-single.html">Religion And History</a>
-                            </h5>
-                            <div class="class-meta">
-                                <div class="class-author">
-                                    <div class="thumb">
-                                        <a href="teacher-single.html"><img src="assets/images/class/teacher03.jpg"
-                                                alt="class"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="subtitle"><a href="teacher-single.html">Robot Smith</a></h6>
-                                        <a href="teacher-single.html" class="info">View Profile</a>
-                                    </div>
-                                </div>
-                                <div class="cost-area">
-                                    <h6 class="subtitle">$12.96</h6>
-                                    <span class="info">Per Month</span>
-                                </div>
-                            </div>
-                            <div class="schedule-area">
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">24 - 30</h6>
-                                    <span class="info">Class Size</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">09:30 -12:00</h6>
-                                    <span class="info">Class Time</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">06 - 08</h6>
-                                    <span class="info">Years Old</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
             <div class="load-more">
                 <a href="#" class="custom-button"><span>Empieza ahora</span></a>
             </div>
         </div>
-    </section>
+    </section>< --}}
     <!-- ==========Class Section Ends Here========== -->
 
 
@@ -752,8 +449,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-header">
-                        <span class="cate">Conozca A Nuestro Personal</span>
-                        <h3 class="title">Nuestros Mejores Profesores Populares</h3>
+                        <span class="cate">Conozca A Nuestras Autoridades</span>
+                        <h3 class="title">Nuestras autoridades que nos ayudan a llevar adelante nuestro centro</h3>
                     </div>
                 </div>
             </div>
@@ -763,12 +460,13 @@
                         <div class="teacher-thumb">
                             <div class="thumb">
                                 <a href="#">
-                                    <img src="assets/images/teacher/teacher01.jpg" alt="teacher">
+                                    <img src="https://e7.pngegg.com/pngimages/43/926/png-clipart-computer-icons-avatar-user-avatar-heroes-woman.png"
+                                        alt="teacher">
                                 </a>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="#">Ricardo Mendoza</a></h5>
-                                <span>Maestro de Música o Arte</span>
+                                <h5 class="title"><a href="#">Lic. Margot Patsi</a></h5>
+                                <span>Directora</span>
                             </div>
                             {{-- <div class="thumb">
                                 <a href="teacher-single.html">
@@ -783,127 +481,12 @@
                         <div class="teacher-content">
                             <ul class="teacher-social justify-content-center">
                                 <li>
-                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
                                     <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
                                             style="color: green;"></i></a>
                                 </li>
-                                {{-- <li>
-                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li> --}}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="teacher-item-2">
-                        <div class="teacher-thumb">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="assets/images/teacher/teacher08.jpg" alt="teacher">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="#">Luz Manriquez</a></h5>
-                                <span>Maestra de Necesidades Especiales</span>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <ul class="teacher-social justify-content-center">
-                                <li>
-                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
-                                            style="color: green;"></i></a>
-                                </li>
-                                {{-- <li>
-                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li> --}}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="teacher-item-2">
-                        <div class="teacher-thumb">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="assets/images/teacher/teacher06.jpg" alt="teacher">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="#">Carla Diaz</a></h5>
-                                <span>Tecnica y tecnologia</span>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <ul class="teacher-social justify-content-center">
-                                <li>
-                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
-                                            style="color: green;"></i></a>
-                                </li>
-                                {{-- <li>
-                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li> --}}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="teacher-item-2">
-                        <div class="teacher-thumb">
-                            <div class="thumb">
-                                {{-- <a href="#"> --}}
-                                <a href="#">
-                                    <img src="assets/images/teacher/teacher03.jpg" alt="teacher">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="#">Susan Soliz</a></h5>
-                                <span>Maestro de Educación Infantil</span>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <ul class="teacher-social justify-content-center">
-                                <li>
-                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
-                                            style="color: green;"></i></a>
-                                </li>
-                                {{-- <li>
-                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -915,7 +498,7 @@
 
 
     <!-- ==========Call-In-Section Starts Here========== -->
-    <section class="call-in-action call-overlay bg_img padding-bottom padding-top"
+    {{-- <section class="call-in-action call-overlay bg_img padding-bottom padding-top"
         data-background="assets/images/bg/call-bg.jpg">
         <div class="container">
             <div class="call-wrapper">
@@ -929,7 +512,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- ==========Call-In-Section Ends Here========== -->
 
 
@@ -1026,6 +609,18 @@
     </section> --}}
     <!-- ==========Blog Section Ends Here========== -->
     <!-- ==========Map Section Starts Here========== -->
+    <section class="teacher-section padding-bottom pos-rel">
+        <div class="top-shape-center">
+            <img src="assets/css/img/gallery1.png" alt="css">
+        </div>
+        <div class="container">
+            <div class="row justify-content-center mb-30-none">
+                <div class="col-lg-3 col-sm-6">
+                    <h3 style="min-width: 20rem">Nuestra Ubicación</h3>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="map-section pos-rel">
         {{-- <iframe width="600" height="450" frameborder="0" style="border:0" 
             src="https://maps.app.goo.gl/ee2EhbxsHMXTbz8u5" allowfullscreen>
@@ -1034,13 +629,7 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1137.3903343415705!2d-68.19275061591475!3d-16.490224711822528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf246daebfb9%3A0x2a4becb95f2f7651!2sEdificio%20del%20%C3%81rea%20Sociales%20de%20la%20UPEA!5e0!3m2!1ses-419!2sbo!4v1709309676020!5m2!1ses-419!2sbo"
             width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="d-flex contact-area p-5" style="bottom: -30px">
-            <div class="container" style="max-width: 32rem;">
-                <div class="contact-wrapper justify-content-center ubicate-title">
-                    <h3>Nuestra Ubicación</h3>
-                </div>
-            </div>
-        </div>
+
     </div>
     <!-- ==========Map Section Ends Here========== -->
     <script>

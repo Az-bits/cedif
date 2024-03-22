@@ -17,8 +17,6 @@
         </div>
     </section>
     <!-- ==========Banner Section Ends Here========== -->
-
-
     <!-- ==========Blog Section Starts Here========== -->
     <div class="blog-section padding-top padding-bottom">
         <div class="container">

@@ -1,101 +1,133 @@
-<form id="formulario_modal" method="post" action="{{ route('admin-publicacion.store') }}">
-    @csrf
-    <div class="row d-flex container">
-        <input type="hidden" id="id_publicacion" name="id_publicacion">
-        <input type="hidden" id="id_multimedia" name="id_multimedia">
+@extends('backend.app')
+@section('content')
+    {{-- <div id='video-container'></div> --}}
 
-        <h4>1. Datos publicación</h4>
-        <div class="col-md-12 mt-2" id="person">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="tipo">Tipo de publicación <span class="az-r">( * )</span></label>
-                        <select class="selectpicker" data-style="btn btn-primary btn-round" data- title="Seleccione"
-                            name="id_tipo_publicacion" id="tipo">
-                        </select>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card ">
+                    <div class="card-header card-header-rose card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">play_circle</i>
+                        </div>
+                        <h4 class="card-title">Nueva Video</h4>
                     </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="form-group fl">
-                        <label for="image">Imagen</label>
-                        <div class="row d-flex justify-content-center" style="width: 100%;">
-                            <div class="col-md-12 text-center">
-                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                    <div class="fileinput-new thumbnail img-raised">
-                                        <!-- <img src="https://epicattorneymarketing.com/wp-content/uploads/2016/07/Headshot-Placeholder-1.png" rel="nofollow" alt="..."> -->
-                                        <img src="https://glouton.b-cdn.net/site/images/no-image-wide.png"
-                                            id="preViewImage" rel="nofollow" alt="...">
-                                    </div>
-                                    <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
-                                    <div>
-                                        <span class="btn btn-raised btn-round btn-rose btn-file">
-                                            <span class="fileinput-new">Seleccione</span>
-                                            <span class="fileinput-exists">Seleccionar</span>
-                                            <input type="file" name='imagen'
-                                                accept="image/jpg,image/png,image/jpeg" />
-                                        </span>
-                                        <a href="javascript:;" class="btn btn-danger btn-round fileinput-exists"
-                                            data-dismiss="fileinput">
-                                            <i class="fa fa-times"></i> Remover</a>
-                                    </div>
+                    <div class="card-body ">
+                        <form id="formulario_modal" method="post" action="{{ route('admin-videos.store') }}"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                            <span>
+                                                <b> Error - </b> Oops! Parece que olvidaste completar algunos
+                                                campos:</span><br>
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7 mt-2">
-                    <div class="form-group">
-                        <label for="detalle">Detalle </label>
-                        <textarea name="detalle" id="detalle" cols="30" rows="10" class="form-control"></textarea>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <label for="f_i">Fecha Ini</label>
-                        <input type="text" id="f_i" name="fecha_inicio" class="form-control datepicker"
-                            placeholder="mm-dd-aaaa">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <label for="f_f">Fecha Fin</label>
-                        <input type="text" id="f_f" name="fecha_fin" class="form-control datepicker"
-                            placeholder="mm-dd-aaaa">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <label for="f_f">Visibilidad</label>
-                        <div class="form-check">
-                            <div class="form-group">
-                                <label class="form-check-label">
-                                    Publicar <input name="visibilidad" class="form-check-input" type="checkbox"
-                                        value="1">
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="col-lg-12 mt-3">
-                    <div class="row justify-content-center">
-                        <div class="form-group">
-                            <button type="button" class="btn btn-danger mr-2" data-dismiss="modal"><i
-                                    class="material-icons ">close</i>cancelar</button>
-                            <button type="submit" class="btn btn-primary ">
-                                <div class="load" role="status">
-                                    <span class="sr-only">Loading...</span>
-                                </div>
-                                <i class="material-icons icon-load">done</i> <span class="btnTextSubmit">Guardar
-                                    publicación</span>
-                            </button>
-                        </div>
+                            <div class="row d-flex m-2">
+                                <div class="col-md-12 mt-2" id="person">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="titulo">Video </label>
+                                                <div id='image-video'>
+                                                    <img class='az-image-video' src="{{ asset('images/video.png') }}"
+                                                        alt="" data-toggle="tooltip"
+                                                        title="Ingrese un Enlace de video">
+                                                </div>
+                                                <div id='iframe-video' style='display: none'>
+                                                    <iframe class='az-iframe-video' id="iframe-id"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mt-2">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label for="titulo">Título </label>
+                                                        <input type="text" id="titulo" name="titulo"
+                                                            class="form-control datepicker" placeholder="Titulo del video"
+                                                            value="{{ old('titulo') }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 mt-2">
+                                                    <div class="form-group">
+                                                        <label for="descripcion">Descripción </label>
+                                                        <textarea name="descripcion" id="descripcion" cols="30" rows="5" class="form-control">{{ old('descripcion') }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 mt-2">
+                                                    <div class="form-group">
+                                                        <label for="enlace">Enlace del video </label>
+                                                        <input type="text" id="enlace" name="enlace"
+                                                            class="form-control"
+                                                            placeholder="https://www.youtube.com/watch?v="
+                                                            value="{{ old('enlace') }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-lg-12 mt-3">
+                                                <div class="row justify-content-center">
+                                                    <div class="form-group">
+                                                        <a href="{{ route('admin-videos.index') }}" id="btnCancel"
+                                                            class="btn btn-danger mr-2" data-dismiss=""><i
+                                                                class="material-icons">cancel</i>Cancelar</a>
+                                                        <button type="submit" class="btn btn-primary ">
+                                                            <div class="load" role="status">
+                                                                <span class="sr-only">Loading...</span>
+                                                            </div>
+                                                            <i class="material-icons icon-load">done</i> <span
+                                                                class="btnTextSubmit">Guardar
+                                                                video</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-</form>
+    </div>
+    <script>
+        const urlInput = $('#enlace')[0];
+
+        urlInput.addEventListener('change', () => {
+            const url = urlInput.value.trim();
+            // Basic validation (can be extended for additional checks)
+            if (!url.startsWith('https://www.youtube.com/watch?v=')) {
+                $('#image-video').show();
+                $('#iframe-video').hide();
+                alert('Error al ingresa el enlace!, vuelva a intentarlo.');
+                return;
+            }
+            // Extract video ID
+            const videoId = new URL(url).searchParams.get('v');
+            // Create iframe with security considerations (avoiding unnecessary attributes)
+            const iframe = $('#iframe-id')[0];
+            iframe.src = `https://www.youtube.com/embed/${videoId}`;
+            $('#image-video').hide();
+            $('#iframe-video').show();
+            // videoContainer.innerHTML = '';
+            // videoContainer.appendChild(iframe);
+        });
+    </script>
+@endsection

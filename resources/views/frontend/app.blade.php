@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 
 <!-- Mirrored from labartisan.net/demo/kitton/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Jan 2024 14:20:28 GMT -->
@@ -31,8 +31,8 @@
 
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/flickity.pkgd.min.js') }}"></script>
-
-
+    <!--  Plugin for Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .pencil {
             display: block;

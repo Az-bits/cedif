@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FrontendController;
+use App\Models\GaleriaModel;
+use App\Models\PublicacionModel;
+use App\Models\SalasModel;
+use App\Models\VideosModel;
 use Illuminate\Http\Request;
 
 class HomeController extends FrontendController
@@ -25,12 +29,15 @@ class HomeController extends FrontendController
      */
     public function index()
     {
-        $data = [
-            "horario" => ["hora_ini" => "8:30", "hora_fin" => "18:00"],
-            "telefonos" => [["numero" => "67031409"], ["numero" => "74277575"], ["numero" => "75800862"]],
-            "direccion" => "Av. Juan Pablo II esquina Av. Sucre A Parada Z/ lado Teleférico Azul."
-        ];
+
         // return view('home');
-        return view('frontend.home', compact('data'));
+        $this->data['contadores'] = [
+            'videos' => VideosModel::where('estado', '1')->count(),
+            'publicaciones' => PublicacionModel::where('estado', '1')->count(),
+            'galeria' => GaleriaModel::where('estado', '1')->count()
+        ];
+        $this->data['salas'] = SalasModel::where('estado', '1')->get();
+        // dd($this->data['salas']);
+        return $this->render('home');
     }
 }

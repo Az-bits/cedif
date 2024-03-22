@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\BackendController;
+use App\Models\InstitucionModel;
 use Illuminate\Http\Request;
 
 class DashboardController extends BackendController
@@ -15,7 +16,8 @@ class DashboardController extends BackendController
     public function __construct()
     {
         // $this->middleware('auth');
-        parent::index();
+        $this->title = 'Inicio';
+        $this->page = 'dashboard';
     }
 
     /**
@@ -25,8 +27,8 @@ class DashboardController extends BackendController
      */
     public function index()
     {
-        $this->title = "Dashboard";
-        $this->page = "dashboard";
-        return $this->render("dashboard");
+        $institucion = InstitucionModel::find(1);
+        $this->data['institucion'] = $institucion;
+        return  $this->render("institucion.index");
     }
 }

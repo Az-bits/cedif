@@ -13,12 +13,16 @@ class PersonaController extends BackendController
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->title = 'Personas';
+        $this->page = 'persona';
+    }
+
     public function index()
     {
         $persona = PersonaModel::where('estado', '1')->get();
         $this->data['personas'] = $persona;
-        $this->title = "Personas";
-        $this->page = "persona";
         return $this->render("persona.index");
     }
 
@@ -30,7 +34,6 @@ class PersonaController extends BackendController
     public function create()
     {
         //
-        $this->title = "Personas";
         return $this->render("persona.form");
     }
 
@@ -118,7 +121,6 @@ class PersonaController extends BackendController
     public function destroy(PersonaModel $persona)
     {
         $persona->update(['estado' => '0']);
-
         return redirect()->route('admin-persona.index')->with('success', 'Persona eliminada exitosamente!');
     }
 }

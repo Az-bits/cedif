@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\BackendController;
+use App\Models\MultimediaModel;
 use App\Models\PublicacionModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
+use App\Helpers\Helpers;
+use Illuminate\Support\Facades\DB;
 
 class PublicacionController extends BackendController
 {
@@ -15,12 +18,23 @@ class PublicacionController extends BackendController
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->title = 'Publicaciones';
+        $this->page = 'publicacion';
+    }
     public function index()
     {
-        $publicaciones = new PublicacionModel();
-        $this->data['publicaciones'] = $publicaciones->getAll();
-        $this->title = "Publicación";
-        $this->page = "publicacion";
+
+        $data = new PublicacionModel();
+        $publicaciones = $data->getAll();
+        foreach ($publicaciones as $p) {
+            $p->image = Helpers::getImage($p->url);
+        }
+
+        $this->data['publicaciones'] = $publicaciones;
+
         return $this->render("publicacion.index");
     }
 
@@ -31,6 +45,8 @@ class PublicacionController extends BackendController
      */
     public function create()
     {
+        $this->title = "Publicaciones";
+        return $this->render("publicacion.form");
     }
 
     /**
@@ -41,28 +57,28 @@ class PublicacionController extends BackendController
      */
     public function store(Request $request)
     {
-        // dd(Auth::id());
-        //guardar publicacion
-        // dd();
         $request->validate([
             'titulo' => 'required|max:80',
             'fecha_ini' => 'required',
-            'imagen' => 'required|file|max:3000'
+            'imagen' => 'required|file|max:10000|mimes:png,jpg,jpeg'
         ]);
-        // dd($_FILES);
+        // dd(Helpers::__fileUpload($request, 'imagen', 'publicaciones'));
 
-        PublicacionModel::create([
-            'titulo' => $request->titulo,
-            'id_usuario' => Auth::id(),
-            'descripcion' => $request->descripcion,
-            'tipo' => $request->tipo,
-            'fecha_ini' => $request->fecha_ini,
-            'fecha_fin' => $request->fecha_fin,
-            'direccion' => $request->direccion,
-            'estado' => $request->estado,
-        ]);
-
-        return redirect()->route('admin-publicacion.index')->with('success', 'Publicación creada exitosamente!');
+        if ($idImage = Helpers::__fileUpload($request, 'imagen', 'publicaciones')) {
+            PublicacionModel::create([
+                'titulo' => $request->titulo,
+                'id_usuario' => Auth::id(),
+                'descripcion' => $request->descripcion,
+                'tipo' => $request->tipo,
+                'fecha_ini' => $request->fecha_ini,
+                'fecha_fin' => $request->fecha_fin,
+                'direccion' => $request->direccion,
+                'estado' => $request->estado ?? '1',
+                'id_multimedia' => $idImage,
+            ]);
+            return redirect()->route('admin-publicacion.index')->with('success', 'Publicación creada exitosamente!');
+        }
+        return redirect()->route('admin-publicacion.index')->with('error', 'Error al subir la imagen');
     }
 
     /**
@@ -84,7 +100,12 @@ class PublicacionController extends BackendController
      */
     public function edit(PublicacionModel $publicacion)
     {
+        $data = new PublicacionModel();
+        $publicacion = $data->getAll($publicacion->id_publicacion);
+        $publicacion->image = Helpers::getImage($publicacion->url);
+
         $this->data['publicacion'] = $publicacion;
+
         return $this->render('publicacion.edit-form');
     }
 
@@ -99,16 +120,28 @@ class PublicacionController extends BackendController
     {
         $request->validate(
             [
-                'nombre' => 'required|max:50',
-                'email' => 'required|email',
-                'celular' => 'required|numeric|digits:8',
-                'ci' => 'required',
-                'imagen' => 'required'
+                'titulo' => 'required|max:80',
+                'fecha_ini' => 'required',
+                'imagen' => 'file|max:10000|mimes:png,jpg,jpeg',
+                // 'imagen' => '',
+                'tipo' => 'required'
             ]
         );
-        die($_FILES);
-        $publicacion->update($request->all());
-        return redirect()->route('admin-persona.index')->with('success', 'Persona actualizada exitosamente!');
+
+        $idImagen = Helpers::__fileUpload($request, 'imagen', 'publicaciones', $request->id_multimedia);
+        $publicacion->update(array_merge([
+            'titulo' => $request->titulo,
+            'id_usuario' => Auth::id(),
+            'descripcion' => $request->descripcion,
+            'tipo' => $request->tipo,
+            'fecha_ini' => $request->fecha_ini,
+            'fecha_fin' => $request->fecha_fin,
+            'direccion' => $request->direccion,
+            'estado' => $request->estado ?? '1',
+        ], $idImagen ? ['id_multimedia' => $idImagen] : []));
+
+        // Redirigir con un mensaje de éxito
+        return redirect()->route('admin-publicacion.index')->with('success', 'Publicación actualizada exitosamente!');
     }
 
     /**
@@ -117,8 +150,9 @@ class PublicacionController extends BackendController
      * @param  \App\Models\PublicacionModel  $publicacionModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PublicacionModel $publicacionModel)
+    public function destroy(PublicacionModel $publicacion)
     {
-        //
+        $publicacion->update(['estado' => '0']);
+        return redirect()->route('admin-publicacion.index')->with('success', 'Publicación eliminada exitosamente!');
     }
 }

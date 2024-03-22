@@ -11,8 +11,25 @@ class FrontendController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public $name = null;
-    function index()
+    public $data = [];
+    public $title = null;
+    public $page = null;
+
+    public function index()
     {
         $this->name = 'Edwin';
+    }
+    public function render($view)
+    {
+        $this->data['title'] = $this->title;
+        $this->data['page'] = $this->page;
+        $this->data['contacto'] = [
+            "horario" => ["hora_ini" => "8:30", "hora_fin" => "18:00"],
+            "telefonos" => [["numero" => "67031409"], ["numero" => "74277575"], ["numero" => "75800862"]],
+            "direccion" => "Av. Juan Pablo II esquina Av. Sucre A Parada Z/ lado Teleférico Azul."
+        ];
+
+        $data = $this->data;
+        return view('frontend.' . $view, compact('data'));
     }
 }

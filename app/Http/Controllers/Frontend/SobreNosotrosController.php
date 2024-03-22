@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FrontendController;
+use App\Models\InstitucionModel;
 use Illuminate\Http\Request;
 
 class SobreNosotrosController extends FrontendController
@@ -25,12 +26,14 @@ class SobreNosotrosController extends FrontendController
      */
     public function index()
     {
-        $data = [
-            "horario" => ["hora_ini" => "8:30", "hora_fin" => "18:00"],
-            "telefonos" => [["numero" => "67031409"], ["numero" => "74277575"], ["numero" => "75800862"]],
-            "direccion" => "Av. Juan Pablo II esquina Av. Sucre A Parada Z/ lado Teleférico Azul."
-        ];
-        // return view('home');
-        return view('frontend.sobre-nosotros', compact('data'));
+        // // return view('home');
+        // $this->data['contadores'] = [
+        //     'videos' => VideosModel::where('estado', '1')->count(),
+        //     'publicaciones' => PublicacionModel::where('estado', '1')->count(),
+        //     'galeria' => GaleriaModel::where('estado', '1')->count()
+        // ];
+        $this->data['institucion'] = InstitucionModel::find(1);
+        // // dd($this->data['salas']);
+        return $this->render('sobre-nosotros');
     }
 }

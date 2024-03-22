@@ -23,7 +23,7 @@
                         <h4 class="card-title">Personas</h4>
                     </div>
                     <a href="{{ route('admin-persona.create') }}" class="btn btn-primary btn-sm mt-1">
-                        <i class="material-icons">add</i> Nuevo formulario
+                        <i class="material-icons">add</i> Nuevo persona
                     </a>
                 </div>
                 <div class="card-body">
@@ -88,55 +88,4 @@
             </div>
         </div>
     </div>
-    {{-- @include('backend.publicacion.modal') --}}
-    <script>
-        $(document).ready(function() {
-            $('#datatables').DataTable({
-                language: {
-                    search: '_INPUT_',
-                    searchPlaceholder: 'Buscar',
-                    "decimal": "",
-                    "emptyTable": "No hay información",
-                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                    "infoPostFix": "",
-                    "thousands": ",",
-                    "lengthMenu": "Mostrar _MENU_ Entradas",
-                    "loadingRecords": "Cargando...",
-                    "processing": "Procesando...",
-                    "zeroRecords": "Sin resultados encontrados",
-                    "paginate": {
-                        "first": "Primero",
-                        "last": "Ultimo",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    }
-                },
-                lengthMenu: [
-                    [5, 25, 50, -1],
-                    [10, 25, 50, 'Todos'],
-                ],
-            });
-        });
-        // Función para mostrar el mensaje de confirmación
-        function confirmarEliminacion(id) {
-            swal({
-                title: '¿Está seguro de eliminar?',
-                text: '¡No podrá recuperar los datos!',
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonText: "Eliminar",
-                cancelButtonText: "No, retornar",
-                confirmButtonClass: "btn btn-danger",
-                cancelButtonClass: "btn btn-default",
-                buttonsStyling: false
-            }).then(function() {
-                // Si el usuario confirma, enviar el formulario de eliminación
-                document.getElementById('eliminarForm-' + id).submit();
-            }, function(dismiss) {
-                dismiss === 'cancel' ? swal.noop : null;
-            });
-        }
-    </script>
 @endsection

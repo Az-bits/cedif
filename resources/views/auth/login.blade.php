@@ -179,7 +179,17 @@
                         <div class="card card-login card-hidden">
                             <div class="card-header card-header-rose text-center">
                                 <h4 class="card-title">Iniciar Sesión</h4>
-                                <div class="social-line">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <button type="button" class="close" data-dismiss="alert"
+                                            aria-label="Close">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                        <span>
+                                            <b> Error - </b> Correo o Contraseña incorrecta!</span><br>
+                                    </div>
+                                @endif
+                                {{-- <div class="social-line">
                                     <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
                                         <i class="fa fa-facebook-square"></i>
                                     </a>
@@ -189,7 +199,7 @@
                                     <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="card-body ">
                                 <p class="card-description text-center"></p>
@@ -203,7 +213,7 @@
                                         <x-text-input id="email" class="block mt-1 w-full" type="email"
                                             name="email" :value="old('email')" required autofocus
                                             autocomplete="username" placeholder="Correo electrónico" />
-                                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                        {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
                                     </div>
                                 </span>
                                 <span class="bmd-form-group">
@@ -217,7 +227,7 @@
                                             name="password" required autocomplete="current-password"
                                             placeholder="Contraseña" />
 
-                                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                                        {{-- <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
                                     </div>
                                 </span>
                             </div>

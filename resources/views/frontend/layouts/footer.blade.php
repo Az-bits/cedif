@@ -9,7 +9,7 @@
                             la comunidad universitaria, destinado a hijos menores de 5 años de estudiantes, docentes y
                             administrativos de esta Casa Superior de Estudios.</p>
                         <ul class="contact">
-                            <li><i class="fas fa-headphones-alt"></i><a href="Tel:54154654">67031409 - 74277575 -
+                            <li><i class="fas fa-headphones-alt"></i><a href="Tel:67031409 ">67031409 - 74277575 -
                                     75800862
                                 </a></li>
                             <li><i class="fas fa-home"></i>Av. Juan Pablo II esquina Av. Sucre A Parada Z/ lado
@@ -19,13 +19,15 @@
                         </ul>
                         <ul class="social-icons">
                             <li>
-                                <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://api.whatsapp.com/send?phone=67031409" target="_blank"
+                                    class="whatsapp"><i class="fab fa-whatsapp"></i></a>
                             </li>
                             <li>
                                 <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.youtube.com/@jiskawawa" target="_blank" class="youtube"><i
+                                        class="fab fa-youtube"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -36,23 +38,23 @@
                         <ul class="footer-blog">
                             <li>
                                 <div class="thumb">
-                                    <a href="blog-single.html">
+                                    <a href="javascript:void(0)">
                                         <img src="{{ asset('images/jw-img-1.jpg') }}" alt="footer">
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <a href="blog-single.html">Curso de gimnacia ritmica</a>
+                                    <a href="javascript:void(0)">Curso de gimnacia ritmica</a>
                                     <span>Agosto 17,2023</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="thumb">
-                                    <a href="blog-single.html">
+                                    <a href="javascript:void(0)">
                                         <img src="{{ asset('images/jw-img-2.jpg') }}" alt="footer">
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <a href="blog-single.html">Graduados del centro de desarrollo Jisk'a Wawa.</a>
+                                    <a href="javascript:void(0)">Graduados del centro de desarrollo Jisk'a Wawa.</a>
                                     <span>Abril 08,2023</span>
                                 </div>
                             </li>

@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\HorarioController;
 use App\Http\Controllers\Frontend\ServiciosController;
 use App\Http\Controllers\Frontend\ClasesController;
 use App\Http\Controllers\Frontend\PaginaController;
+use App\Http\Controllers\Frontend\SalasController;
 
 use App\Http\Controllers\TestController;
 
@@ -26,16 +27,30 @@ use App\Http\Controllers\TestController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('/');
 Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
 Route::get('/sobre-nosotros', [SobreNosotrosController::class, 'index'])->name('sobre-nosotros');
 Route::get('/galeria', [GaleriaController::class, 'index'])->name('galeria');
 Route::get('/horario', [HorarioController::class, 'index'])->name('horario');
 Route::get('/servicios/{id}', [ServiciosController::class, 'index'])->name('servicios');
 
+// Begin::Salas
+
+// Route::get('/salas/{id}', [SalasController::class, 'index'])->name('sala-lactante');
+// Route::get('/salas/{id}', [SalasController::class, 'index'])->name('sala-lactante');
+// Route::get('/salas/{id}', [SalasController::class, 'index'])->name('sala-lactante');
+
+// End::Salas
+
+Route::get('/salas-parvulo', [SalasController::class, 'index'])->name('salas-parvulo');
+
 Route::get('/publicaciones', [PaginaController::class, 'publicacion'])->name('publicaciones');
-Route::get('/publicaciones/{id}', [PaginaController::class, 'detallePublicacion'])->name('detalle-publicacion');
+Route::get('/convocatorias', [PaginaController::class, 'convocatorias'])->name('convocatorias');
+// Route::get('/publicaciones/{id}', [PaginaController::class, 'detallePublicacion'])->name('detalle-publicacion');
 Route::get('/organigrama', [PaginaController::class, 'organigrama'])->name('organigrama');
+
+Route::get('/detalle-informacion/{id}', [PaginaController::class, 'detalleInformacion'])->name('detalle-informacion');
+Route::get('/detalle-sala/{id}', [SalasController::class, 'detalleSala'])->name('detalle-sala');
 
 // Route::get('/', function () {
 //     return view('welcome');

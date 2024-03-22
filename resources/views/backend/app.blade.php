@@ -71,6 +71,7 @@
     <script src="{{ asset('material-dashboard/assets/js/plugins/jquery.dataTables.min.js') }}"></script>
     <!--  Plugin for Sweet Alert -->
     <script src="{{ asset('material-dashboard/assets/js/plugins/sweetalert2.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
 
     <link rel="stylesheet" href="{{ asset('css/global-styles.css') }}">
 
@@ -303,6 +304,7 @@
     <script src="{{ asset('material-dashboard/assets/js/material-dashboard.min40a0.js?v=2.0.2') }}" type="text/javascript">
     </script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+
     <script src="{{ asset('material-dashboard/assets/demo/demo.js') }}"></script>
     <script src="{{ asset('js/global-scripts.js') }}"></script>
     <script>

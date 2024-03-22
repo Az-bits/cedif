@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class VideosModel extends Model
 {
     use HasFactory;
+    protected $table = 'video';
+    protected $primaryKey = 'id_video';
+    protected $fillable = ['id_usuario', 'titulo', 'descripcion', 'estado', 'enlace'];
+    protected $guarded = [];
+    public $timestamps = false;
 }

@@ -1,6 +1,7 @@
+@php
+    $institucionView = $data['page'] == 'institucion' || $data['page'] == 'salas' || $data['page'] == 'organigrama';
+@endphp
 <div class="sidebar" data-color="rose" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
-
-
     <div class="logo" style="padding: 10px 0;">
         <a href="{{ asset('dashboard') }}" style='justify-content: center;display: flex' class="simple-text logo-normal">
             <img src="{{ asset('assets/images/logo/cdi-logo.png') }}" alt="" height="80" style="width: 100%">
@@ -28,24 +29,24 @@
                 </a>
                 <div class="collapse" id="collapseExample">
                     <ul class="nav">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span class="sidebar-mini"> P </span>
                                 <span class="sidebar-normal"> Perfil </span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
-                            <button class="nav-link" href="{{ route('logout') }}">
+                            <a class="nav-link" href="{{ route('logout') }}">
                                 <span class="sidebar-mini"> CS</span>
                                 <span class="sidebar-normal"> Cerrar Sesión </span>
-                            </button>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
         <ul class="nav">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#formsExamples">
                     <i class="material-icons">settings</i>
                     <p>
@@ -57,7 +58,7 @@
                 <div class="collapse" id="formsExamples">
                     <ul class="nav">
                         <li class="nav-item">
-                            {{-- <a class="nav-link" href="{{ route('users.index') }}"> --}}
+                            <a class="nav-link" href="{{ route('users.index') }}">
                             <a class="nav-link" href="#">
                                 <span class="sidebar-mini"> U </span>
                                 <span class="sidebar-normal"> Usuarios </span>
@@ -66,7 +67,7 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
             <li class="nav-item  {{ $data['page'] == 'dashboard' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="material-icons">home</i>
@@ -84,9 +85,9 @@
                     <i class="material-icons">apartment</i>
                     <p>Institución <b class="caret"></b></p>
                 </a>
-                <div class="collapse" id="instutionCollapse">
+                <div class="collapse {{ $institucionView ? 'show' : '' }}" id="instutionCollapse">
                     <ul class="nav">
-                        <li class="nav-item">
+                        <li class="nav-item {{ $data['page'] == 'institucion' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('admin-institucion.index') }}">
                                 <span class="sidebar-mini"> I </span>
                                 <span class="sidebar-normal"> Institución </span>
@@ -94,7 +95,15 @@
                         </li>
                     </ul>
                     <ul class="nav">
-                        <li class="nav-item">
+                        <li class="nav-item {{ $data['page'] == 'salas' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('admin-salas.index') }}">
+                                <span class="sidebar-mini"> SP </span>
+                                <span class="sidebar-normal"> Salas Parbulo </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav">
+                        <li class="nav-item {{ $data['page'] == 'organigrama' ? 'active' : '' }}">
                             <a class="nav-link" href="#">
                                 <span class="sidebar-mini"> O </span>
                                 <span class="sidebar-normal"> Organigrama </span>
@@ -113,7 +122,7 @@
                     </p>
                 </a>
 
-                <div class="collapse  {{ ($data['page'] == 'publicacion' or $data['page'] == 'videos') ? 'show' : '' }}"
+                <div class="collapse  {{ ($data['page'] == 'publicacion' or $data['page'] == 'videosEE') ? 'show' : '' }}"
                     id="pages">
                     <ul class="nav">
                         <li class="nav-item {{ $data['page'] == 'publicacion' ? 'active' : '' }}">
@@ -123,8 +132,25 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#videoCollapse">
+                    <i class="material-icons">play_arrow</i>
+                    <p>Videos <b class="caret"></b></p>
+                </a>
+                <div class="collapse {{ ($data['page'] == 'videos' or $data['page'] == 'canal') ? 'show' : '' }}"
+                    id="videoCollapse">
                     <ul class="nav">
-                        <li class="nav-item  {{ $data['page'] == 'videos' ? 'active' : '' }}">
+                        {{-- <li class="nav-item {{ $data['page'] == 'canal' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('admin-videos.canalYT') }}">
+                                <span class="sidebar-mini"> CY </span>
+                                <span class="sidebar-normal"> Canal YouTube </span>
+                            </a>
+                        </li> --}}
+                    </ul>
+                    <ul class="nav">
+                        <li class="nav-item {{ $data['page'] == 'videos' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('admin-videos.index') }}">
                                 <span class="sidebar-mini"> V </span>
                                 <span class="sidebar-normal"> Videos </span>

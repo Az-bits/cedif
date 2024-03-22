@@ -30,8 +30,8 @@
                         <form id="formulario_modal" method="post" action="{{ route('admin-persona.update', $persona) }}">
                             @csrf
                             @method('PUT')
-                            <div class="row d-flex container">
-                                <div class="col-12 mt-2">
+                            <div class="row d-flex m-2">
+                                <div class="col-lg-12 mt-2">
                                     <div class="row">
                                         <div class="col-lg-3">
                                             <div class="form-group fl">

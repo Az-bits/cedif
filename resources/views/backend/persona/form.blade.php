@@ -39,7 +39,7 @@
                     <div class="card-body ">
                         <form id="formulario_modal" method="post" action="{{ route('admin-persona.store') }}">
                             @csrf
-                            <div class="row d-flex container">
+                            <div class="row d-flex m-2">
                                 <input type="hidden" id="id_persona" name="id_persona">
                                 <div class="col-12 mt-2">
                                     <div class="row">
@@ -124,21 +124,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="col-lg-12 mt-3">
-                                        <div class="row justify-content-center">
-                                            <div class="form-group">
-                                                <a href="{{ route('admin-persona.index') }}" id="btnCancel"
-                                                    class="btn btn-danger mr-2" data-dismiss=""><i
-                                                        class="material-icons">cancel</i>Cancelar</a>
-                                                <button type="submit" id="btnSubmit" class="btn btn-primary ">
-                                                    <div class="load" role="status">
-                                                        <span class="sr-only">Loading...</span>
-                                                    </div>
-                                                    <i class="material-icons icon-load">done</i>
-                                                    <span class="btnTextSubmit">Guardar</span>
-                                                </button>
-                                            </div>
+                                <div class="col-lg-12 mt-3">
+                                    <div class="row justify-content-center">
+                                        <div class="form-group">
+                                            <a href="{{ route('admin-persona.index') }}" id="btnCancel"
+                                                class="btn btn-danger mr-2" data-dismiss=""><i
+                                                    class="material-icons">cancel</i>Cancelar</a>
+                                            <button type="submit" id="btnSubmit" class="btn btn-primary ">
+                                                <div class="load" role="status">
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
+                                                <i class="material-icons icon-load">done</i>
+                                                <span class="btnTextSubmit">Guardar</span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

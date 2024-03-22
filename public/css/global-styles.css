@@ -19,3 +19,26 @@ textarea {
     border-radius: 15px !important;
     padding: 5px !important;
 }
+.az-image-video {
+    width: 100%;
+    height: 315px;
+}
+
+@media only screen and (max-width: 767px) {
+    .az-image-video {
+        height: 160px;
+    }
+    .az-iframe-video {
+        height: 160px;
+    }
+}
+.az-iframe-video {
+    height: 315px;
+    width: 100%;
+}
+.ck.ck-balloon-panel.ck-powered-by-balloon .ck.ck-powered-by {
+    display: none;
+}
+.map-section iframe {
+    width: 100%;
+}

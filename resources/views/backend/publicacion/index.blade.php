@@ -22,10 +22,10 @@
                         </div>
                         <h4 class="card-title">Publicaciones</h4>
                     </div>
-                    <button id="nuevo" type="button" class="btn btn-primary btn-sm mt-1" data-toggle="modal"
-                        data-target="#main_modal">
-                        <i class="material-icons">add</i> Nuevo formulario
-                    </button>
+                    <a href="{{ route('admin-publicacion.create') }}" class="btn btn-primary btn-sm mt-2">
+                        <i class="material-icons">add</i> Nuevo Publicación
+                    </a>
+
                 </div>
                 <div class="card-body">
                     <div class="toolbar">
@@ -50,7 +50,8 @@
                                 @foreach ($data['publicaciones'] as $item)
                                     <tr>
                                         <td>{{ $item->id_publicacion }}</td>
-                                        <td>{{ $item->titulo }}</td>
+                                        <td class='text-center'><img src="{{ $item->image }}" alt="{{ $item->titulo }}"
+                                                width='50' height="50" /></td>
                                         <td>{{ $item->titulo }}</td>
                                         <td>{{ $item->fecha_ini }}</td>
                                         <td>{{ $item->fecha_fin }}</td>
@@ -62,11 +63,11 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin-persona.edit', $item) }}"
+                                            <a href="{{ route('admin-publicacion.edit', $item) }}"
                                                 class="btn btn-link btn-info btn-just-icon editar" data-toggle="tooltip"
                                                 title="Editar"><i class="material-icons">edit</i></a>
                                             <form id="eliminarForm-{{ $item->id_publicacion }}"
-                                                action="{{ route('admin-persona.destroy', $item) }}" method="post"
+                                                action="{{ route('admin-publicacion.destroy', $item) }}" method="post"
                                                 class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
@@ -98,36 +99,13 @@
             </div>
         </div>
     </div>
-    @include('backend.publicacion.modal')
+    {{-- @include('backend.publicacion.modal') --}}
     <script>
         $(document).ready(function() {
             @if ($errors->any())
                 console.log('Hay errores');
                 $("#main_modal").modal('show');
             @endif
-            $('#datatables').DataTable({
-                language: {
-                    search: '_INPUT_',
-                    searchPlaceholder: 'Buscar',
-                    "decimal": "",
-                    "emptyTable": "No hay información",
-                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                    "infoPostFix": "",
-                    "thousands": ",",
-                    "lengthMenu": "Mostrar _MENU_ Entradas",
-                    "loadingRecords": "Cargando...",
-                    "processing": "Procesando...",
-                    "zeroRecords": "Sin resultados encontrados",
-                    "paginate": {
-                        "first": "Primero",
-                        "last": "Ultimo",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    }
-                }
-            });
         });
     </script>
 @endsection

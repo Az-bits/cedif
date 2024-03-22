@@ -1,3 +1,8 @@
+@php
+
+    $contacto = $data['contacto'];
+
+@endphp
 <header>
     {{-- {{ var_dump($data['telefonos']->numero) }} --}}
     <div class="header-top">
@@ -7,11 +12,11 @@
 
                     <li>
                         <i class="far fa-clock"></i>
-                        {{ $data['horario']['hora_ini'] . 'am - ' . $data['horario']['hora_fin'] . 'pm Lun - Vie' }}
+                        {{ $contacto['horario']['hora_ini'] . 'am - ' . $contacto['horario']['hora_fin'] . 'pm Lun - Vie' }}
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-phone-alt"></i>
-                            @foreach ($data['telefonos'] as $item)
+                            @foreach ($contacto['telefonos'] as $item)
                                 <a href="https://api.whatsapp.com/send?phone={{ $item['numero'] }}" target="_blank">
                                     {{ $item['numero'] }}
                                 </a>
@@ -22,7 +27,7 @@
                         </a>
                     </li>
                     <li>
-                        <i class="fas fa-map-marker-alt"></i> {{ $data['direccion'] }}
+                        <i class="fas fa-map-marker-alt"></i> {{ $contacto['direccion'] }}
                     </li>
                 </ul>
                 <ul>
@@ -61,7 +66,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#0"><i class="fas fa-book"></i>Sobre Nosotros</a>
+                            <a href="javascript:void(0)"><i class="fas fa-book"></i>Sobre Nosotros</a>
                             <ul class="submenu">
                                 <li>
                                     <a href="{{ route('sobre-nosotros') }}">Sobre Nosotros</a>
@@ -71,20 +76,52 @@
                                 </li>
                             </ul>
                         </li>
-                        {{-- <li>
-                            <a href="#0"><i class="fas fa-book"></i>Clases</a>
-                            <ul class="submenu">
-                                <li>
-                                    <a href="{{ route('horario') }}">Horario</a>
-                                </li>
-                            </ul>
-                        </li> --}}
-                        {{-- 
                         <li>
-                            <a href="#0"><i class="fas fa-layer-group"></i>Servicios Educativos</a>
+                            <a href="javascript:void(0)"><i class="fas fa-book"></i>Salas</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="#">Club de Tareas</a>
+                                    <a href="{{ route('salas-parvulo') }}">Sala parvulo</a>
+                                </li>
+                                {{-- <li>
+                                    <a href="{{ route('sala-comedor') }}">Sala comedor</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('sala-musica') }}">Sala música</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('sala-arte') }}">Sala Arte</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('auditorio') }}">Auditorio</a>
+                                </li> --}}
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><i class="fas fa-layer-group"></i>Información</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="{{ route('publicaciones') }}">Publicaciones</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('convocatorias') }}">Convocatoria</a>
+                                </li>
+                                {{-- <li>
+                                    <a href="{{ route('eventos') }}">Eventos</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('comunicados') }}">Comunicados</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('avisos') }}">Avisos</a>
+                                </li> --}}
+                            </ul>
+                        </li>
+                        {{-- <li>
+                            <a href="#"><i class="fas fa-layer-group"></i>Servicios Educativos</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#">Sala </a>
                                 </li>
                                 <li>
                                     <a href="#l">Apoyo Escolar</a>
@@ -110,8 +147,8 @@
                             <a href="{{ route('contacto') }}"><i class="fas fa-map-marker-alt"></i>Contacto</a>
                         </li>
                         <li>
-                            {{-- <a href="#0"><i class="fas fa-pencil-alt"></i>Blog</a> --}}
-                            <a href="#0"><i class="fas fa-plus"></i>Más</a>
+                            {{-- <a href="#"><i class="fas fa-pencil-alt"></i>Blog</a> --}}
+                            <a href="javascript:void(0)"><i class="fas fa-plus"></i>Más</a>
                             <ul class="submenu">
                                 <li>
                                     <a href="{{ route('galeria') }}">Galeria</a>

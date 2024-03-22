@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\BackendController;
 use App\Models\InstitucionModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InstitucionController extends BackendController
 {
@@ -15,16 +16,13 @@ class InstitucionController extends BackendController
      */
     public function __construct()
     {
-        // parent::__construct();
-        parent::index();
+        $this->title = 'Institución';
+        $this->page = 'institucion';
     }
     public function index()
     {
-        //
-        // return view("backend.institucion.index");
-        // dd($this->name);
-        $this->title = "Institución";
-        $this->page = "institucion";
+        $institucion = InstitucionModel::find(1);
+        $this->data['institucion'] = $institucion;
         return  $this->render("institucion.index");
     }
 
@@ -46,7 +44,6 @@ class InstitucionController extends BackendController
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -78,9 +75,34 @@ class InstitucionController extends BackendController
      * @param  \App\Models\InstitucionModel  $institucionModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InstitucionModel $institucionModel)
+    public function update(Request $request, InstitucionModel $institucion)
     {
-        //
+        $request->validate([
+            'mision' => 'required',
+            'vision' => 'required',
+            'correo' => 'required|email',
+            'telefono1' => 'required|numeric|digits:8',
+            'celular1' => 'numeric|digits:8',
+            'celular2' => 'numeric|digits:8',
+        ]);
+        $institucion->update([
+            'id_usuario' => Auth::id(),
+            'mision' => $request->mision,
+            'vision' => $request->vision,
+            'objetivo' => $request->objetivo,
+            'historia' => $request->historia,
+            'sobre_institucion' => $request->sobre_institucion,
+            'correo' => $request->correo,
+            'correo2' => $request->correo2,
+            'celular1' => $request->celular1,
+            'celular2' => $request->celular2,
+            'telefono1' => $request->telefono1,
+            'telefono2' => $request->telefono2,
+            'facebook' => $request->facebook,
+            'youtube' => $request->youtube,
+            'ubicacion' => $request->ubicacion,
+        ]);
+        return redirect()->route('admin-institucion.index')->with('success', 'Información editada exitosamente!');
     }
 
     /**

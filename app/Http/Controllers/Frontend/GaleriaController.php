@@ -25,12 +25,6 @@ class GaleriaController extends FrontendController
      */
     public function index()
     {
-        $data = [
-            "horario" => ["hora_ini" => "8:30", "hora_fin" => "18:00"],
-            "telefonos" => [["numero" => "67031409"], ["numero" => "74277575"], ["numero" => "75800862"]],
-            "direccion" => "Av. Juan Pablo II esquina Av. Sucre A Parada Z/ lado Teleférico Azul."
-        ];
-        // return view('home');
-        return view('frontend.galeria', compact('data'));
+        return $this->render('galeria');
     }
 }

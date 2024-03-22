@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\BackendController;
 use App\Models\VideosModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VideosController extends BackendController
 {
@@ -13,10 +14,15 @@ class VideosController extends BackendController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct()
     {
         $this->title = 'Videos';
         $this->page = 'videos';
+    }
+    public function index()
+    {
+        $videos = VideosModel::where('estado', '1')->get();
+        $this->data['videos'] = $videos;
         return $this->render("videos.index");
     }
 
@@ -27,7 +33,7 @@ class VideosController extends BackendController
      */
     public function create()
     {
-        //
+        return $this->render("videos.form");
     }
 
     /**
@@ -38,7 +44,18 @@ class VideosController extends BackendController
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'titulo' => 'required|max:80',
+            'enlace' => 'required|url|regex:/^(https:\/\/www\.youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})$/',
+        ]);
+        VideosModel::create([
+            'titulo' => $request->titulo,
+            'id_usuario' => Auth::id(),
+            'descripcion' => $request->descripcion,
+            'enlace' => $request->enlace,
+            'estado' => '1',
+        ]);
+        return redirect()->route('admin-videos.index')->with('success', 'Video registrado exitosamente!');
     }
 
     /**
@@ -47,7 +64,7 @@ class VideosController extends BackendController
      * @param  \App\Models\VideosModel  $videosModel
      * @return \Illuminate\Http\Response
      */
-    public function show(VideosModel $videosModel)
+    public function show()
     {
         //
     }
@@ -58,9 +75,10 @@ class VideosController extends BackendController
      * @param  \App\Models\VideosModel  $videosModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(VideosModel $videosModel)
+    public function edit(VideosModel $video)
     {
-        //
+        $this->data['video'] = $video;
+        return $this->render('videos.edit-form');
     }
 
     /**
@@ -70,9 +88,16 @@ class VideosController extends BackendController
      * @param  \App\Models\VideosModel  $videosModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, VideosModel $videosModel)
+    public function update(Request $request, VideosModel $video)
     {
-        //
+        $request->validate(
+            [
+                'titulo' => 'required|max:80',
+                'enlace' => 'required|url|regex:/^(https:\/\/www.youtube.com\/watch\?v=)([a-zA-Z0-9]{11})$/',
+            ]
+        );
+        $video->update($request->all());
+        return redirect()->route('admin-videos.index')->with('success', 'Datos de video actualizado correctamente!');
     }
 
     /**
@@ -81,8 +106,20 @@ class VideosController extends BackendController
      * @param  \App\Models\VideosModel  $videosModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(VideosModel $videosModel)
+    public function destroy(VideosModel $video)
     {
-        //
+        $video->update(['estado' => '0']);
+        return redirect()->route('admin-videos.index')->with('success', 'Video eliminado exitosamente!');
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\VideosModel  $videosModel
+     * @return \Illuminate\Http\Response
+     */
+    public function canalYT()
+    {
+        $this->page = 'canal';
+        return $this->render("videos.canal-info");
     }
 }
