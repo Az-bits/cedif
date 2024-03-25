@@ -48,4 +48,5 @@ $("#datatables").DataTable({
         [5, 25, 50, -1],
         [5, 25, 50, "Todos"],
     ],
+    responsive: true,
 });

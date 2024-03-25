@@ -49,8 +49,8 @@ class PersonaController extends BackendController
         $request->validate([
             'nombre' => 'required|max:50',
             'email' => 'required|email',
-            'celular' => 'required|numeric|digits:8',
-            'ci' => 'required|unique:persona,ci',
+            // 'celular' => 'required|numeric|digits:8',
+            // 'ci' => 'required|unique:persona,ci',
         ], [
             'ci.unique' => 'La Cedula de Identidad ya está registrada.',
         ]);

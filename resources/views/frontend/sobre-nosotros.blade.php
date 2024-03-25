@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="faq-content">
                                         <p>
-                                            {{ $institucion->mision }}
+                                            {!! $institucion->mision !!}
                                         </p>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="faq-content">
                                         <p>
-                                            {{ $institucion->vision }}
+                                            {!! $institucion->vision !!}
                                         </p>
                                     </div>
                                 </div>

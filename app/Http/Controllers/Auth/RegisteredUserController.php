@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AuthController;
+use App\Models\PersonaModel;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -13,14 +14,24 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
-class RegisteredUserController extends Controller
+class RegisteredUserController extends AuthController
 {
     /**
      * Display the registration view.
      */
+    public function __construct()
+    {
+        $this->title = 'Usuarios';
+        $this->page = 'usuarios';
+    }
+
     public function create(): View
     {
-        return view('auth.register');
+        $personas = PersonaModel::where('estado', '1')->get();
+        $this->data['personas'] = $personas;
+
+        // $data
+        return $this->render('register');
     }
 
     /**
@@ -32,7 +43,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 

@@ -6,7 +6,7 @@
                 <div class="card-header card-header-primary card-header-icon d-flex justify-content-between">
                     <div class="w-100">
                         <div class="card-icon">
-                            <i class="material-icons">assignment</i>
+                            <i class="material-icons">group</i>
                         </div>
                         <h4 class="card-title">Usuarios</h4>
                     </div>
@@ -27,25 +27,53 @@
                                 <tr>
                                     <th class="min-w-25">#</th>
                                     <th>Nombre</th>
-                                    <th>Usuario</th>
                                     <th>Correo</th>
                                     <th>Rol</th>
                                     <th>Estado</th>
-                                    <th>Visibilidad</th>
                                     <th class="disabled-sorting text-right">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data['usuarios'] as $item)
+                                    <tr>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->nombre . ' ' . $item->paterno . ' ' . $item->materno }}</td>
+                                        <td>{{ $item->email }}</td>
+                                        <td>{{ $item->rol }}</td>
+                                        <td>
+                                            @if ($item->estado == '1')
+                                                <span class=" btn btn-success az-b">ACTIVO</span>
+                                            @else
+                                                <span class="btn btn-warning az-b">INACTIVO</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('admin-persona.edit', $item) }}"
+                                                class="btn btn-link btn-info btn-just-icon editar" data-toggle="tooltip"
+                                                title="Editar"><i class="material-icons">edit</i></a>
+                                            <form id="eliminarForm-{{ $item->id_persona }}"
+                                                action="{{ route('admin-persona.destroy', $item) }}" method="post"
+                                                class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="button"
+                                                    onclick="confirmarEliminacion('{{ $item->id_persona }}')"
+                                                    class="btn btn-link btn-danger btn-just-icon eliminar"
+                                                    data-toggle="tooltip" title="Eliminar">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th>#</th>
                                     <th>Nombre</th>
-                                    <th>Usuario</th>
                                     <th>Correo</th>
                                     <th>Rol</th>
                                     <th>Estado</th>
-                                    <th>Visibilidad</th>
                                     <th class="disabled-sorting text-right">Acciones</th>
                                 </tr>
                             </tfoot>
@@ -55,30 +83,4 @@
             </div>
         </div>
     </div>
-    @include('auth.modal')
-    <script>
-        $('#datatables').DataTable({
-            language: {
-                search: '_INPUT_',
-                searchPlaceholder: 'Buscar',
-                "decimal": "",
-                "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                "infoPostFix": "",
-                "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ Entradas",
-                "loadingRecords": "Cargando...",
-                "processing": "Procesando...",
-                "zeroRecords": "Sin resultados encontrados",
-                "paginate": {
-                    "first": "Primero",
-                    "last": "Ultimo",
-                    "next": "Siguiente",
-                    "previous": "Anterior"
-                }
-            }
-        });
-    </script>
 @endsection

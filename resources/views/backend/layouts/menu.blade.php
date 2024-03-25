@@ -46,7 +46,7 @@
             </div>
         </div>
         <ul class="nav">
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#formsExamples">
                     <i class="material-icons">settings</i>
                     <p>
@@ -55,19 +55,17 @@
                     </p>
                 </a>
 
-                <div class="collapse" id="formsExamples">
+                {{-- <div class="collapse {{ $data['page'] == 'usuarios' ? 'show' : '' }}" id="formsExamples">
                     <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('users.index') }}">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item {{ $data['page'] == 'usuarios' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('usuarios') }}">
                                 <span class="sidebar-mini"> U </span>
                                 <span class="sidebar-normal"> Usuarios </span>
                             </a>
-                            <x></x>
                         </li>
                     </ul>
-                </div>
-            </li> --}}
+                </div> --}}
+            </li>
             <li class="nav-item  {{ $data['page'] == 'dashboard' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="material-icons">home</i>
@@ -142,12 +140,12 @@
                 <div class="collapse {{ ($data['page'] == 'videos' or $data['page'] == 'canal') ? 'show' : '' }}"
                     id="videoCollapse">
                     <ul class="nav">
-                        {{-- <li class="nav-item {{ $data['page'] == 'canal' ? 'active' : '' }}">
+                        <li class="nav-item {{ $data['page'] == 'canal' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('admin-videos.canalYT') }}">
                                 <span class="sidebar-mini"> CY </span>
                                 <span class="sidebar-normal"> Canal YouTube </span>
                             </a>
-                        </li> --}}
+                        </li>
                     </ul>
                     <ul class="nav">
                         <li class="nav-item {{ $data['page'] == 'videos' ? 'active' : '' }}">

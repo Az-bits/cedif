@@ -1,4 +1,5 @@
 @import url("organigrama.css");
+@import url("button.css");
 
 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
         .input-group-btn
@@ -41,4 +42,21 @@ textarea {
 }
 .map-section iframe {
     width: 100%;
+}
+.select2-container {
+    width: 100% !important;
+}
+.select2-container--default
+    .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #9c27b0 !important;
+}
+.select2-container--default .select2-selection--single {
+    height: 2.5rem !important;
+    display: flex !important;
+    align-items: center;
+}
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    height: 38px !important;
 }
