@@ -81,7 +81,7 @@ class AutoridadesController extends BackendController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PublicacionModel  $publicacionModel
+     * @param  \App\Models\AutoridadesModel  $autoridad
      * @return \Illuminate\Http\Response
      */
 
@@ -97,6 +97,7 @@ class AutoridadesController extends BackendController
 
         $this->data['autoridad'] = $autoridad;
         $this->data['persona'] = $persona;
+        // dd($this->data);
 
         return $this->render('autoridades.edit-form');
     }
@@ -105,7 +106,7 @@ class AutoridadesController extends BackendController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PublicacionModel  $publicacionModel
+     * @param  \App\Models\AutoridadesModel  $autoridades
      * @return \Illuminate\Http\Response
      */
 
@@ -132,9 +133,13 @@ class AutoridadesController extends BackendController
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\AutoridadesModel  $publicacionModel
+     * @return \Illuminate\Http\Response
      */
     public function destroy(AutoridadesModel $autoridad)
     {
+        dd($autoridad->id_autoridad);
         $autoridad->update(['estado' => '0']);
         return redirect()->route('admin-autoridades.index')->with('success', 'Autoridad eliminada exitosamente!');
     }

@@ -25,7 +25,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo-main.ico') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ asset('frontend/css/global-styles.css') }}">
 
@@ -397,8 +397,8 @@
     <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
     <script src="{{ asset('assets/js/nice-select.js') }}"></script>
     <script src="{{ asset('assets/js/slick.min.js') }}"></script>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCo_pcAdFNbTDCAvMwAD19oRTuEmb9M50c"></script>
-    <script src="{{ asset('assets/js/map.js') }}"></script>
+    {{-- <script src="https://maps.google.com/maps"></script> --}}
+    {{-- <script src="{{ asset('assets/js/map.js') }}"></script> --}}
     <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 

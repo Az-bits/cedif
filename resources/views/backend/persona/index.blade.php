@@ -12,6 +12,9 @@
                 </div>
             </div>
         @endif
+        {{-- @php
+            dd($data['personas']);
+        @endphp --}}
 
         <div class="col-md-12">
             <div class="card">

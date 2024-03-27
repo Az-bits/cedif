@@ -1,7 +1,7 @@
 <!-- <= form_open(current_url()); ?> -->
 @extends('backend.app')
 @section('content')
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
     {{-- @php
         if (isset($data['persona'])) {
             $persona = $data['persona'];
@@ -158,8 +158,8 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
+    {{-- <script>
         $(document).ready(function() {
             $('#select-person').select2({
                 placeholder: 'Selecccione una persona'
@@ -167,7 +167,7 @@
             $('#select-person').on('change', function(e) {
                 // alert();
                 // let persona = $(this).val();
-                let persona = <?= json_encode($data['personas']) ?>;
+                let persona = <= json_encode($data['personas']) ?>;
                 persona = persona.filter((data) => $(this).val() == data.id_persona)[0];
                 $('#nombreCompleto').val(persona.nombre + ' ' + persona.paterno + ' ' + persona.materno);
                 $('#email').val(persona.email);
@@ -180,5 +180,5 @@
                 // $('#email').val(email);
             });
         });
-    </script>
+    </script> --}}
 @endsection

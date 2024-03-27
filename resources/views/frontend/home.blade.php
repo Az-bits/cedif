@@ -415,7 +415,7 @@
                                 </a>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="#">Lic. Margot Patsi</a></h5>
+                                <h5 class="title"><a href="#">Lic. Ximena Margot Patzi Quispe</a></h5>
                                 <span>Directora</span>
                             </div>
                             {{-- <div class="thumb">

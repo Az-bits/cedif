@@ -43,9 +43,9 @@
     <div class="header-bottom">
         <div class="container">
             <div class="header-wrapper" style="height: 6rem;">
-                <div class="logo">
+                <div class="logo m-auto">
                     <a href="/">
-                        <img src="{{ asset('assets/images/logo/logo-main.png') }}" alt="logo">
+                        <img src="{{ asset('assets/images/logo/logo-main.png') }}" alt="logo" style="width: 18em">
                     </a>
                 </div>
                 <div class="menu-area">

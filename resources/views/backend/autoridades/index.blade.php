@@ -12,6 +12,9 @@
                 </div>
             </div>
         @endif
+        {{-- @php
+            dd($data['autoridades']);
+        @endphp --}}
 
         <div class="col-md-12">
             <div class="card">
@@ -56,7 +59,7 @@
                                             <a href="{{ route('admin-autoridades.edit', $item) }}"
                                                 class="btn btn-link btn-info btn-just-icon editar" data-toggle="tooltip"
                                                 title="Editar"><i class="material-icons">edit</i></a>
-                                            <form id="eliminarForm-{{ $item->id_publicacion }}"
+                                            <form id="eliminarForm-{{ $item->id_autoridad }}"
                                                 action="{{ route('admin-autoridades.destroy', $item) }}" method="post"
                                                 class="d-inline">
                                                 @csrf
