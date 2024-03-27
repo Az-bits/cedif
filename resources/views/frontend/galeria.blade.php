@@ -31,7 +31,7 @@
             <img src="assets/css/img/bottom-shape.png" alt="css">
         </div>
         <div class="container">
-            <ul class="filter-2">
+            {{-- <ul class="filter-2">
                 <li data-filter="*" class="active"><span class="category">Mostrar todo</span><span class="amount">08</span>
                 </li>
                 <li data-filter=".toddler"><span class="category">Niños pequeños</span><span class="amount">04</span></li>
@@ -40,7 +40,7 @@
                 </li>
                 <li data-filter=".programe"><span class="category">Jardín de infancia</span><span class="amount">02</span>
                 </li>
-            </ul>
+            </ul> --}}
             <div class="masonary-wrapper">
                 <div class="masonary-item preschool programe">
                     <div class="masonary-thumb">
@@ -97,9 +97,9 @@
                     </div>
                 </div> --}}
             </div>
-            <div class="load-more">
+            {{-- <div class="load-more">
                 <a href="{{ route('contacto') }}" class="custom-button"><span>Empieza ahora</span></a>
-            </div>
+            </div> --}}
         </div>
     </div>
     <!-- ==========Gallery Section Ends Here========== -->
