@@ -12,8 +12,7 @@
                             <li><i class="fas fa-headphones-alt"></i><a href="Tel:67031409 ">67031409 - 74277575 -
                                     75800862
                                 </a></li>
-                            <li><i class="fas fa-home"></i>Av. Juan Pablo II esquina Av. Sucre A Parada Z/ lado
-                                Teleférico Azul.</li>
+                            <li><i class="fas fa-home"></i>{{ $data['institucion']->direccion }}</li>
                             <li><i class="fas fa-globe-asia"></i><a href="#">www.jiskawawa.upea.bo </a>
                             </li>
                         </ul>
