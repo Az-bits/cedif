@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InstitucionModel;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -26,8 +27,9 @@ class FrontendController extends BaseController
         $this->data['contacto'] = [
             "horario" => ["hora_ini" => "8:30", "hora_fin" => "18:00"],
             "telefonos" => [["numero" => "67031409"], ["numero" => "74277575"], ["numero" => "75800862"]],
-            "direccion" => "Av. Juan Pablo II esquina Av. Sucre A Parada Z/ lado Teleférico Azul."
+            "direccion" => "Av. Sucre A Parada Z/ lado Teleférico Azul."
         ];
+        $this->data['institucion'] = InstitucionModel::find(1);
 
         $data = $this->data;
         return view('frontend.' . $view, compact('data'));

@@ -104,6 +104,13 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-lg-12">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" id="direccion" name="direccion" class="form-control"
+                                    value="{{ old('direccion', $institucion->direccion) }}">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-lg-12">
                                 <label for="ubicacion">Google Maps</label>
                                 <input type="text" id="ubicacion" name="ubicacion" class="form-control"
                                     value="{{ old('ubicacion', $institucion->ubicacion) }}">

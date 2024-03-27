@@ -18,7 +18,7 @@
     <div class="sidebar-wrapper">
         <div class="user">
             <div class="photo">
-                <img src="https://cdn.vectorstock.com/i/preview-1x/48/37/web-developer-design-vector-5884837.jpg" />
+                <img src="https://t3.ftcdn.net/jpg/05/17/79/88/240_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg" />
             </div>
             <div class="user-info">
                 <a data-toggle="collapse" href="#collapseExample" class="username">
@@ -55,16 +55,16 @@
                     </p>
                 </a>
 
-                {{-- <div class="collapse {{ $data['page'] == 'usuarios' ? 'show' : '' }}" id="formsExamples">
+                <div class="collapse {{ $data['page'] == 'usuarios' ? 'show' : '' }}" id="formsExamples">
                     <ul class="nav">
                         <li class="nav-item {{ $data['page'] == 'usuarios' ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('usuarios') }}">
+                            <a class="nav-link" href="{{ route('usuarios.index') }}">
                                 <span class="sidebar-mini"> U </span>
                                 <span class="sidebar-normal"> Usuarios </span>
                             </a>
                         </li>
                     </ul>
-                </div> --}}
+                </div>
             </li>
             <li class="nav-item  {{ $data['page'] == 'dashboard' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}">
@@ -100,14 +100,14 @@
                             </a>
                         </li>
                     </ul>
-                    <ul class="nav">
+                    {{-- <ul class="nav">
                         <li class="nav-item {{ $data['page'] == 'organigrama' ? 'active' : '' }}">
                             <a class="nav-link" href="#">
                                 <span class="sidebar-mini"> O </span>
                                 <span class="sidebar-normal"> Organigrama </span>
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </li>
 

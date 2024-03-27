@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FrontendController;
 use App\Models\GaleriaModel;
+use App\Models\InstitucionModel;
 use App\Models\PublicacionModel;
 use App\Models\SalasModel;
 use App\Models\VideosModel;
@@ -31,11 +32,15 @@ class HomeController extends FrontendController
     {
 
         // return view('home');
+
+        $this->data['institucion'] = InstitucionModel::find(1);
+        // dd($this->data['institucion']);
         $this->data['contadores'] = [
             'videos' => VideosModel::where('estado', '1')->count(),
-            'publicaciones' => PublicacionModel::where('estado', '1')->count(),
+            'publicaciones' => PublicacionModel::whereIn('estado', ['1', '2'])->count(),
             'galeria' => GaleriaModel::where('estado', '1')->count()
         ];
+
         $this->data['salas'] = SalasModel::where('estado', '1')->get();
         // dd($this->data['salas']);
         return $this->render('home');

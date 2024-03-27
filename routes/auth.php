@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\UsuarioController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,13 +20,18 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    // Route::resource('admin/publicacion', RegisteredUserController::class)->middleware(['auth'])->names('admin-publicacion');
+    Route::resource('usuarios', UsuarioController::class)->names('usuarios');
+
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
+    Route::get('register/{id}', [RegisteredUserController::class, 'edit'])
+        ->name('register.edit');
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
-    Route::get('usuarios', [AuthenticatedSessionController::class, 'index'])
-        ->name('usuarios');
+    // Route::get('usuarios', [AuthenticatedSessionController::class, 'index'])
+    //     ->name('usuarios');
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
         ->name('password.request');

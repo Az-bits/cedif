@@ -27,7 +27,8 @@
                         </a>
                     </li>
                     <li>
-                        <i class="fas fa-map-marker-alt"></i> {{ $contacto['direccion'] }}
+                        <a href="#ubicacion"><i class="fas fa-map-marker-alt"></i>
+                            {{ $data['institucion']->direccion }}</a>
                     </li>
                 </ul>
                 <ul>

@@ -22,9 +22,9 @@
                                 <a href="https://api.whatsapp.com/send?phone=67031409" target="_blank"
                                     class="whatsapp"><i class="fab fa-whatsapp"></i></a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="https://www.youtube.com/@jiskawawa" target="_blank" class="youtube"><i
                                         class="fab fa-youtube"></i></a>

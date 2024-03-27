@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\AuthController;
-use App\Models\PersonaModel;
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -14,24 +13,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
-class RegisteredUserController extends AuthController
+class RegisteredUserController extends Controller
 {
     /**
      * Display the registration view.
      */
-    public function __construct()
-    {
-        $this->title = 'Usuarios';
-        $this->page = 'usuarios';
-    }
-
     public function create(): View
     {
-        $personas = PersonaModel::where('estado', '1')->get();
-        $this->data['personas'] = $personas;
-
-        // $data
-        return $this->render('register');
+        return view('auth.register');
     }
 
     /**

@@ -26,6 +26,7 @@ class InstitucionModel extends Model
         'facebook',
         'youtube',
         'ubicacion',
+        'direccion',
     ];
     protected $guarded = [];
     public $timestamps = false;

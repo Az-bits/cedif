@@ -65,48 +65,8 @@
     </style>
 
 
-    <!-- Flickity HTML init -->
-    {{-- <div class="carousel" data-flickity='{ "imagesLoaded": true, "percentPosition": false }'>
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" alt="submerged" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" alt="look-out" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" alt="One World Trade" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" alt="drizzle" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" alt="cat nose" />
-    </div> --}}
-    {{-- <div class="top-shape-content d-none d-lg-block" style='right: calc(50% - 780px)'>
-        <img src="assets/images/banner/banner04.png" alt="banner">
-    </div>
-    <div class="carousel banner-section bg_img style-2 oh p-0" data-flickity='{ "fullscreen": true, "lazyLoad": 1 }'>
-        <div class="carousel-cell">
-            <img class="carousel-cell-image" data-flickity-lazyload="{{ asset('images/cdi-1.png') }}" alt="orange tree" />
-            <div class="top-shape-content d-none d-lg-block" style='right: calc(50% - 780px)'>
-                <img src="assets/images/banner/banner04.png" alt="banner">
-            </div>
-            <div class="container">
-                <div class="d-flex justify-content-between">
-                    <div class="banner-content style-2 cl-white">
-                        <h3 class="cate">Nuestra centro de desarrollo es la mejor</h3>
-                        <h1 class="title maquina">Para tus hijos</h1>
-                        <p>prestara un servicio multidisciplinario, integral, con calidad y calidez a las niñas(os).</p>
-                        <a href="{{ route('contacto') }}" class="custom-button"><span>
-                                Empezar ahora</span></a>
-                    </div>
-                    <div class="banner-thumb d-none d-lg-block">
-                        <img src="assets/images/banner/banner03.png" alt="banner">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-cell">
-            <img class="carousel-cell-image" data-flickity-lazyload="{{ asset('images/cdi-1.png') }}" alt="orange tree" />
-        </div>
-        <div class="carousel-cell">
-            <img data-flickity-lazyload="{{ asset('images/cdi-1.png') }}" alt="drizzle" />
-        </div>
-    </div> --}}
-    <!-- ==========Banner Section Starts Here========== -->
-    <section class="banner-section bg_img style-2 oh" data-background="assets/images/banner/banner02.jpg">
-        {{-- <section class="banner-section bg_img style-2 oh" data-background="{{ asset('images/jw-img-5.jpg') }}"> --}}
+    {{-- <section class="banner-section bg_img style-2 oh" data-background="assets/images/banner/banner02.jpg">
+        <section class="banner-section bg_img style-2 oh" data-background="{{ asset('images/jw-img-5.jpg') }}">
 
 
         <div class="top-shape-content d-none d-lg-block" style='right: calc(50% - 780px)'>
@@ -126,25 +86,10 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="container">
-            <div class="d-flex justify-content-between">
-                <div class="banner-content style-2 cl-white">
-                    <h3 class="cate">Nuestra centro de desarrollo es la mejor</h3>
-                    <h1 class="title maquina">Para tus hijos</h1>
-                    <p>prestara un servicio multidisciplinario, integral, con calidad y calidez a las niñas(os).</p>
-                    <a href="{{ route('contacto') }}" class="custom-button"><span>
-                            Empezar ahora</span></a>
-                </div>
-                <div class="banner-thumb d-none d-lg-block">
-                    <img src="assets/images/banner/banner03.png" alt="banner">
-                </div>
-            </div>
-        </div> --}}
-    </section>
-    <!-- ==========Banner Section Ends Here========== -->
+       
+    </section> --}}
 
-    <!-- ==========Banner Section Starts Here========== -->
-    {{-- <section class="banner-section style-slide">
+    <section class="banner-section style-slide">
         <div class="banner-slider">
             <div class="banner-item bg_img" data-background="assets/images/banner/slider/01.jpg">
                 <div class="banner-item-inner">
@@ -153,10 +98,14 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="banner-item-content">
-                                        <h1>Best Child Care Center - Kitton</h1>
-                                        <p>Prescholer for the apcation testing and enrollment process for
-                                            publc and private schools the city of alo abu mal kita kores vai</p>
-                                        <a href="#" class="custom-button"><span>Get Started Now</span></a>
+                                        <h1>
+                                            Mejor Centro de Cuidado para Niños
+                                        </h1>
+                                        <p>
+                                            Para prevenir la deserción estudiantil, de madres y padres universitarios con
+                                            hijos de 1 a 5 años.
+                                        </p>
+                                        <a href="{{ route('contacto') }}" class="custom-button"><span>Contactanos</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -164,17 +113,19 @@
                     </div>
                 </div>
             </div>
-            <div class="banner-item bg_img" data-background="assets/images/banner/slider/02.jpg">
+            {{-- <div class="banner-item bg_img" data-background="assets/images/banner/slider/02.jpg">
                 <div class="banner-item-inner">
                     <div class="container">
                         <div class="banner-item-wrapper">
                             <div class="row justify-content-center">
                                 <div class="col-lg-6">
                                     <div class="banner-item-content text-center">
-                                        <h1>Best Child Care Center</h1>
-                                        <p>Prescholer for the apcation testing and enrollment process for
-                                            publc and private schools the city of alo abu mal kita kores vai</p>
-                                        <a href="#" class="custom-button"><span>Get Started Now</span></a>
+                                        <h1>Mejor Centro de Cuidado Infantil</h1>
+                                        <p>
+                                            Preescolar para el proceso de solicitud y matrícula para escuelas públicas y
+                                            privadas en la ciudad de alo abu mal kita kores vai
+                                        </p>
+                                        <a href="{{ route('contacto') }}" class="custom-button"><span>Contactanos</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -189,19 +140,22 @@
                             <div class="row justify-content-end">
                                 <div class="col-lg-6">
                                     <div class="banner-item-content">
-                                        <h1>Kitton- Child Care Center </h1>
-                                        <p>Prescholer for the apcation testing and enrollment process for
-                                            publc and private schools the city of alo abu mal kita kores vai</p>
-                                        <a href="#" class="custom-button"><span>Get Started Now</span></a>
+                                        <h1>Kitton - Centro de Cuidado Infantil</h1>
+                                        <p>
+                                            Preescolar para el proceso de solicitud y matrícula para escuelas públicas y
+                                            privadas en la ciudad de alo abu mal kita kores vai
+                                        </p>
+                                        <a href="{{ route('contacto') }}" class="custom-button"><span>Contactanos</span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
-    </section> --}}
+    </section>
+
     <!-- ==========Banner Section Ends Here========== -->
 
     <!-- ==========About Section Starts Here========== -->
@@ -274,10 +228,6 @@
                                 <li>
                                     <i class="flaticon-vegan"></i><span>Zona de juegos</span> Amplia
                                 </li>
-
-
-
-
                             </ul>
                             <blockquote class="about-quote">
                                 <div class="thumb">
@@ -609,7 +559,7 @@
     </section> --}}
     <!-- ==========Blog Section Ends Here========== -->
     <!-- ==========Map Section Starts Here========== -->
-    <section class="teacher-section padding-bottom pos-rel">
+    <section class="teacher-section padding-bottom pos-rel" id="ubicacion">
         <div class="top-shape-center">
             <img src="assets/css/img/gallery1.png" alt="css">
         </div>

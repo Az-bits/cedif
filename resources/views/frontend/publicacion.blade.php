@@ -30,7 +30,7 @@
                         <div class="post-item">
                             <div class="post-thumb">
                                 <a href="{{ asset('detalle-informacion/' . $item->id_publicacion . '') }}"><img
-                                        src="{{ $item->image }}" alt="blog"></a>
+                                        src="{{ $item->image }}" alt="{{ $item->titulo }}"></a>
                             </div>
                             <div class="post-content">
                                 <div class="post-top">

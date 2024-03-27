@@ -1,6 +1,17 @@
 @extends('backend.app')
 @section('content')
     <div class="row">
+        @if (Session::get('success'))
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        <b> ÉXITO - </b> {{ Session::get('success') }}</span>
+                </div>
+            </div>
+        @endif
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary card-header-icon d-flex justify-content-between">
@@ -10,10 +21,9 @@
                         </div>
                         <h4 class="card-title">Usuarios</h4>
                     </div>
-                    <button id="nuevo" type="button" class="btn btn-primary btn-sm mt-1" data-toggle="modal"
-                        data-target="#main_modal">
+                    <a href="{{ route('usuarios.create') }}" class="btn btn-primary btn-sm mt-1">
                         <i class="material-icons">add</i> Nuevo Usuario
-                    </button>
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="toolbar">
@@ -48,16 +58,15 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin-persona.edit', $item) }}"
+                                            <a href="{{ route('usuarios.edit', $item->id) }}"
                                                 class="btn btn-link btn-info btn-just-icon editar" data-toggle="tooltip"
                                                 title="Editar"><i class="material-icons">edit</i></a>
-                                            <form id="eliminarForm-{{ $item->id_persona }}"
-                                                action="{{ route('admin-persona.destroy', $item) }}" method="post"
+                                            <form id="eliminarForm-{{ $item->id }}"
+                                                action="{{ route('usuarios.destroy', $item) }}" method="post"
                                                 class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="button"
-                                                    onclick="confirmarEliminacion('{{ $item->id_persona }}')"
+                                                <button type="button" onclick="confirmarEliminacion('{{ $item->id }}')"
                                                     class="btn btn-link btn-danger btn-just-icon eliminar"
                                                     data-toggle="tooltip" title="Eliminar">
                                                     <i class="material-icons">close</i>

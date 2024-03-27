@@ -30,7 +30,7 @@
                         <div class="post-item">
                             <div class="post-thumb">
                                 <a href="{{ asset('detalle-sala/' . $item->id_sala . '') }}">
-                                    <img style="max-height: 11rem;" src="{{ $item->image }}" alt="blog"></a>
+                                    <img style="max-height: 11rem;" src="{{ $item->image }}" alt="{{ $item->nombre }}"></a>
                             </div>
                             <div class="post-content">
                                 <div class="post-top">

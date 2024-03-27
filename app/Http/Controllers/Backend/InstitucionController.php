@@ -101,6 +101,7 @@ class InstitucionController extends BackendController
             'facebook' => $request->facebook,
             'youtube' => $request->youtube,
             'ubicacion' => $request->ubicacion,
+            'direccion' => $request->direccion,
         ]);
         return redirect()->route('admin-institucion.index')->with('success', 'Información editada exitosamente!');
     }
