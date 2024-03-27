@@ -12,11 +12,11 @@
                                 <i class="material-icons">info</i> Información
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#link8" role="tablist">
                                 <i class="material-icons">edit_square</i> Editar
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                     <div class="tab-content tab-space tab-subcategories">
                         <div class="tab-pane active" id="link7">
@@ -36,15 +36,17 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="list-group">
-                                        <a href="https://www.youtube.com" target="_blank"
+                                        <a href="https://studio.youtube.com/channel/UCU4_F0EHQJFW07LsXS7mCZA/videos/upload?d=ud&filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D"
+                                            target="_blank"
                                             class="text-center d-flex w-25 btn btn-success  margin-auphpto">Subir video a
                                             Youtube</a>
                                         <a href="javascript:void(0)" class="list-group-item list-group-item-action"
                                             aria-current="true">
-                                            Correo:
+                                            Correo: <span class="text-info">{{ $data['institucion']->canal_email }}</span>
                                         </a>
                                         <a href="javascript:void(0)"
-                                            class="list-group-item list-group-item-action">Contraseña:</a>
+                                            class="list-group-item list-group-item-action">Contraseña:
+                                            <span class="text-info">{{ $data['institucion']->password }}</span></a>
                                         <a href="https://www.youtube.com/channel/UCU4_F0EHQJFW07LsXS7mCZA"
                                             class="list-group-item list-group-item-action" target="_blank">Enlace
                                             del canal de Youtube:

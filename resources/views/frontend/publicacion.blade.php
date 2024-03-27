@@ -25,6 +25,10 @@
     <div class="blog-section padding-top padding-bottom">
         <div class="container">
             <div class="row mb-30-none justify-content-center">
+                @if (!$data['publicaciones'])
+                    <h2 class="text-center text-secondary">Sin publicaciones</h2>
+                @endif
+
                 @foreach ($data['publicaciones'] as $item)
                     <div class="col-xl-4 col-md-6">
                         <div class="post-item">

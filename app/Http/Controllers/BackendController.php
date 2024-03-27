@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserModel;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 
 class BackendController extends BaseController
 {
@@ -22,6 +24,9 @@ class BackendController extends BaseController
     }
     public function render($view)
     {
+        $users = new UserModel();
+        $this->data['usuario'] = $users->getUsers(Auth::id());
+
         $this->data['title'] = $this->title;
         $this->data['page'] = $this->page;
         $data = $this->data;

@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Http\Controllers\Controller;
+use App\Models\UserModel;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -22,6 +24,8 @@ class AuthController extends Controller
     }
     public function render($view)
     {
+        $users = new UserModel();
+        $this->data['usuario'] = $users->getUsers(Auth::id());
         $this->data['title'] = $this->title;
         $this->data['page'] = $this->page;
         $data = $this->data;

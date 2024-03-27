@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\BackendController;
 use App\Models\InstitucionModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends BackendController
 {
@@ -18,6 +19,7 @@ class DashboardController extends BackendController
         // $this->middleware('auth');
         $this->title = 'Inicio';
         $this->page = 'dashboard';
+        // dd(Auth::id());
     }
 
     /**

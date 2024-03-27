@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\BackendController;
+use App\Models\InstitucionModel;
 use App\Models\VideosModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -119,7 +120,9 @@ class VideosController extends BackendController
      */
     public function canalYT()
     {
+        $institucion = InstitucionModel::find(1);
         $this->page = 'canal';
+        $this->data['institucion'] = $institucion;
         return $this->render("videos.canal-info");
     }
 }

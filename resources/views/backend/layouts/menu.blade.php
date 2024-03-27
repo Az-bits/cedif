@@ -1,5 +1,6 @@
 @php
     $institucionView = $data['page'] == 'institucion' || $data['page'] == 'salas' || $data['page'] == 'organigrama';
+    $usuario = $data['usuario'];
 @endphp
 <div class="sidebar" data-color="rose" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
     <div class="logo" style="padding: 10px 0;">
@@ -23,7 +24,7 @@
             <div class="user-info">
                 <a data-toggle="collapse" href="#collapseExample" class="username">
                     <span>
-                        Azbits
+                        {{ $usuario->nombre . ' ' . $usuario->parterno . ' ' . $usuario->marterno }}
                         <b class="caret"></b>
                     </span>
                 </a>
