@@ -7,6 +7,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 use App\Helpers\Helpers;
 use App\Http\Controllers\FrontendController;
 use App\Models\PublicacionModel;
+use App\Models\VideosModel;
 use Illuminate\Http\Request;
 
 class PaginaController extends FrontendController
@@ -79,5 +80,15 @@ class PaginaController extends FrontendController
             return $this->render("detalle-publicacion");
         }
         return redirect()->route('/');
+    }
+    public function videos()
+    {
+        $videos = VideosModel::where('estado', '1')->get();;
+
+        $this->data['title'] = 'Convocatorias';
+        $this->data['videos'] = $videos;
+        // dd($this->data);
+
+        return $this->render("videos");
     }
 }

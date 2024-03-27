@@ -46,6 +46,7 @@ Route::get('/salas-parvulo', [SalasController::class, 'index'])->name('salas-par
 
 Route::get('/publicaciones', [PaginaController::class, 'publicacion'])->name('publicaciones');
 Route::get('/convocatorias', [PaginaController::class, 'convocatorias'])->name('convocatorias');
+Route::get('/videos', [PaginaController::class, 'videos'])->name('videos');
 // Route::get('/publicaciones/{id}', [PaginaController::class, 'detallePublicacion'])->name('detalle-publicacion');
 Route::get('/organigrama', [PaginaController::class, 'organigrama'])->name('organigrama');
 

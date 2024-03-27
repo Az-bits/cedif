@@ -155,10 +155,10 @@
                                     <a href="{{ route('galeria') }}">Galeria</a>
                                     <a href="{{ route('publicaciones') }}">Publicaciones</a>
                                 </li>
-                                {{-- <li>
-                                    <a href="blog-classic.html">Blog Classic</a>
-                                </li>
                                 <li>
+                                    <a href="{{ route('videos') }}">Videos</a>
+                                </li>
+                                {{-- <li>
                                     <a href="blog-single.html">Blog Single</a>
                                 </li> --}}
                             </ul>
