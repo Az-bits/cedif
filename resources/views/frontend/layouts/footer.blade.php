@@ -81,8 +81,7 @@
         <div class="container">
             <p>
                 &copy; Todos los derechos reservados. <a href="https://sie.upea.bo/" target="_blank">SIE - 2024,</a>
-                Development by <a href="https://azbits.dev" target="_blank">Edar
-                    Company</a>
+                Desarrollado por <a href="javascript:void(0)">Edar</a>
             </p>
         </div>
     </div>

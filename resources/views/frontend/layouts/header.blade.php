@@ -30,8 +30,6 @@
                         <a href="#ubicacion"><i class="fas fa-map-marker-alt"></i>
                             {{ $data['institucion']->direccion }}</a>
                     </li>
-                </ul>
-                <ul>
                     <li>
                         <a href="{{ route('login') }}"class="d-flex align-items-center"> <i
                                 class="material-symbols-outlined">

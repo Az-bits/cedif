@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\BackendController;
-use App\Models\MultimediaModel;
 use App\Models\PublicacionModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use App\Helpers\Helpers;
-use Illuminate\Support\Facades\DB;
 
 class PublicacionController extends BackendController
 {

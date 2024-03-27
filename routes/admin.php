@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Backend\AutoridadesController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Backend\DashboardController;
@@ -19,6 +20,7 @@ Route::put('admin/institucion/{institucion}', [InstitucionController::class, 'up
 
 
 Route::resource('admin/salas', SalasController::class)->middleware(['auth'])->names('admin-salas');
+Route::resource('admin/autoridades', AutoridadesController::class)->middleware(['auth'])->names('admin-autoridades');
 Route::resource('admin/persona', PersonaController::class)->middleware(['auth'])->names('admin-persona');
 Route::resource('admin/videos', VideosController::class)->middleware(['auth'])->names('admin-videos');
 Route::get('admin/canalYT', [VideosController::class, 'canalYT'])->middleware(['auth'])->name('admin-videos.canalYT');
