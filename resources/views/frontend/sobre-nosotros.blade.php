@@ -186,13 +186,13 @@
                         </div>
                         <div class="teacher-content">
                             <ul class="teacher-social justify-content-center">
-                                <li>
+                                {{-- <li>
                                     <a href="" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
                                     <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
                                             style="color: green;"></i></a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
