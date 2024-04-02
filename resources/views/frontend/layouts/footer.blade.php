@@ -1,3 +1,6 @@
+@php
+    setlocale(LC_ALL, 'es_ES');
+@endphp
 <footer class="bg_img" data-background="{{ asset('assets/images/footer/footer-bg.jpg') }}">
     <div class="footer-top">
         <div class="container">
@@ -35,28 +38,23 @@
                     <div class="footer-widget widget-blog">
                         <h5 class="title">Públicaciones recientes</h5>
                         <ul class="footer-blog">
-                            <li>
-                                <div class="thumb">
-                                    <a href="javascript:void(0)">
-                                        <img src="{{ asset('images/jw-img-1.jpg') }}" alt="footer">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="javascript:void(0)">Curso de gimnacia ritmica</a>
-                                    <span>Agosto 17,2023</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumb">
-                                    <a href="javascript:void(0)">
-                                        <img src="{{ asset('images/jw-img-2.jpg') }}" alt="footer">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="javascript:void(0)">Graduados del centro de desarrollo Jisk'a Wawa.</a>
-                                    <span>Abril 08,2023</span>
-                                </div>
-                            </li>
+                            @foreach ($data['publicaciones'] as $item)
+                                <li>
+                                    <div class="thumb">
+                                        <a href="{{ asset('detalle-informacion/' . $item->id_publicacion . '') }}">
+                                            <img src="{{ $item->image }}" alt="footer">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <a
+                                            href="{{ asset('detalle-informacion/' . $item->id_publicacion . '') }}">{{ $item->titulo }}</a>
+                                        <span>
+                                            {{ \Carbon\Carbon::createFromFormat('F d, Y', date('F d, Y', strtotime($item->fecha_ini)))->locale('es')->isoFormat('LL') }}</span>
+
+
+                                    </div>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

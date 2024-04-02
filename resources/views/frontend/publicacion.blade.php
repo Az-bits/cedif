@@ -54,8 +54,6 @@
                                     <a href="{{ asset('detalle-informacion/' . $item->id_publicacion . '') }}"
                                         class="read">LEER
                                         MÁS</a>
-                                    <a href="#" class="comments"><i class="far fa-comments"></i> <span
-                                            class="comment-number">2</span></a>
                                 </div>
                             </div>
                         </div>

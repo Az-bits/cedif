@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helpers;
 use App\Models\InstitucionModel;
+use App\Models\PublicacionModel;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -30,6 +32,13 @@ class FrontendController extends BaseController
             "direccion" => "Av. Sucre A Parada Z/ lado Teleférico Azul."
         ];
         $this->data['institucion'] = InstitucionModel::find(1);
+        $this->data['institucion'] = InstitucionModel::find(1);
+        $publicaciones = new PublicacionModel();
+        $publicaciones = $publicaciones->getAllFront();
+        foreach ($publicaciones as $p) {
+            $p->image = Helpers::getImage($p->url);
+        }
+        $this->data['publicaciones'] = $publicaciones;
 
         $data = $this->data;
         return view('frontend.' . $view, compact('data'));

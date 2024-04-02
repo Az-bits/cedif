@@ -29,9 +29,7 @@ class PublicacionController extends BackendController
         foreach ($publicaciones as $p) {
             $p->image = Helpers::getImage($p->url);
         }
-
         $this->data['publicaciones'] = $publicaciones;
-
         return $this->render("publicacion.index");
     }
 
@@ -56,8 +54,13 @@ class PublicacionController extends BackendController
     {
         $request->validate([
             'titulo' => 'required|max:80',
-            'fecha_ini' => 'required',
-            'imagen' => 'required|file|max:10000|mimes:png,jpg,jpeg'
+            'fecha_ini' => 'required|date|after_or_equal:today',
+            'fecha_fin' => 'date|after_or_equal:today',
+            'imagen' => 'required|file|max:10000|mimes:png,jpg,jpeg',
+        ], [
+            'fecha_ini.after_or_equal' => 'El campo fecha de inicio debe ser una fecha posterior a hoy.',
+            'fecha_fin.after_or_equal' => 'El campo fecha de finalización debe ser una fecha posterior a hoy.',
+
         ]);
         // dd(Helpers::__fileUpload($request, 'imagen', 'publicaciones'));
 
@@ -118,10 +121,15 @@ class PublicacionController extends BackendController
         $request->validate(
             [
                 'titulo' => 'required|max:80',
-                'fecha_ini' => 'required',
+                'fecha_ini' => 'required|date',
+                'fecha_fin' => 'date|after_or_equal:today',
                 'imagen' => 'file|max:10000|mimes:png,jpg,jpeg',
                 // 'imagen' => '',
-                'tipo' => 'required'
+                'tipo' => 'required',
+
+            ],
+            [
+                'fecha_fin.after_or_equal' => 'El campo fecha de finalización debe ser una fecha posterior a hoy.',
             ]
         );
 

@@ -42,8 +42,6 @@
                                 <div class="post-bottom">
                                     <a href="{{ asset('detalle-sala/' . $item->id_sala . '') }}" class="read">LEER
                                         MÁS</a>
-                                    <a href="#" class="comments"><i class="far fa-comments"></i> <span
-                                            class="comment-number">2</span></a>
                                 </div>
                             </div>
                         </div>

@@ -46,4 +46,30 @@ class PublicacionModel extends Model
             return $publicaciones;
         }
     }
+    public function getAllFront()
+    {
+        $query = $this->select(
+            'id_publicacion',
+            'id_usuario',
+            'titulo',
+            'descripcion',
+            // DB::raw("DATE_FORMAT(fecha_ini, '%m/%d/%Y') fecha_ini"),
+            // DB::raw("DATE_FORMAT(fecha_fin, '%m/%d/%Y') fecha_fin"),
+            'fecha_ini',
+            'fecha_fin',
+            'tipo',
+            'direccion',
+            'p.estado',
+            'p.id_multimedia',
+            'm.url',
+        )
+            ->from('publicaciones as p')
+            ->leftJoin('multimedia as m', 'm.id_multimedia', '=', 'p.id_multimedia');
+
+        // Si no se proporciona un ID, aplicamos otras condiciones
+        $query->whereIn('p.estado', ['1', '2'])->orderBy('fecha_ini', 'desc') // Ordenar por fecha_ini en orden descendente
+            ->limit(2); // Limitar los resultados a 10 registros;
+        $publicaciones = $query->get();
+        return $publicaciones;
+    }
 }

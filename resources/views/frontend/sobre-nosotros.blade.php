@@ -41,7 +41,7 @@
                             <div class="section-header left-style mb-olpo">
                                 <span class="cate">Acerde de nuestro centro</span>
                                 <h3 class="title">
-                                    Atención Especial Para Cada Niño
+                                    Atención especial para cada niño
                                 </h3>
                                 <p>
                                     Nuestro equipo está compuesto por profesionales apasionados y dedicados que están aquí
@@ -101,7 +101,7 @@
                         <div class="section-header left-style">
                             <span class="cate mt-0">Nuestros Objetivos</span>
                             <h3 class="title">
-                                Nuestros Objetivo Principal y Especificos
+                                Objetivos de nuestro centro infantil
                             </h3>
                             <p>{!! $institucion->objetivo !!}</p>
                         </div>
@@ -155,7 +155,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-header">
-                        <span class="cate">Conozca A Nuestras Autoridades</span>
+                        <span class="cate">Conozca a nuestras autoridades</span>
                         <h3 class="title">Nuestras autoridades que nos ayudan a llevar adelante nuestro centro</h3>
                     </div>
                 </div>

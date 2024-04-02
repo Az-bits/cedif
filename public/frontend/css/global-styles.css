@@ -1,3 +1,10 @@
 .ubicate-title {
     padding: 20px 10px !important;
 }
+
+.section-header .cate {
+    text-transform: none;
+}
+.section-header .title {
+    text-transform: none;
+}

@@ -76,7 +76,7 @@
                                     </li> --}}
                                     <li>
                                         <a href="javascript:void(0)"><span><i
-                                                    class="fas fa-angle-double-right"></i>Auditorio</span><span>06</span></a>
+                                                    class="fas fa-angle-double-right"></i>Auditorio</span><span></span></a>
                                     </li>
                                     {{-- <li>
                                         <a href="javascript:void(0)"><span><i

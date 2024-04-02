@@ -71,24 +71,24 @@
                             <div class="widget-body">
                                 <ul>
                                     <li>
-                                        <a href="#"><span><i
-                                                    class="fas fa-angle-double-right"></i>Publicaciones</span><span>05</span></a>
+                                        <a href="javascript:void(0)"><span><i
+                                                    class="fas fa-angle-double-right"></i>Publicaciones</span><span></span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span><i
-                                                    class="fas fa-angle-double-right"></i>Convocatoria</span><span>06</span></a>
+                                        <a href="javascript:void(0)"><span><i
+                                                    class="fas fa-angle-double-right"></i>Convocatoria</span><span></span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span><i
-                                                    class="fas fa-angle-double-right"></i>Eventos</span><span>05</span></a>
+                                        <a href="javascript:void(0)"><span><i
+                                                    class="fas fa-angle-double-right"></i>Eventos</span><span></span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span><i
-                                                    class="fas fa-angle-double-right"></i>Comunicados</span><span>04</span></a>
+                                        <a href="javascript:void(0)"><span><i
+                                                    class="fas fa-angle-double-right"></i>Comunicados</span><span></span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span><i
-                                                    class="fas fa-angle-double-right"></i>Avisos</span><span>27</span></a>
+                                        <a href="javascript:void(0)"><span><i
+                                                    class="fas fa-angle-double-right"></i>Avisos</span><span></span></a>
                                     </li>
                                 </ul>
                             </div>

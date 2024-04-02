@@ -1,94 +1,5 @@
 @extends('frontend.app')
 @section('content')
-    <style>
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100%;
-            }
-        }
-
-        .maquina {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 1px solid #fff;
-            animation: typing 3s steps(50) infinite;
-        }
-    </style>
-
-    <style>
-        /* position dots in carousel */
-        .carousel {
-            background: #EEE;
-        }
-
-        .carousel-cell {
-            width: 100%;
-            /* height: 200px; */
-            margin-right: 10px;
-            /* background: #8C8; */
-            border-radius: 5px;
-            /* counter-increment: gallery-cell; */
-        }
-
-        /* cell number */
-        .carousel-cell:before {
-            display: block;
-            text-align: center;
-            /* content: counter(gallery-cell); */
-            line-height: 200px;
-            font-size: 80px;
-            color: white;
-        }
-
-        /* position dots in gallery */
-        .flickity-page-dots {
-            bottom: 0px;
-        }
-
-        /* white circles */
-        .flickity-page-dots .dot {
-            width: 12px;
-            height: 12px;
-            opacity: 1;
-            background: transparent;
-            border: 2px solid white;
-        }
-
-        /* fill-in selected dot */
-        .flickity-page-dots .dot.is-selected {
-            background: white;
-        }
-    </style>
-
-
-    {{-- <section class="banner-section bg_img style-2 oh" data-background="assets/images/banner/banner02.jpg">
-        <section class="banner-section bg_img style-2 oh" data-background="{{ asset('images/jw-img-5.jpg') }}">
-
-
-        <div class="top-shape-content d-none d-lg-block" style='right: calc(50% - 780px)'>
-            <img src="assets/images/banner/banner04.png" alt="banner">
-        </div>
-        <div class="container">
-            <div class="d-flex justify-content-between">
-                <div class="banner-content style-2 cl-white">
-                    <h3 class="cate">Nuestra centro de desarrollo es la mejor</h3>
-                    <h1 class="title maquina">Para tus hijos</h1>
-                    <p>prestara un servicio multidisciplinario, integral, con calidad y calidez a las niñas(os).</p>
-                    <a href="{{ route('contacto') }}" class="custom-button"><span>
-                            Empezar ahora</span></a>
-                </div>
-                <div class="banner-thumb d-none d-lg-block">
-                    <img src="assets/images/banner/banner03.png" alt="banner">
-                </div>
-            </div>
-        </div>
-       
-    </section> --}}
-
     <section class="banner-section style-slide">
         <div class="banner-slider">
             <div class="banner-item bg_img" data-background="assets/images/banner/slider/01.jpg">
@@ -98,14 +9,68 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="banner-item-content">
-                                        <h1>
-                                            Mejor Centro de Cuidado para Niños
-                                        </h1>
+                                        <div class="az-contenedor">
+                                            <style>
+                                                h1.maquina-2 {
+                                                    /* font-family: monospace; */
+                                                    overflow: hidden;
+                                                    white-space: nowrap;
+                                                    width: 0;
+                                                    animation: maquina-escribir 3.5s linear infinite;
+                                                }
+
+                                                h1.maquina-2 .linea {
+                                                    display: inline-block;
+                                                    width: 0;
+                                                    animation: linea-escribir 3.5s linear infinite;
+
+                                                }
+
+                                                @keyframes maquina-escribir {
+                                                    from {
+                                                        width: 0;
+                                                    }
+
+                                                    to {
+                                                        width: 100%;
+                                                    }
+                                                }
+
+                                                @keyframes linea-escribir {
+                                                    from {
+                                                        width: 0;
+                                                    }
+
+                                                    to {
+                                                        width: 100%;
+                                                    }
+
+                                                    0% {
+                                                        opacity: 0;
+                                                    }
+
+                                                    50% {
+                                                        opacity: 50%;
+                                                    }
+
+                                                    50% {
+                                                        opacity: 100%;
+                                                    }
+                                                }
+                                            </style>
+                                            <h1 class="maquina-2">
+                                                <span class="linea">Mejor centro de</span><br>
+                                                <span class="linea">cuidado para</span><br>
+                                                <span class="linea">niños.</span>
+                                            </h1>
+
+                                        </div>
                                         <p>
                                             Para prevenir la deserción estudiantil, de madres y padres universitarios con
                                             hijos de 1 a 5 años.
                                         </p>
-                                        <a href="{{ route('contacto') }}" class="custom-button"><span>Contactanos</span></a>
+                                        <a href="{{ route('contacto') }}" class="custom-button"> <span><i
+                                                    class="fab fa-telegram-plane"></i> Contactanos</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +139,7 @@
                 <div class="col-lg-8">
                     <div class="section-header">
                         <span class="cate">Bienvenidos a nuestra centro infantil Jisk'a wawa</span>
-                        <h3 class="title">La Mejor Educación En Nuestro Centro Infantil</h3>
+                        <h3 class="title">La mejor educación en nuestro centro de infantil</h3>
                     </div>
                 </div>
             </div>
@@ -207,7 +172,7 @@
                         <div class="about-content">
                             <div class="section-header left-style mb-olpo">
                                 <span class="cate">Acerca de nuestro centro</span>
-                                <h3 class="title">Atención Especial Para Cada Niño</h3>
+                                <h3 class="title">Atención especial para cada niño</h3>
                                 <p>Brindamos servicios integrales de atención cuidado, seguridad, educación Inicial en
                                     Familia
                                     Comunitaria, estimulación y orientación parental, con un enfoque multidisciplinario,
@@ -217,9 +182,6 @@
                             </div>
                             <ul class="about-list">
                                 <li>
-                                    <i class="flaticon-vegan"></i><span>Baños</span> ordenados y limpios
-                                </li>
-                                <li>
                                     <i class="flaticon-vegan"></i><span>Comedor</span> con alimentos saludables.
                                 </li>
                                 <li>
@@ -227,6 +189,9 @@
                                 </li>
                                 <li>
                                     <i class="flaticon-vegan"></i><span>Zona de juegos</span> Amplia
+                                </li>
+                                <li>
+                                    <i class="flaticon-vegan"></i><span>Baños</span> ordenados y limpios
                                 </li>
                             </ul>
                             <blockquote class="about-quote">
@@ -302,74 +267,6 @@
     </div>
     <!-- ==========Counter Section Ends Here========== -->
 
-    <!-- ==========Class Section Starts Here========== -->
-    {{-- section class="class-section padding-top padding-bottom pos-rel">
-        <div class="top-shape-center">
-            <img src="assets/css/img/gallery1.png" alt="css">
-        </div>
-        <div class="bottom-shape-left">
-            <img src="assets/css/img/bottom-shape.png" alt="css">
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-header">
-                        <span class="cate">Nuestras Clases Escolares</span>
-                        <h3 class="title">Clases Escolares Más Populares</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center mb-30-none">
-                <div class="col-xl-4 col-md-6">
-                    <div class="class-item">
-                        <div class="class-thumb">
-                            <a href="#"><img src="assets/images/class/class04.jpg" alt="class"></a>
-                        </div>
-                        <div class="class-content">
-                            <h5 class="title">
-                                <a href="#">Gestión de arte y color</a>
-                            </h5>
-                            <div class="class-meta">
-                                <div class="class-author">
-                                    <div class="thumb">
-                                        <a href="#"><img src="assets/images/class/teacher02.jpg"
-                                                alt="class"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="subtitle"><a href="#">Martin Soliz</a></h6>
-                                        <a href="#" class="info">Ver perfil</a>
-                                    </div>
-                                </div>
-                                <div class="cost-area">
-                                    <h6 class="subtitle">Gratuito</h6>
-                                </div>
-                            </div>
-                            <div class="schedule-area">
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">24 - 30</h6>
-                                    <span class="info">Tamaño de la clase</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">02:30 -18:00</h6>
-                                    <span class="info">Hora de clase</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">03 - 05</h6>
-                                    <span class="info">Años</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="load-more">
-                <a href="#" class="custom-button"><span>Empieza ahora</span></a>
-            </div>
-        </div>
-    </section>< --}}
-    <!-- ==========Class Section Ends Here========== -->
-
-
     <!-- ==========Call In Action Section Starts Here========== -->
     <section class="call-in-action padding-top padding-bottom theme-overlay bg_img"
         data-background="assets/images/bg/call-bg.jpg">
@@ -378,11 +275,12 @@
                 <div class="col-md-8">
                     <div class="section-header left-style cl-white mb-olpo mb-md-0">
                         <h3 class="mb-3">Es el momento perfecto para inscribirse</h3>
-                        <h3 class="title">¿Cómo Inscribir A Su Hijo En Una Clase?</h3>
+                        <h3 class="title">¿Necesita informacion sobre como inscribir a su hijo?</h3>
                     </div>
                 </div>
                 <div class="col-md-4 text-md-right">
-                    <a href="{{ route('contacto') }}" class="custom-button theme-one"><span>Empieza ahora</span></a>
+                    <a href="{{ route('contacto') }}" class="custom-button theme-one"><span><i
+                                class="fab fa-telegram-plane"></i> Contactenos</span></a>
                 </div>
             </div>
         </div>
@@ -399,8 +297,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-header">
-                        <span class="cate">Conozca A Nuestras Autoridades</span>
-                        <h3 class="title">Nuestras autoridades que nos ayudan a llevar adelante nuestro centro</h3>
+                        <span class="cate">Conozca a nuestras autoridades</span>
+                        <h3 class="title">Nuestras autoridades que nos ayudan a llevar adelante nuestro centro infantil
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -418,15 +317,6 @@
                                 <h5 class="title"><a href="#">Lic. Ximena Margot Patzi Quispe</a></h5>
                                 <span>Directora</span>
                             </div>
-                            {{-- <div class="thumb">
-                                <a href="teacher-single.html">
-                                    <img src="assets/images/teacher/teacher01.jpg" alt="teacher">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Ricardo Mendoza</a></h5>
-                                <span>Maestro de Música o Arte</span>
-                            </div> --}}
                         </div>
                         <div class="teacher-content">
                             <ul class="teacher-social justify-content-center">
