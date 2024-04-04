@@ -153,10 +153,9 @@
                                                         <div class="card-header p-0">
                                                             <h3>Ubicación</h3>
                                                         </div>
-                                                        <iframe
-                                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1137.3903343415705!2d-68.19275061591475!3d-16.490224711822528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf246daebfb9%3A0x2a4becb95f2f7651!2sEdificio%20del%20%C3%81rea%20Sociales%20de%20la%20UPEA!5e0!3m2!1ses-419!2sbo!4v1709309676020!5m2!1ses-419!2sbo"
-                                                            width="100%" height="450" style="border:0;"
-                                                            allowfullscreen="" loading="lazy"
+                                                        <iframe src="{{ $institucion->ubicacion }}" width="100%"
+                                                            height="450" style="border:0;" allowfullscreen=""
+                                                            loading="lazy"
                                                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                                                     </div>
                                                 </div>
