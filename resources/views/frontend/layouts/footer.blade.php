@@ -12,8 +12,9 @@
                             la comunidad universitaria, destinado a hijos menores de 5 años de estudiantes, docentes y
                             administrativos de esta Casa Superior de Estudios.</p>
                         <ul class="contact">
-                            <li><i class="fas fa-headphones-alt"></i><a href="Tel:67031409 ">67031409 - 74277575 -
-                                    75800862
+                            <li><i class="fas fa-headphones-alt"></i><a
+                                    href="Tel:67031409 ">{{ $data['institucion']->celular1 }} -
+                                    {{ $data['institucion']->celular2 }}
                                 </a></li>
                             <li><i class="fas fa-home"></i>{{ $data['institucion']->direccion }}</li>
                             <li><i class="fas fa-globe-asia"></i><a href="#">www.jiskawawa.upea.bo </a>
@@ -21,12 +22,9 @@
                         </ul>
                         <ul class="social-icons">
                             <li>
-                                <a href="https://api.whatsapp.com/send?phone=67031409" target="_blank"
-                                    class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://api.whatsapp.com/send?phone={{ $data['institucion']->celular1 }}"
+                                    target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
                             </li>
-                            {{-- <li>
-                                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                            </li> --}}
                             <li>
                                 <a href="https://www.youtube.com/@jiskawawa" target="_blank" class="youtube"><i
                                         class="fab fa-youtube"></i></a>
@@ -38,7 +36,7 @@
                     <div class="footer-widget widget-blog">
                         <h5 class="title">Públicaciones recientes</h5>
                         <ul class="footer-blog">
-                            @foreach ($data['publicaciones'] as $item)
+                            @foreach ($data['morePublic'] as $item)
                                 <li>
                                     <div class="thumb">
                                         <a href="{{ asset('detalle-informacion/' . $item->id_publicacion . '') }}">
@@ -49,7 +47,8 @@
                                         <a
                                             href="{{ asset('detalle-informacion/' . $item->id_publicacion . '') }}">{{ $item->titulo }}</a>
                                         <span>
-                                            {{ \Carbon\Carbon::createFromFormat('F d, Y', date('F d, Y', strtotime($item->fecha_ini)))->locale('es')->isoFormat('LL') }}</span>
+                                            {{ \Carbon\Carbon::createFromFormat('d F, Y', date('d F, Y', strtotime($item->fecha_ini)))->locale('es')->isoFormat('D MMMM, YYYY') }}
+                                        </span>
 
 
                                     </div>
@@ -78,7 +77,7 @@
         <div class="container">
             <p>
                 &copy; Todos los derechos reservados. <a href="https://sie.upea.bo/" target="_blank">SIE - 2024,</a>
-                Desarrollado por <a href="javascript:void(0)">Edar</a>
+                Desarrollado por <a href="https://linktr.ee/azbits">Edar</a>
             </p>
         </div>
     </div>

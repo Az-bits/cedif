@@ -15,7 +15,7 @@ class PublicacionModel extends Model
     protected $fillable = ['id_usuario', 'titulo', 'descripcion', 'fecha_ini', 'fecha_fin', 'tipo', 'direccion', 'estado', 'id_multimedia'];
     protected $guarded = [];
     public $timestamps = false;
-    public function getAll($id = null)
+    public function getAll($id = null, $priory = null, $type = null)
     {
         $query = $this->select(
             'id_publicacion',
@@ -42,7 +42,14 @@ class PublicacionModel extends Model
         } else {
             // Si no se proporciona un ID, aplicamos otras condiciones
             $query->whereIn('p.estado', ['1', '2']);
-            $publicaciones = $query->get();
+            if ($type) {
+                $query->where('tipo', $type);
+            }
+            if ($priory) {
+                $publicaciones = $query->paginate(3);
+            } else {
+                $publicaciones = $query->get();
+            }
             return $publicaciones;
         }
     }

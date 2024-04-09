@@ -16,7 +16,7 @@
                  document.write(new Date().getFullYear());
              </script>
              , Desarrollado ► Por
-             <a href="https://azbits.dev/" target="_blank">Edar</a>
+             <a href="https://linktr.ee/azbits" target="_blank">Edar</a>
              - <a href="https://sie.upea.bo/" target="_blank">S.I.E.</a>
          </div>
      </div>

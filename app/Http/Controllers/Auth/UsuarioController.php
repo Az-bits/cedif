@@ -37,7 +37,7 @@ class UsuarioController extends AuthController
      */
     public function create()
     {
-        $personas = PersonaModel::where('estado', '1')->get();
+        $personas = PersonaModel::where('estado', '1')->whereNot('name', 'root')->get();
         $this->data['personas'] = $personas;
         return $this->render('form');
     }
@@ -47,11 +47,13 @@ class UsuarioController extends AuthController
      */
     public function store(Request $request)
     {
+        // dd($_POST);
         $request->validate([
             'id_persona' => ['required'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . UserModel::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'rol' => ['required'],
+        ], [
             'id_persona.required' => 'Debe seleccionar una persona.',
             'email.unique' => 'Usuario ya fue registrado anteriormente.',
         ]);
@@ -68,7 +70,7 @@ class UsuarioController extends AuthController
 
         event(new Registered($user));
 
-        Auth::login($user);
+        // Auth::login($user);
         return redirect()->route('usuarios.index')->with('success', 'Usuario registrado exitosamente!');
     }
 
@@ -86,13 +88,13 @@ class UsuarioController extends AuthController
     public function edit($id)
     {
         $users = new UserModel();
-        $users = $users->getUsers($id);
+        $usuario = $users->getUsers($id);
         $personas = PersonaModel::where('estado', '1')->get();
-        $persona = PersonaModel::find($users->id_persona);
-        $users->email = $persona->email;
+        // $persona = PersonaModel::find($users->id_persona);
+        // $users->email = $persona->email;
         $this->data['personas'] = $personas;
-        $this->data['persona'] = $persona;
-        $this->data['usuario'] = $users;
+        $this->data['persona'] = $usuario;
+        // $this->data['usuario'] = $users;
         return $this->render('edit-form');
     }
 
@@ -109,6 +111,7 @@ class UsuarioController extends AuthController
 
     public function update(Request $request, UserModel $usuario)
     {
+        // dd($_POST);
         $request->validate(array_merge(
             [
                 'id_persona' => ['required'],
@@ -121,6 +124,7 @@ class UsuarioController extends AuthController
         $usuario->update([
             'estado' => $request->estado ?? '1',
         ]);
+
         DB::table('persona_rol')->where('id_user', $usuario->id)->update([
             'id_rol' => $request->rol,
         ]);
@@ -132,6 +136,7 @@ class UsuarioController extends AuthController
      */
     public function destroy(UserModel $usuario)
     {
+        dd($usuario->id);
         $usuario->update(['estado' => '0']);
         return redirect()->route('usuarios.index')->with('success', 'Usuario eliminado exitosamente!');
     }

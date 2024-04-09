@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class Helpers
 {
-    public static function getImage(string $url = null, string $defaultPath = 'images\no-image.jpg'): ?string
+    public static function getImage(string $url = null, string $defaultPath = 'images/no-image.jpg'): ?string
     {
         $imagePath = null;
         if ($url) {

@@ -1,7 +1,7 @@
 @extends('backend.app')
 @section('content')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <div class="container-fluid">
+    <div class="container-fluid" style="max-width: 50rem;">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card ">
@@ -12,7 +12,7 @@
                         <h4 class="card-title">Nueva Autoridad</h4>
                     </div>
                     <div class="card-body ">
-                        <form id="formulario_modal" method="post" action="{{ route('admin-autoridades.store') }}"
+                        <form id="formulario_modal" method="post" action="{{ route('admin-autoridad.store') }}"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="row">
@@ -96,14 +96,28 @@
                                                             placeholder="Cargo de la persona">
                                                     </div>
                                                 </div>
+                                                <div class="col-lg-12 mt-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group">
+                                                                <label for="nivel_titulo">Nivel de titulo </label>
+                                                                <input type="text" id="nivel_titulo" name="nivel_titulo"
+                                                                    value="{{ old('nivel_titulo') }}"
+                                                                    class="form-control datepicker"
+                                                                    placeholder="Nivel de titulo universitario">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-lg-12 mt-3">
                                             <div class="row justify-content-center">
                                                 <div class="form-group">
-                                                    <a href="{{ route('admin-autoridades.index') }}" id="btnCancel"
+                                                    <a href="{{ route('admin-autoridad.index') }}" id="btnCancel"
                                                         class="btn btn-danger mr-2" data-dismiss=""><i
                                                             class="material-icons">cancel</i>Cancelar</a>
                                                     <button type="submit" class="btn btn-primary ">
@@ -112,7 +126,7 @@
                                                         </div>
                                                         <i class="material-icons icon-load">done</i> <span
                                                             class="btnTextSubmit">Guardar
-                                                            publicación</span>
+                                                            autoridad</span>
                                                     </button>
                                                 </div>
                                             </div>
@@ -132,7 +146,7 @@
                 placeholder: 'Selecccione una persona'
             });
             $('#select-person').on('change', function(e) {
-                let persona = <?= json_encode($data['personas']) ?>;
+                let persona = JSON.parse('<?php echo json_encode($data['personas']); ?>');
                 persona = persona.filter((data) => $(this).val() == data.id_persona)[0];
                 $('#id_persona').val(persona.id_persona);
 

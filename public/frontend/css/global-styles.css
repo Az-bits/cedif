@@ -8,3 +8,29 @@
 .section-header .title {
     text-transform: none;
 }
+.form-group {
+    width: 100% !important;
+}
+.az-btn-closed {
+}
+.az-images-container {
+    top: 11% !important;
+    left: 10% !important;
+}
+.modal-backdrop.show {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Estilos específicos para pantallas más pequeñas */
+    .az-with {
+        width: 100%;
+    }
+    .header-wrapper .logo {
+        width: 13rem;
+    }
+    .az-images-container {
+        top: 21% !important;
+        left: 17% !important;
+    }
+}

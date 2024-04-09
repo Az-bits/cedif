@@ -46,7 +46,7 @@ class UserModel extends Model
             return $query->first();
         } else {
             // Si no se proporciona un ID, aplicamos otras condiciones
-            $query->whereIn('u.estado', ['1', '2']);
+            $query->whereIn('u.estado', ['1', '2'])->whereNot('u.id_persona', '1');
             $users = $query->get();
             return $users;
         }

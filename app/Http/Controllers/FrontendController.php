@@ -32,13 +32,13 @@ class FrontendController extends BaseController
             "direccion" => "Av. Sucre A Parada Z/ lado Teleférico Azul."
         ];
         $this->data['institucion'] = InstitucionModel::find(1);
-        $this->data['institucion'] = InstitucionModel::find(1);
-        $publicaciones = new PublicacionModel();
-        $publicaciones = $publicaciones->getAllFront();
-        foreach ($publicaciones as $p) {
+
+        $morePublic = new PublicacionModel();
+        $morePublic = $morePublic->getAllFront();
+        foreach ($morePublic as $p) {
             $p->image = Helpers::getImage($p->url);
         }
-        $this->data['publicaciones'] = $publicaciones;
+        $this->data['morePublic'] = $morePublic;
 
         $data = $this->data;
         return view('frontend.' . $view, compact('data'));

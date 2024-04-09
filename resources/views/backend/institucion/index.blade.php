@@ -4,7 +4,6 @@
         $institucion = $data['institucion'];
         // dd($institucion);
     @endphp
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -12,7 +11,7 @@
                     <div class="card-header d-flex justify-content-between ">
                         <h4 class="card-title">Información principal del Centro de Desarrollo Infantil
                         </h4>
-                        <a href="{{ route('admin-autoridades.index') }}" class="btn btn-primary btn-md mt-2">
+                        <a href="{{ route('admin-autoridad.index') }}" class="btn btn-primary btn-md mt-2">
                             <i class="material-icons">group</i> Autoridades
                         </a>
                     </div>

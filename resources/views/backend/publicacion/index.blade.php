@@ -57,9 +57,10 @@
                                         <td>{{ $item->fecha_fin }}</td>
                                         <td>
                                             @if ($item->estado == '1')
-                                                <span class="text-warning az-b">NO PUBLICADO</span>
+                                                <span class="btn btn-warning az-b" style="min-width: 6rem;">NO
+                                                    PUBLICADO</span>
                                             @else
-                                                <span class="text-success az-b">PUBLICADO</span>
+                                                <span class="btn btn-success az-b" style="min-width: 6rem;">PUBLICADO</span>
                                             @endif
                                         </td>
                                         <td>

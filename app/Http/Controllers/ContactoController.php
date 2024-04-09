@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactoModel;
 use Illuminate\Http\Request;
 
 class ContactoController extends Controller
@@ -57,8 +58,7 @@ class ContactoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(ContactoModel $contacto)
     {
-        //
     }
 }

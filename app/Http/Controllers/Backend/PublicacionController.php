@@ -122,7 +122,7 @@ class PublicacionController extends BackendController
             [
                 'titulo' => 'required|max:80',
                 'fecha_ini' => 'required|date',
-                'fecha_fin' => 'date|after_or_equal:today',
+                'fecha_fin' => 'date',
                 'imagen' => 'file|max:10000|mimes:png,jpg,jpeg',
                 // 'imagen' => '',
                 'tipo' => 'required',

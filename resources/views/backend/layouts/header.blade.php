@@ -37,24 +37,30 @@
                                 <i class="material-icons">dashboard</i>
                                 <p class="d-lg-none d-md-block">Stats</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="http://example.com/" id="navbarDropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip"
+                                title="Solicitudes Recibidas">
                                 <i class="material-icons">notifications</i>
-                                <span class="notification">5</span>
+                                <span class="notification">{{ $data['cantidad'] }}</span>
                                 <p class="d-lg-none d-md-block">Some Actions</p>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                                <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                                <a class="dropdown-item" href="#">Another Notification</a>
-                                <a class="dropdown-item" href="#">Another One</a>
-                            </div>
-                        </li> --}}
+                                @foreach ($data['notificaciones'] as $item)
+                                    <a class="dropdown-item"
+                                        href="{{ route('admin-contacto.edit', $item) }}">{{ $item->nombre }}</a>
+                                @endforeach
 
-                        {{-- <li class="nav-item">
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}" data-toggle="tooltip" title="Salir">
+                                <i class="material-icons" aria-hidden="true">logout</i>
+                            </a>
+                        </li>
+                        {{-- 
+                        <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="material-icons">person</i>
                                 <p class="d-lg-none d-md-block">Account</p>

@@ -36,18 +36,6 @@
                             <div class="post-content">
                                 <div class="post-top">
                                     <h3 class="title"><a href="javascript:void(0)">{{ $sala->titulo }}</a></h3>
-                                    <ul class="meta-post">
-                                        <li>
-                                            <a href="javascript:void(0)"><i class="far fa-user"></i> Maria Hugarte
-                                                {{ $sala->id_usuario }}</a>
-                                        </li>
-                                        {{-- <li>
-                                            <a href="#"><i class="far fa-heart"></i>124 Likes</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="far fa-comments"></i>09 Comments</a>
-                                        </li> --}}
-                                    </ul>
                                     <p>{!! $sala->descripcion !!}</p>
                                 </div>
                             </div>
@@ -70,26 +58,10 @@
                             </div>
                             <div class="widget-body">
                                 <ul>
-                                    {{-- <li>
-                                        <a href="javascript:void(0)"><span><i class="fas fa-angle-double-right"></i>salas
-                                            </span><span>05</span></a>
-                                    </li> --}}
                                     <li>
-                                        <a href="javascript:void(0)"><span><i
-                                                    class="fas fa-angle-double-right"></i>Auditorio</span><span></span></a>
+                                        <a href="{{ route('galeria') }}"><span><i
+                                                    class="fas fa-angle-double-right"></i>Imagenes</span><span></span></a>
                                     </li>
-                                    {{-- <li>
-                                        <a href="javascript:void(0)"><span><i
-                                                    class="fas fa-angle-double-right"></i>Eventos</span><span>05</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><span><i
-                                                    class="fas fa-angle-double-right"></i>Comunicados</span><span>04</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><span><i
-                                                    class="fas fa-angle-double-right"></i>Avisos</span><span>27</span></a>
-                                    </li> --}}
                                 </ul>
                             </div>
                         </div>
@@ -99,36 +71,13 @@
                             </div>
                             <div class="widget-body">
                                 <ul>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-1.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-1.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-2.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-2.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-3.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-3.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-4.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-4.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-5.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-5.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-6.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-6.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
+                                    @foreach ($data['galeria'] as $item)
+                                        <li>
+                                            <a href="{{ $item->image }}" class="img-pop">
+                                                <img src="{{ $item->image }}" alt="gallery">
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -147,9 +96,6 @@
                                     </li>
                                     <li>
                                         <a href="{{ asset('contacto') }}">contacto</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">organigrama</a>
                                     </li>
                                 </ul>
                             </div>

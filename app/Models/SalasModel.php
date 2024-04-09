@@ -10,11 +10,11 @@ class SalasModel extends Model
     use HasFactory;
     protected $table = 'salas';
     protected $primaryKey = 'id_sala';
-    protected $fillable = ['id_usuario', 'nombre', 'subtitulo', 'descripcion', 'estado', 'cupo'];
+    protected $fillable = ['id_usuario', 'nombre', 'subtitulo', 'descripcion', 'estado', 'cupo', 'categoria'];
     protected $guarded = [];
     public $timestamps = false;
 
-    public function getAll($id = null)
+    public function getAll($id = null, $priory = null)
     {
         $query = $this->select(
             's.id_sala',
@@ -23,6 +23,7 @@ class SalasModel extends Model
             'subtitulo',
             'descripcion',
             's.estado',
+            's.categoria',
             'cupo',
             'url',
             'm.id_multimedia'
@@ -38,7 +39,11 @@ class SalasModel extends Model
         } else {
             // Si no se proporciona un ID, aplicamos otras condiciones
             $query->whereIn('s.estado', ['1', '2']);
-            $salas = $query->get();
+            if ($priory) {
+                $salas = $query->paginate(6);
+            } else {
+                $salas = $query->get();
+            }
             return $salas;
         }
     }

@@ -31,76 +31,100 @@
             <img src="assets/css/img/bottom-shape.png" alt="css">
         </div>
         <div class="container">
-            {{-- <ul class="filter-2">
-                <li data-filter="*" class="active"><span class="category">Mostrar todo</span><span class="amount">08</span>
-                </li>
-                <li data-filter=".toddler"><span class="category">Niños pequeños</span><span class="amount">04</span></li>
-                <li data-filter=".preschool"><span class="category">Prescolar</span><span class="amount">04</span></li>
-                <li data-filter=".kinder"><span class="category">Programas de prekínter</span><span class="amount">03</span>
-                </li>
-                <li data-filter=".programe"><span class="category">Jardín de infancia</span><span class="amount">02</span>
-                </li>
-            </ul> --}}
             <div class="masonary-wrapper">
-                <div class="masonary-item preschool programe">
-                    <div class="masonary-thumb">
-                        <a href="{{ asset('images/jw-img-1.jpg') }}" class="img-pop"><i class="fas fa-expand"></i></a>
-                        <img src="{{ asset('images/jw-img-1.jpg') }}" alt="gallery">
+                @if ($data['galeria']->total() == 0)
+                    <h2 class="text-center text-secondary">No hay imágenes</h2>
+                @endif
+                @foreach ($data['galeria'] as $item)
+                    <div class="masonary-item">
+                        <div class="masonary-thumb">
+                            <a href="{{ $item->image }}" class="img-pop"><i class="fas fa-expand"></i></a>
+                            <img src="{{ $item->image }}" alt="gallery">
+                            <a href="javascript:void(0)" onclick="detailImage({{ $item->id_galeria }})"
+                                style="top: 11%;left: 10%;"><i class="fas fa-eye"></i></a>
+                        </div>
+                    </div>
+                @endforeach
+                <div class="modal fade" id="modal-image" tabindex="-1" aria-labelledby="modal-image" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="titulo"></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-0">
+                                <div class="card">
+                                    <img id='image' src="" class="card-img-top " alt="">
+                                    <div class="card-body">
+                                        <h6 class="card-title" id="fecha_creacion">
+                                        </h6>
+                                        <p class="card-text" id="descripcion"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                {{-- <div class="masonary-item preschool programe">
-                    <div class="masonary-thumb">
-                        <a href="assets/images/gallery/g1.jpg" class="img-pop"><i class="fas fa-expand"></i></a>
-                        <img src="assets/images/gallery/g1.jpg" alt="gallery">
-                    </div>
-                </div> --}}
-                <div class="masonary-item toddler">
-                    <div class="masonary-thumb">
-                        <a href="{{ asset('images/jw-img-2.jpg') }}" class="img-pop"><i class="fas fa-expand"></i></a>
-                        <img src="{{ asset('images/jw-img-2.jpg') }}" alt="gallery">
-                    </div>
-                </div>
-                <div class="masonary-item preschool kinder">
-                    <div class="masonary-thumb">
-                        <a href="{{ asset('images/jw-img-3.jpg') }}" class="img-pop"><i class="fas fa-expand"></i></a>
-                        <img src="{{ asset('images/jw-img-3.jpg') }}" alt="gallery">
-                    </div>
-                </div>
-                <div class="masonary-item toddler programe">
-                    <div class="masonary-thumb">
-                        <a href="{{ asset('images/jw-img-4.jpg') }}" class="img-pop"><i class="fas fa-expand"></i></a>
-                        <img src="{{ asset('images/jw-img-4.jpg') }}" alt="gallery">
-                    </div>
-                </div>
-                <div class="masonary-item preschool kinder">
-                    <div class="masonary-thumb">
-                        <a href="{{ asset('images/jw-img-5.jpg') }}" class="img-pop"><i class="fas fa-expand"></i></a>
-                        <img src="{{ asset('images/jw-img-5.jpg') }}" alt="gallery">
-                    </div>
-                </div>
-                <div class="masonary-item toddler">
-                    <div class="masonary-thumb">
-                        <a href="{{ asset('images/jw-img-6.jpg') }}" class="img-pop"><i class="fas fa-expand"></i></a>
-                        <img src="{{ asset('images/jw-img-6.jpg') }}" alt="gallery">
-                    </div>
-                </div>
-                {{-- <div class="masonary-item preschool">
-                    <div class="masonary-thumb">
-                        <a href="assets/images/gallery/g7.jpg" class="img-pop"><i class="fas fa-expand"></i></a>
-                        <img src="assets/images/gallery/g7.jpg" alt="gallery">
-                    </div>
-                </div>
-                <div class="masonary-item toddler kinder">
-                    <div class="masonary-thumb">
-                        <a href="assets/images/gallery/g8.jpg" class="img-pop"><i class="fas fa-expand"></i></a>
-                        <img src="assets/images/gallery/g8.jpg" alt="gallery">
-                    </div>
-                </div> --}}
             </div>
-            {{-- <div class="load-more">
-                <a href="{{ route('contacto') }}" class="custom-button"><span>Empieza ahora</span></a>
-            </div> --}}
         </div>
+        @php
+            $paginate = $data['galeria'];
+        @endphp
+        @if (!$data['galeria']->total() == 0)
+            <ul class="default-pagination">
+                @if ($paginate->onFirstPage())
+                    <li class="disabled">
+                        <a href="#"><i class="fas fa-angle-left"></i></a>
+                    </li>
+                @else
+                    <li>
+                        <a href="{{ $paginate->previousPageUrl() }}"><i class="fas fa-angle-left"></i></a>
+                    </li>
+                @endif
+
+                @foreach ($paginate->getUrlRange(1, $paginate->lastPage()) as $page => $url)
+                    <li>
+                        <a href="{{ $url }}"
+                            class="{{ $paginate->currentPage() == $page ? 'active' : '' }}">{{ $page }}</a>
+                    </li>
+                @endforeach
+
+                @if ($paginate->hasMorePages())
+                    <li>
+                        <a href="{{ $paginate->nextPageUrl() }}"><i class="fas fa-angle-right"></i></a>
+                    </li>
+                @else
+                    <li class="disabled">
+                        <a href="#"><i class="fas fa-angle-right"></i></a>
+                    </li>
+                @endif
+            </ul>
+        @endif
+
     </div>
-    <!-- ==========Gallery Section Ends Here========== -->
+    <script>
+        function detailImage(item) {
+            $('#modal-image').modal('show');
+            let galeria = JSON.parse('<?php echo json_encode($data['galeria']); ?>');
+
+            console.log(galeria);
+            galeria = galeria.data.filter((data) => item == data.id_galeria)[0];
+            $('#titulo').text(galeria.titulo);
+            $('#fecha_creacion').text(formatFecha(galeria.fecha_creacion));
+            $('#descripcion').html(galeria.descripcion);
+            $('#image').attr('src', galeria.image);
+            $('#image').attr('alt', galeria.titulo);
+        };
+
+        function formatFecha(inputDate) {
+            const monthNames = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+                "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+            ];
+            const [year, month, day] = inputDate.split('-').map(Number);
+            const monthName = monthNames[month - 1];
+            const formattedDate = `${day} ${monthName}, ${year}`;
+            return formattedDate;
+        }
+    </script>
 @endsection

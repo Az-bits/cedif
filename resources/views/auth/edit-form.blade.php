@@ -1,12 +1,9 @@
-<!-- <= form_open(current_url()); ?> -->
 @extends('backend.app')
 @section('content')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     @php
-        $usuario = $data['usuario'];
-        // dd($usuario);
-        $persona = $data['persona'];
-        $usuario->nombreCompleto = $persona->nombre . ' ' . $persona->paterno . ' ' . $persona->materno;
+        $usuario = $data['persona'];
+        $usuario->nombreCompleto = $usuario->nombre . ' ' . $usuario->paterno . ' ' . $usuario->materno;
     @endphp
     <div class="container-fluid" style="max-width: 50rem;">
         <div class="row">
@@ -173,19 +170,11 @@
                 placeholder: 'Selecccione una persona'
             });
             $('#select-person').on('change', function(e) {
-                // alert();
-                // let persona = $(this).val();
-                let persona = <?= json_encode($data['personas']) ?>;
+                let persona = JSON.parse('<?php echo json_encode($data['personas']); ?>');
                 persona = persona.filter((data) => $(this).val() == data.id_persona)[0];
                 $('#nombreCompleto').val(persona.nombre + ' ' + persona.paterno + ' ' + persona.materno);
                 $('#email').val(persona.email);
                 $('#id_persona').val(persona.id_persona);
-                // var optionSelected = $(e.currentTarget).find("option:selected");
-                // var nombre = optionSelected.text();
-                // var email = optionSelected.attr('data-email');
-
-                // $('#nombreCompleto').val(nombre);
-                // $('#email').val(email);
             });
             $('#form-user').submit(function() {
                 $('#email').prop('disabled', false);

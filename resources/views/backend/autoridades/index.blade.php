@@ -1,6 +1,9 @@
 @extends('backend.app')
 @section('content')
     <div class="row">
+        {{-- @php
+            dd($data['autoridades'][0]->id_autoridad);
+        @endphp --}}
         @if (Session::get('success'))
             <div class="col-md-12">
                 <div class="alert alert-success">
@@ -12,10 +15,6 @@
                 </div>
             </div>
         @endif
-        {{-- @php
-            dd($data['autoridades']);
-        @endphp --}}
-
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary card-header-icon d-flex justify-content-between">
@@ -23,9 +22,9 @@
                         <div class="card-icon">
                             <i class="material-icons">assignment</i>
                         </div>
-                        <h4 class="card-title">Autoriades</h4>
+                        <h4 class="card-title">Autoridades</h4>
                     </div>
-                    <a href="{{ route('admin-autoridades.create') }}" class="btn btn-primary btn-sm mt-2">
+                    <a href="{{ route('admin-autoridad.create') }}" class="btn btn-primary btn-sm mt-2">
                         <i class="material-icons">add</i> Nueva Autoridad
                     </a>
 
@@ -56,12 +55,12 @@
                                         <td>{{ $item->nombre . ' ' . $item->paterno . ' ' . $item->materno }}</td>
                                         <td>{{ $item->cargo }}</td>
                                         <td>
-                                            <a href="{{ route('admin-autoridades.edit', $item) }}"
+                                            {{-- <a href="{{ route('admin-autoridades.edit', $item) }}" --}}
+                                            <a href="{{ route('admin-autoridad.edit', $item) }}"
                                                 class="btn btn-link btn-info btn-just-icon editar" data-toggle="tooltip"
                                                 title="Editar"><i class="material-icons">edit</i></a>
-                                            <form id="eliminarForm-{{ $item->id_autoridad }}"
-                                                action="{{ route('admin-autoridades.destroy', $item) }}" method="post"
-                                                class="d-inline">
+                                            <form id="eliminarForm-{{ $item->id_autoridad }}" method="post"
+                                                action="{{ route('admin-autoridad.destroy', $item) }}" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="button"
@@ -90,13 +89,4 @@
             </div>
         </div>
     </div>
-    {{-- @include('backend.publicacion.modal') --}}
-    <script>
-        $(document).ready(function() {
-            @if ($errors->any())
-                console.log('Hay errores');
-                $("#main_modal").modal('show');
-            @endif
-        });
-    </script>
 @endsection

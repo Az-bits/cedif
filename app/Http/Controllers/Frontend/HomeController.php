@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\Helpers;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FrontendController;
+use App\Models\AutoridadModel;
 use App\Models\GaleriaModel;
 use App\Models\InstitucionModel;
 use App\Models\PublicacionModel;
@@ -40,6 +42,12 @@ class HomeController extends FrontendController
             'publicaciones' => PublicacionModel::whereIn('estado', ['1', '2'])->count(),
             'galeria' => GaleriaModel::where('estado', '1')->count()
         ];
+        $data = new AutoridadModel();
+        $autoridades = $data->getAll();
+        foreach ($autoridades as $a) {
+            $a->image = Helpers::getImage($a->url);
+        }
+        $this->data['autoridades'] = $autoridades;
 
         $this->data['salas'] = SalasModel::where('estado', '1')->get();
         // dd($this->data['salas']);

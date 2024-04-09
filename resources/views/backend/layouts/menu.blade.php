@@ -7,13 +7,6 @@
         <a href="{{ asset('dashboard') }}" style='justify-content: center;display: flex' class="simple-text logo-normal">
             <img src="{{ asset('assets/images/logo/cdi-logo.png') }}" alt="" height="80" style="width: 100%">
         </a>
-        {{-- <a href="http://www.creative-tim.com/" class="simple-text logo-mini">
-            CT
-        </a> --}}
-        {{-- 
-        <a href="http://www.creative-tim.com/" class="simple-text logo-normal">
-            Centro de Desarrollo Infantil
-        </a> --}}
     </div>
 
     <div class="sidebar-wrapper">
@@ -30,12 +23,6 @@
                 </a>
                 <div class="collapse" id="collapseExample">
                     <ul class="nav">
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span class="sidebar-mini"> P </span>
-                                <span class="sidebar-normal"> Perfil </span>
-                            </a>
-                        </li> --}}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}">
                                 <span class="sidebar-mini"> CS</span>
@@ -47,36 +34,37 @@
             </div>
         </div>
         <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#formsExamples">
-                    <i class="material-icons">settings</i>
-                    <p>
-                        Administración
-                        <b class="caret"></b>
-                    </p>
-                </a>
-
-                <div class="collapse {{ $data['page'] == 'usuarios' ? 'show' : '' }}" id="formsExamples">
-                    <ul class="nav">
-                        <li class="nav-item {{ $data['page'] == 'usuarios' ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('usuarios.index') }}">
-                                <span class="sidebar-mini"> U </span>
-                                <span class="sidebar-normal"> Usuarios </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+            @if ($data['rol'] === 'ADMINISTRADOR')
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#formsExamples">
+                        <i class="material-icons">settings</i>
+                        <p>
+                            Administración
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse {{ $data['page'] == 'usuarios' ? 'show' : '' }}" id="formsExamples">
+                        <ul class="nav">
+                            <li class="nav-item {{ $data['page'] == 'usuarios' ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('usuarios.index') }}">
+                                    <span class="sidebar-mini"> U </span>
+                                    <span class="sidebar-normal"> Usuarios </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            @endif
             <li class="nav-item  {{ $data['page'] == 'dashboard' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="material-icons">home</i>
                     <p>Inicio</p>
                 </a>
             </li>
-            <li class="nav-item  {{ $data['page'] == 'persona' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('admin-persona.index') }}">
-                    <i class="material-icons">person</i>
-                    <p>Personas</p>
+            <li class="nav-item  {{ $data['page'] == 'contacto' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin-contacto.index') }}">
+                    <i class="material-icons">chat</i>
+                    <p>Contacto</p>
                 </a>
             </li>
             <li class="nav-item">
@@ -121,13 +109,21 @@
                     </p>
                 </a>
 
-                <div class="collapse  {{ ($data['page'] == 'publicacion' or $data['page'] == 'videosEE') ? 'show' : '' }}"
+                <div class="collapse  {{ ($data['page'] == 'publicacion' or $data['page'] == 'galeria') ? 'show' : '' }}"
                     id="pages">
                     <ul class="nav">
                         <li class="nav-item {{ $data['page'] == 'publicacion' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('admin-publicacion.index') }}">
                                 <span class="sidebar-mini"> P </span>
                                 <span class="sidebar-normal"> Publicaciones </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav">
+                        <li class="nav-item {{ $data['page'] == 'galeria' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('admin-galerias.index') }}">
+                                <span class="sidebar-mini"> G </span>
+                                <span class="sidebar-normal"> Galeria </span>
                             </a>
                         </li>
                     </ul>
@@ -157,6 +153,12 @@
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="nav-item  {{ $data['page'] == 'persona' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin-persona.index') }}">
+                    <i class="material-icons">person</i>
+                    <p>Personas</p>
+                </a>
             </li>
         </ul>
     </div>

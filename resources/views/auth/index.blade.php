@@ -52,13 +52,13 @@
                                         <td>{{ $item->rol }}</td>
                                         <td>
                                             @if ($item->estado == '1')
-                                                <span class=" btn btn-success az-b">ACTIVO</span>
+                                                <span class="btn btn-success az-b">ACTIVO</span>
                                             @else
                                                 <span class="btn btn-warning az-b">INACTIVO</span>
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('usuarios.edit', $item->id) }}"
+                                            <a href="{{ route('usuarios.edit', $item) }}"
                                                 class="btn btn-link btn-info btn-just-icon editar" data-toggle="tooltip"
                                                 title="Editar"><i class="material-icons">edit</i></a>
                                             <form id="eliminarForm-{{ $item->id }}"

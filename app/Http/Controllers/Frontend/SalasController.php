@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Helpers\Helpers;
 use App\Http\Controllers\FrontendController;
+use App\Models\GaleriaModel;
 use App\Models\SalasModel;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class SalasController extends FrontendController
     public function index()
     {
         $data = new SalasModel();
-        $salas = $data->getAll();
+        $salas = $data->getAll(null, true);
         foreach ($salas as $p) {
             $p->image = Helpers::getImage($p->url);
         }
@@ -33,7 +34,12 @@ class SalasController extends FrontendController
             $sala->image = Helpers::getImage($sala->url);
             $this->data['title'] = 'Salas';
             $this->data['sala'] = $sala;
-            // dd($this->data);
+            $foto = new GaleriaModel();
+            $galeria = $foto->getAll(null, true);
+            foreach ($galeria as $s) {
+                $s->image = Helpers::getImage($s->url);
+            }
+            $this->data['galeria'] = $galeria;
             return $this->render("detalle-sala");
         }
         return redirect()->route('/');

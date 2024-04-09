@@ -81,7 +81,7 @@ class InstitucionController extends BackendController
             'mision' => 'required',
             'vision' => 'required',
             'correo' => 'required|email',
-            'telefono1' => 'required|numeric|digits:8',
+            // 'telefono1' => 'required|numeric|digits:8',
             'celular1' => 'numeric|digits:8',
             'celular2' => 'numeric|digits:8',
         ]);

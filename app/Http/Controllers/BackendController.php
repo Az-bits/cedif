@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactoModel;
 use App\Models\UserModel;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -26,9 +27,15 @@ class BackendController extends BaseController
     {
         $users = new UserModel();
         $this->data['usuario'] = $users->getUsers(Auth::id());
+        $this->data['notificaciones'] = ContactoModel::whereIn('estado', ['1'])->orderByDesc('fecha_creacion')->get();
+        $this->data['cantidad'] = ContactoModel::whereIn('estado', ['1'])->get()->count();
 
+        $user =  new UserModel();
+        $user = $user->getUsers(Auth::user()->id);
+        $this->data['rol'] = $user->rol;
         $this->data['title'] = $this->title;
         $this->data['page'] = $this->page;
+
         $data = $this->data;
         return view('backend.' . $view, compact('data'));
     }

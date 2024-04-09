@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\RolesModel;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
@@ -26,10 +27,14 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        $usuario = User::where('email', $request->email)->first();
+        if ($usuario->estado == 2) {
+            return redirect()->back()->withErrors(['email' => 'Su usuario esta inactivo, contactarse con el administrador.']);
+        }
         $request->authenticate();
-
         $request->session()->regenerate();
 
+        // dd(Auth::user());
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

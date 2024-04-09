@@ -49,23 +49,38 @@
                 @endforeach
 
             </div>
+            @php
+                $salas = $data['salas'];
+            @endphp
             <ul class="default-pagination">
-                <li>
-                    <a href="#"><i class="fas fa-angle-left"></i></a>
-                </li>
-                <li>
-                    <a href="#" class="active">01</a>
-                </li>
-                {{-- <li>
-                    <a href="#" class="active">02</a>
-                </li>
-                <li>
-                    <a href="#">03</a>
-                </li> --}}
-                <li>
-                    <a href="#"><i class="fas fa-angle-right"></i></a>
-                </li>
+                @if ($salas->onFirstPage())
+                    <li class="disabled">
+                        <a href="#"><i class="fas fa-angle-left"></i></a>
+                    </li>
+                @else
+                    <li>
+                        <a href="{{ $salas->previousPageUrl() }}"><i class="fas fa-angle-left"></i></a>
+                    </li>
+                @endif
+
+                @foreach ($salas->getUrlRange(1, $salas->lastPage()) as $page => $url)
+                    <li>
+                        <a href="{{ $url }}"
+                            class="{{ $salas->currentPage() == $page ? 'active' : '' }}">{{ $page }}</a>
+                    </li>
+                @endforeach
+
+                @if ($salas->hasMorePages())
+                    <li>
+                        <a href="{{ $salas->nextPageUrl() }}"><i class="fas fa-angle-right"></i></a>
+                    </li>
+                @else
+                    <li class="disabled">
+                        <a href="#"><i class="fas fa-angle-right"></i></a>
+                    </li>
+                @endif
             </ul>
+
         </div>
     </div>
     <!-- ==========Blog Section Ends Here========== -->

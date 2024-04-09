@@ -179,7 +179,7 @@
                         <div class="card card-login card-hidden">
                             <div class="card-header card-header-rose text-center">
                                 <h4 class="card-title">Iniciar Sesión</h4>
-                                @if ($errors->any())
+                                @if ($errors->any() && !$errors->has('email'))
                                     <div class="alert alert-danger">
                                         <button type="button" class="close" data-dismiss="alert"
                                             aria-label="Close">
@@ -187,6 +187,16 @@
                                         </button>
                                         <span>
                                             <b> Error - </b> Correo o Contraseña incorrecta!</span><br>
+                                    </div>
+                                @endif
+                                @if ($errors->has('email'))
+                                    <div class="alert alert-danger">
+                                        <button type="button" class="close" data-dismiss="alert"
+                                            aria-label="Close">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                        <span>
+                                            <b> Error - </b> {{ $errors->first('email') }}</span><br>
                                     </div>
                                 @endif
                                 {{-- <div class="social-line">

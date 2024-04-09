@@ -71,6 +71,7 @@ class SalasController extends BackendController
                 'subtitulo' => $request->subtitulo,
                 'descripcion' => $request->descripcion,
                 'cupo' => $request->cupo,
+                'categoria' => $request->categoria,
                 'estado' => $request->estado ?? '1',
             ]);
             DB::table('multimedia_salas')->insert([
@@ -135,6 +136,7 @@ class SalasController extends BackendController
             'id_usuario' => Auth::id(),
             'nombre' => $request->nombre,
             'subtitulo' => $request->subtitulo,
+            'categoria' => $request->categoria,
             'descripcion' => $request->descripcion,
             'cupo' => $request->cupo,
             'estado' => $request->estado ?? '1',

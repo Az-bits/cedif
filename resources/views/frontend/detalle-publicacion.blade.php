@@ -38,8 +38,8 @@
                                     <h3 class="title"><a href="javascript:void(0)">{{ $publicacion->titulo }}</a></h3>
                                     <ul class="meta-post">
                                         <li>
-                                            <a href="javascript:void(0)"><i class="far fa-user"></i> Maria Ugarte
-                                                {{ $publicacion->id_usuario }}</a>
+                                            <a href="javascript:void(0)"><i class="far fa-user"></i>
+                                                {{ $publicacion->usuario->nombre . ' ' . $publicacion->usuario->paterno }}</a>
                                         </li>
                                         {{-- <li>
                                             <a href="#"><i class="far fa-heart"></i>124 Likes</a>
@@ -99,36 +99,13 @@
                             </div>
                             <div class="widget-body">
                                 <ul>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-1.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-1.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-2.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-2.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-3.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-3.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-4.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-4.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-5.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-5.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('images/jw-img-6.jpg') }}" class="img-pop">
-                                            <img src="{{ asset('images/jw-img-6.jpg') }}" alt="gallery">
-                                        </a>
-                                    </li>
+                                    @foreach ($data['galeria'] as $item)
+                                        <li>
+                                            <a href="{{ $item->image }}" class="img-pop">
+                                                <img src="{{ $item->image }}" alt="gallery">
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

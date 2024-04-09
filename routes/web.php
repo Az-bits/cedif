@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Frontend\ClienteController;
-use App\Http\Controllers\Frontend\ContactoController;
+use App\Http\Controllers\Frontend\ContactoController as ContactoFrontend;
 use App\Http\Controllers\Frontend\SobreNosotrosController;
 use App\Http\Controllers\Frontend\GaleriaController;
 use App\Http\Controllers\Frontend\HorarioController;
@@ -28,11 +28,12 @@ use App\Http\Controllers\TestController;
 */
 
 Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('/');
-Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
+Route::get('/contacto', [ContactoFrontend::class, 'index'])->name('contacto');
 Route::get('/sobre-nosotros', [SobreNosotrosController::class, 'index'])->name('sobre-nosotros');
 Route::get('/galeria', [GaleriaController::class, 'index'])->name('galeria');
 Route::get('/horario', [HorarioController::class, 'index'])->name('horario');
 Route::get('/servicios/{id}', [ServiciosController::class, 'index'])->name('servicios');
+Route::post('/contacto', [ContactoFrontend::class, 'saveSolicitud'])->name('contacto.save');
 
 // Begin::Salas
 
@@ -46,6 +47,10 @@ Route::get('/salas-parvulo', [SalasController::class, 'index'])->name('salas-par
 
 Route::get('/publicaciones', [PaginaController::class, 'publicacion'])->name('publicaciones');
 Route::get('/convocatorias', [PaginaController::class, 'convocatorias'])->name('convocatorias');
+Route::get('/avisos', [PaginaController::class, 'avisos'])->name('avisos');
+Route::get('/comunicados', [PaginaController::class, 'comunicados'])->name('comunicados');
+Route::get('/eventos', [PaginaController::class, 'eventos'])->name('eventos');
+
 Route::get('/videos', [PaginaController::class, 'videos'])->name('videos');
 // Route::get('/publicaciones/{id}', [PaginaController::class, 'detallePublicacion'])->name('detalle-publicacion');
 Route::get('/organigrama', [PaginaController::class, 'organigrama'])->name('organigrama');

@@ -40,13 +40,11 @@
                                             target="_blank"
                                             class="text-center d-flex w-25 btn btn-success  margin-auphpto">Subir video a
                                             Youtube</a>
-                                        <a href="javascript:void(0)" class="list-group-item list-group-item-action"
-                                            aria-current="true">
+                                        <span class="list-group-item list-group-item-action" aria-current="true">
                                             Correo: <span class="text-info">{{ $data['institucion']->canal_email }}</span>
-                                        </a>
-                                        <a href="javascript:void(0)"
-                                            class="list-group-item list-group-item-action">Contraseña:
-                                            <span class="text-info">{{ $data['institucion']->password }}</span></a>
+                                        </span>
+                                        <span class="list-group-item list-group-item-action">Contraseña:
+                                            <span class="text-info">{{ $data['institucion']->password }}</span></span>
                                         <a href="https://www.youtube.com/channel/UCU4_F0EHQJFW07LsXS7mCZA"
                                             class="list-group-item list-group-item-action" target="_blank">Enlace
                                             del canal de Youtube:
@@ -54,7 +52,7 @@
                                                 class="text-success">https://www.youtube.com/channel/UCU4_F0EHQJFW07LsXS7mCZA</span></a>
                                         <h4 class="mt-3 text-danger">¿Como subir Video a youtube?</h4>
                                         <p class='text-info'>Video tutorial</p>
-                                        <a href="https://www.youtube.com" target="_blank"
+                                        <a href="https://www.youtube.com/watch?v=jq363d1mziw" target="_blank"
                                             class="d-flex justify-content-center">
                                             <img class="thumbnail-border-color margin-auto" style="height: 20em;"
                                                 src="{{ asset('images/gifs/video-play.gif') }}" class="img-fluid"

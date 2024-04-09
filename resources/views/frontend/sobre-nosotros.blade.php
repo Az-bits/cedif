@@ -84,6 +84,50 @@
             </div>
         </div>
     </section>
+    <!-- ==========Client Section Starts Here========== -->
+    <section class="client-section padding-top padding-bottom bg_img" data-background="assets/images/client/client-bg.jpg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-header cl-white">
+                        <span class="cate">Nuestra Institución</span>
+                        <h3 class="title">Nuestra Historia y acerca de nosotros</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="client-slider oh">
+                <div class="client-item">
+                    <div class="client-header">
+                        <div class="author">
+
+                            <div class="content">
+                                <h6 class="title" style="font-size: 2rem">Historia</h6>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="client-body">
+                        {!! $institucion->historia !!}
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-header">
+                        <div class="author">
+                            <div class="content">
+                                <h6 class="title" style="font-size: 2rem">Sobre la Institución</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client-body">
+                        {!! $institucion->sobre_institucion !!}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Client Section Ends Here========== -->
+
     <!-- ==========About Section Ends Here========== -->
     <!-- ==========About Section Starts Here========== -->
     <section class="about-section section-right-shape padding-bottom padding-top">
@@ -161,42 +205,26 @@
                 </div>
             </div>
             <div class="row justify-content-center mb-30-none">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="teacher-item-2">
-                        <div class="teacher-thumb">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="https://e7.pngegg.com/pngimages/43/926/png-clipart-computer-icons-avatar-user-avatar-heroes-woman.png"
-                                        alt="teacher">
-                                </a>
+                @foreach ($data['autoridades'] as $item)
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="teacher-item-2">
+                            <div class="teacher-thumb">
+                                <div class="thumb">
+                                    <a href="javascript:void(0)">
+                                        <img src="{{ $item->image }}"
+                                            alt="{{ $item->nombre . ' ' . $item->paterno . ' ' . $item->materno }}">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h5 class="title"><a
+                                            href="javascript:void(0)">{{ $item->nivel_titulo . ' ' . $item->nombre . ' ' . $item->paterno . ' ' . $item->materno }}</a>
+                                    </h5>
+                                    <span>{{ $item->cargo }}</span>
+                                </div>
                             </div>
-                            <div class="content">
-                                <h5 class="title"><a href="#">Lic. Margot Patsi</a></h5>
-                                <span>Directora</span>
-                            </div>
-                            {{-- <div class="thumb">
-                                <a href="teacher-single.html">
-                                    <img src="assets/images/teacher/teacher01.jpg" alt="teacher">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Ricardo Mendoza</a></h5>
-                                <span>Maestro de Música o Arte</span>
-                            </div> --}}
-                        </div>
-                        <div class="teacher-content">
-                            <ul class="teacher-social justify-content-center">
-                                {{-- <li>
-                                    <a href="" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
-                                            style="color: green;"></i></a>
-                                </li> --}}
-                            </ul>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

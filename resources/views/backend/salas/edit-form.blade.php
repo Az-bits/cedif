@@ -11,7 +11,7 @@
                         <div class="card-icon">
                             <i class="material-icons">holiday_village</i>
                         </div>
-                        <h4 class="card-title">Nueva Sala</h4>
+                        <h4 class="card-title">Editar Sala</h4>
                     </div>
                     <div class="card-body ">
                         <form id="formulario_modal" method="post" action="{{ route('admin-salas.update', $sala) }}"
@@ -79,6 +79,12 @@
                                                     <input type="text" id="nombre" name="nombre" class="form-control"
                                                         placeholder="Nombre de la sala"
                                                         value="{{ old('nombre', $sala->nombre) }}">
+                                                </div>
+                                                <div class="col-lg-12 mt-3">
+                                                    <label for="categoria">Categoria </label>
+                                                    <input type="text" id="categoria" name="categoria"
+                                                        class="form-control" placeholder="Categoria"
+                                                        value="{{ old('categoria', $sala->categoria) }}">
                                                 </div>
                                                 <div class="col-lg-12 mt-3">
                                                     <label for="subtitulo">Subtitulo </label>

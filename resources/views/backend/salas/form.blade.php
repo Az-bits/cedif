@@ -76,6 +76,12 @@
                                                         placeholder="Nombre de la sala" value="{{ old('nombre') }}">
                                                 </div>
                                                 <div class="col-lg-12 mt-3">
+                                                    <label for="categoria">Categoria </label>
+                                                    <input type="text" id="categoria" name="categoria"
+                                                        class="form-control" placeholder="Categoria"
+                                                        value="{{ old('categoria') }}">
+                                                </div>
+                                                <div class="col-lg-12 mt-3">
                                                     <label for="subtitulo">Subtitulo </label>
                                                     <textarea name="subtitulo" id="subtitulo" cols="30" rows="5" class="form-control">{{ old('subtitulo') }}</textarea>
                                                 </div>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\Helpers;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FrontendController;
+use App\Models\AutoridadModel;
 use App\Models\InstitucionModel;
 use Illuminate\Http\Request;
 
@@ -26,14 +28,13 @@ class SobreNosotrosController extends FrontendController
      */
     public function index()
     {
-        // // return view('home');
-        // $this->data['contadores'] = [
-        //     'videos' => VideosModel::where('estado', '1')->count(),
-        //     'publicaciones' => PublicacionModel::where('estado', '1')->count(),
-        //     'galeria' => GaleriaModel::where('estado', '1')->count()
-        // ];
         $this->data['institucion'] = InstitucionModel::find(1);
-        // // dd($this->data['salas']);
+        $data = new AutoridadModel();
+        $autoridades = $data->getAll();
+        foreach ($autoridades as $a) {
+            $a->image = Helpers::getImage($a->url);
+        }
+        $this->data['autoridades'] = $autoridades;
         return $this->render('sobre-nosotros');
     }
 }

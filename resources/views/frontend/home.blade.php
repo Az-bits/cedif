@@ -4,7 +4,7 @@
     @endphp
     <section class="banner-section style-slide">
         <div class="banner-slider">
-            <div class="banner-item bg_img" data-background="assets/images/banner/slider/01.jpg">
+            <div class="banner-item bg_img" data-background="assets/images/banner/slider/05.gif">
                 <div class="banner-item-inner">
                     <div class="container">
                         <div class="banner-item-wrapper">
@@ -61,15 +61,14 @@
                                                 }
                                             </style>
                                             <h1 class="maquina-2">
-                                                <span class="linea">Mejor centro de</span><br>
-                                                <span class="linea">cuidado para</span><br>
-                                                <span class="linea">niños.</span>
+                                                <span class="linea">Centro de </span><br>
+                                                <span class="linea">Desarrollo</span><br>
+                                                <span class="linea">Infantil</span>
                                             </h1>
 
                                         </div>
                                         <p>
-                                            Para prevenir la deserción estudiantil, de madres y padres universitarios con
-                                            hijos de 1 a 5 años.
+                                            Por los niños y para los niños.
                                         </p>
                                         <a href="{{ route('contacto') }}" class="custom-button"> <span><i
                                                     class="fab fa-telegram-plane"></i> Contactanos</span></a>
@@ -306,33 +305,26 @@
                 </div>
             </div>
             <div class="row justify-content-center mb-30-none">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="teacher-item-2">
-                        <div class="teacher-thumb">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="https://e7.pngegg.com/pngimages/43/926/png-clipart-computer-icons-avatar-user-avatar-heroes-woman.png"
-                                        alt="teacher">
-                                </a>
+                @foreach ($data['autoridades'] as $item)
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="teacher-item-2">
+                            <div class="teacher-thumb">
+                                <div class="thumb">
+                                    <a href="javascript:void(0)">
+                                        <img src="{{ $item->image }}"
+                                            alt="{{ $item->nombre . ' ' . $item->paterno . ' ' . $item->materno }}">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h5 class="title"><a
+                                            href="javascript:void(0)">{{ $item->nivel_titulo . ' ' . $item->nombre . ' ' . $item->paterno . ' ' . $item->materno }}</a>
+                                    </h5>
+                                    <span>{{ $item->cargo }}</span>
+                                </div>
                             </div>
-                            <div class="content">
-                                <h5 class="title"><a href="#">Lic. Ximena Margot Patzi Quispe</a></h5>
-                                <span>Directora</span>
-                            </div>
-                        </div>
-                        <div class="teacher-content">
-                            <ul class="teacher-social justify-content-center">
-                                {{-- <li>
-                                    <a href="" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"
-                                            style="color: green;"></i></a>
-                                </li> --}}
-                            </ul>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -458,7 +450,7 @@
         <div class="container">
             <div class="row justify-content-center mb-30-none">
                 <div class="col-lg-3 col-sm-6">
-                    <h3 style="min-width: 20rem">Nuestra Ubicación</h3>
+                    <h3 class="text-center" style="min-width: 20rem">Nuestra Ubicación</h3>
                 </div>
             </div>
         </div>

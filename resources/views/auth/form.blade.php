@@ -1,7 +1,7 @@
 <!-- <= form_open(current_url()); ?> -->
 @extends('backend.app')
 @section('content')
-    {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     {{-- @php
         if (isset($data['persona'])) {
             $persona = $data['persona'];
@@ -52,7 +52,7 @@
                                         <div class="col-lg-12">
                                             <label for="ci" class="text-dark">Persona</label>
                                             <br>
-                                            <select id='select-person' class="" name="state"
+                                            <select id='select-person' class="" name="persona"
                                                 data-style="btn btn-primary btn-round">
                                                 <option></option>
                                                 @foreach ($data['personas'] as $item)
@@ -158,27 +158,20 @@
             </div>
         </div>
     </div>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
-    {{-- <script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
         $(document).ready(function() {
             $('#select-person').select2({
                 placeholder: 'Selecccione una persona'
             });
             $('#select-person').on('change', function(e) {
-                // alert();
-                // let persona = $(this).val();
-                let persona = <= json_encode($data['personas']) ?>;
+                let persona = JSON.parse('<?php echo json_encode($data['personas']); ?>');
                 persona = persona.filter((data) => $(this).val() == data.id_persona)[0];
                 $('#nombreCompleto').val(persona.nombre + ' ' + persona.paterno + ' ' + persona.materno);
+                $('#email').prop('disabled', false);
                 $('#email').val(persona.email);
                 $('#id_persona').val(persona.id_persona);
-                // var optionSelected = $(e.currentTarget).find("option:selected");
-                // var nombre = optionSelected.text();
-                // var email = optionSelected.attr('data-email');
-
-                // $('#nombreCompleto').val(nombre);
-                // $('#email').val(email);
             });
         });
-    </script> --}}
+    </script>
 @endsection

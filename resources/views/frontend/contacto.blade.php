@@ -24,36 +24,71 @@
         <script>
             Swal.fire({
                 title: "Exitoso!",
-                text: "Solicitud enviada correctamente!",
+                text: "{{ session('success') }}",
                 icon: "success"
+            });
+        </script>
+    @endif
+    @if (Session::get('error'))
+        <script>
+            Swal.fire({
+                title: "Error!",
+                text: "{{ Session::get('error') }}",
+                icon: "question"
             });
         </script>
     @endif
 
     <section class="contact-section padding-top padding-bottom">
         <div class="container">
-            <div class="contact-form-area">
+            <div class="contact-form-area" style="background: #f6f6f6;">
                 <h4 class="title">Solicitar información</h4>
-                <form action="{{ route('admin-contacto') }}" method="POST" class="contact-form" id="contact_form_submit">
+                @if ($errors->any())
+                    <div class="alert alert-danger d-flex align-items-center lert-dismissible" role="alert">
+                        <div>
+                            <span>
+                                <b> Error - </b> Oops! Parece que olvidaste completar algunos
+                                campos:</span><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <button type="button" class="btn-close az-btn-closed" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
+                @endif
+                <form action="{{ route('contacto.save') }}" method="POST" class="contact-form" id="contact_form_submit">
                     @csrf
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre" id="name" name="name">
+                    <div class="col-lg-8 az-with">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre" id="nombre" name="nombre" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Correo" id="email" name="email">
+                    <div class="col-lg-4 az-with">
+                        <div class="form-group">
+                            <input type="text" placeholder="Cedula de  Identidad" id="ci" name="ci" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Celular" id="phone" name="phone">
+                    <div class="col-lg-8 az-with">
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo" id="email" name="email" required>
+                        </div>
                     </div>
-                    {{-- <div class="form-group">
-                        <input type="text" placeholder="Asunto" id="subject" name="subject">
-                    </div> --}}
-                    <div class="form-group w-100">
-                        <textarea name="message" id="message" id="message" placeholder="Asunto"></textarea>
+                    <div class="col-lg-4 az-with">
+                        <div class="form-group">
+                            <input type="number" placeholder="Celular" id="celular" name="celular" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 az-with">
+                        <div class="form-group w-100">
+                            <textarea name="descripcion" id="descripcion" placeholder="Asunto" required></textarea>
+                        </div>
                     </div>
                     <div class="form-group w-100 text-center">
-                        <button onclick="confirmarEliminacion('1')" class="custom-button"><span>Enviar
-                                Solicitud</span></button>
+                        <button class="custom-button"><span>Enviar
+                                Solicitud <i class="fab fa-telegram-plane"></i></span></button>
                     </div>
                 </form>
             </div>
@@ -65,15 +100,14 @@
         {{-- <iframe width="600" height="450" frameborder="0" style="border:0" 
             src="https://maps.app.goo.gl/ee2EhbxsHMXTbz8u5" allowfullscreen>
         </iframe> --}}
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1137.3903343415705!2d-68.19275061591475!3d-16.490224711822528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf246daebfb9%3A0x2a4becb95f2f7651!2sEdificio%20del%20%C3%81rea%20Sociales%20de%20la%20UPEA!5e0!3m2!1ses-419!2sbo!4v1709309676020!5m2!1ses-419!2sbo"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="{{ $data['institucion']->ubicacion }}" width="100%" height="450" style="border:0;"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- ==========Map Section Ends Here========== -->
+
     <script>
         // Obtén la referencia al elemento input por su id
-        const inputNombre = document.getElementById('name');
+        const inputNombre = document.getElementById('nombre');
 
         // Dale foco al input cuando la página se carga
         window.onload = function() {
